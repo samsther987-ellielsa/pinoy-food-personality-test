@@ -183,6 +183,7 @@
     <script>
         let curLang = 'en'; 
         let curTheme = 'light';
+        let currentMbti = ""; // Global variable to store the MBTI result
 
         const uiText = {
             en: {
@@ -405,6 +406,16 @@
             
             if(document.getElementById('quiz-screen').style.display === 'block') {
                  showQuestion(false);
+            } else if (document.getElementById('result-screen').classList.contains('active') && currentMbti) {
+                const r = resultsData[currentMbti];
+                if (curLang === 'en') {
+                    document.getElementById('food-desc').innerText = r.enDesc;
+                    document.getElementById('mission-text').innerText = r.enAct;
+                } else {
+                    document.getElementById('food-desc').innerText = r.tlDesc;
+                    document.getElementById('mission-text').innerText = r.tlAct;
+                }
+                document.getElementById('result-label').innerText = t.resultLabel; // Update result label
             }
         }
 
@@ -487,6 +498,7 @@
             mbti += (scores.S >= scores.N) ? "S" : "N";
             mbti += (scores.T >= scores.F) ? "T" : "F";
             mbti += (scores.J >= scores.P) ? "J" : "P";
+            currentMbti = mbti; // Store MBTI globally
             
             // ✨ 결과 소리 재생 (E는 팡파레, I는 매직사운드)
             playResult(mbti);
