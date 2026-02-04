@@ -118,6 +118,7 @@
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+        <button class="icon-btn" onclick="showContactScreen()" id="contact-btn">✉️ Contact</button>
     </div>
 
     <div class="container">
@@ -172,6 +173,22 @@
             <button class="btn" onclick="shareResult()" style="background-color: var(--text); color: var(--bg);" id="share-btn">Share Result 📤</button>
             <button class="btn" onclick="location.reload()" style="background-color: transparent; border: 2px solid var(--text); color: var(--text);" id="retry-btn">Try Again 🔄</button>
         </div>
+
+        <div id="contact-screen" class="screen">
+            <h2 class="title" id="contact-title">Inquiry / Partnership</h2>
+            <p class="subtitle" id="contact-subtitle">Please fill out the form below and we'll get back to you soon.</p>
+            <form action="https://formspree.io/f/xlglqkoe" method="POST" id="contact-form">
+                <input type="text" name="name" id="contact-name" placeholder="Your Name" required 
+                       style="width: calc(100% - 20px); padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <input type="email" name="email" id="contact-email" placeholder="Your Email" required
+                       style="width: calc(100% - 20px); padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <textarea name="message" id="contact-message" placeholder="Your Message" required
+                          style="width: calc(100% - 20px); padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; height: 120px; resize: vertical;"></textarea>
+                <button class="btn" type="submit" id="contact-submit">Send Inquiry</button>
+                <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="contact-back">Back to Home</button>
+            </form>
+        </div>
+
     </div>
 
     <audio id="audio-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
@@ -196,7 +213,11 @@
                 subtitle: "Alamin ang iyong Soul Food at K-Pop Twin!", startBtn: "Tara Kain! (Simula)",
                 analyzing: "Ina-analyze ang iyong personality...", loadingSub: "Hinahanap ang iyong K-Pop match...",
                 resultLabel: "ANG SOUL FOOD MO AY", shareBtn: "I-share ang Resulta 📤", retryBtn: "Ulitin ang Quiz 🔄",
-                options: ["Sobrang Agree! 😍", "Pwede 🙂", "Di masyado 😕", "Sobrang Hindi! 🙅‍♂️"]
+                options: ["Sobrang Agree! 😍", "Pwede 🙂", "Di masyado 😕", "Sobrang Hindi! 🙅‍♂️"],
+                contactBtn: "✉️ Makipag-ugnayan", contactTitle: "Inquiry / Partnership",
+                contactSubtitle: "Punan ang form sa ibaba at babalikan ka namin.",
+                contactName: "Pangalan mo", contactEmail: "Email mo", contactMessage: "Mensahe mo",
+                contactSubmit: "Ipadala ang Inquiry", contactBack: "Bumalik sa Home"
             }
         };
 
@@ -416,6 +437,14 @@
                     document.getElementById('mission-text').innerText = r.tlAct;
                 }
                 document.getElementById('result-label').innerText = t.resultLabel; // Update result label
+            } else if (document.getElementById('contact-screen').classList.contains('active')) {
+                document.getElementById('contact-title').innerText = t.contactTitle;
+                document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
+                document.getElementById('contact-name').placeholder = t.contactName;
+                document.getElementById('contact-email').placeholder = t.contactEmail;
+                document.getElementById('contact-message').placeholder = t.contactMessage;
+                document.getElementById('contact-submit').innerText = t.contactSubmit;
+                document.getElementById('contact-back').innerText = t.contactBack;
             }
         }
 
@@ -526,6 +555,30 @@
                  alert((curLang === 'en') ? "Link copied!" : "Na-copy na ang link!");
              });
         }
+
+        // --- Screen Navigation Functions ---
+        function hideAllScreens() {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+        }
+
+        function showScreen(screenId) {
+            hideAllScreens();
+            document.getElementById(screenId).classList.add('active');
+            playClick();
+        }
+
+        function showStartScreen() {
+            showScreen('start-screen');
+            updateUIText(); // Update UI text when returning to start screen
+        }
+
+        function showContactScreen() {
+            showScreen('contact-screen');
+            updateUIText(); // Update UI text for contact screen
+        }
+
     </script>
 </body>
 </html>
