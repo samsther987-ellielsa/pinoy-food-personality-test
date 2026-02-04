@@ -404,7 +404,7 @@
             document.getElementById('share-btn').innerText = t.shareBtn;
             document.getElementById('retry-btn').innerText = t.retryBtn;
             
-            if(document.getElementById('quiz-screen').style.display === 'block') {
+            if(document.getElementById('quiz-screen').classList.contains('active')) {
                  showQuestion(false);
             } else if (document.getElementById('result-screen').classList.contains('active') && currentMbti) {
                 const r = resultsData[currentMbti];
