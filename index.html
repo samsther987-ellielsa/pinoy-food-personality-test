@@ -172,6 +172,9 @@
             
             <button class="btn" onclick="shareResult()" style="background-color: var(--text); color: var(--bg);" id="share-btn">Share Result 📤</button>
             <button class="btn" onclick="location.reload()" style="background-color: transparent; border: 2px solid var(--text); color: var(--text);" id="retry-btn">Try Again 🔄</button>
+            <!-- Social Sharing Buttons -->
+            <button class="btn" onclick="shareToFacebook()" style="background-color: #3b5998; margin-top: 20px;" id="facebook-share-btn"></button>
+            <button class="btn" onclick="shareToInstagram()" style="background-color: #c32aa3; margin-top: 10px;" id="instagram-share-btn"></button>
         </div>
 
         <div id="contact-screen" class="screen">
@@ -211,7 +214,8 @@
                 contactBtn: "✉️ Contact", contactTitle: "Inquiry / Partnership",
                 contactSubtitle: "Please fill out the form below and we'll get back to you soon.",
                 contactName: "Your Name", contactEmail: "Your Email", contactMessage: "Your Message",
-                contactSubmit: "Send Inquiry", contactBack: "Back to Home"
+                contactSubmit: "Send Inquiry", contactBack: "Back to Home",
+                facebookShare: "Share to Facebook 📘", instagramShare: "Share to Instagram 📸 (Screenshot & Tag!)"
             },
             tl: {
                 subtitle: "Alamin ang iyong Soul Food at K-Pop Twin!", startBtn: "Tara Kain! (Simula)",
@@ -221,7 +225,8 @@
                 contactBtn: "✉️ Makipag-ugnayan", contactTitle: "Inquiry / Partnership",
                 contactSubtitle: "Punan ang form sa ibaba at babalikan ka namin.",
                 contactName: "Pangalan mo", contactEmail: "Email mo", contactMessage: "Mensahe mo",
-                contactSubmit: "Ipadala ang Inquiry", contactBack: "Bumalik sa Home"
+                contactSubmit: "Ipadala ang Inquiry", contactBack: "Bumalik sa Home",
+                facebookShare: "I-share sa Facebook 📘", instagramShare: "I-share sa Instagram 📸 (Screenshot & Tag!)"
             }
         };
 
@@ -444,6 +449,10 @@
                     document.getElementById('mission-text').innerText = r.tlAct;
                 }
                 document.getElementById('result-label').innerText = t.resultLabel; // Update result label
+                
+                // Update social sharing buttons
+                document.getElementById('facebook-share-btn').innerText = t.facebookShare;
+                document.getElementById('instagram-share-btn').innerText = t.instagramShare;
             } else if (document.getElementById('contact-screen').classList.contains('active')) {
                 document.getElementById('contact-title').innerText = t.contactTitle;
                 document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
@@ -451,7 +460,7 @@
                 document.getElementById('contact-email').placeholder = t.contactEmail;
                 document.getElementById('contact-message').placeholder = t.contactMessage;
                 document.getElementById('contact-submit').innerText = t.contactSubmit;
-                document.getElementById('contact-back').innerText = t.contactBack; // Re-add this line
+                document.getElementById('contact-back').innerText = t.contactBack; 
             }
         }
 
@@ -525,23 +534,15 @@
             }, 30);
         }
 
-        function calculateResult() {
-            document.getElementById('loading-screen').classList.remove('active');
+        // New function to display result screen given an MBTI type
+        function showResultScreen(mbtiType) {
+            hideAllScreens();
             document.getElementById('result-screen').classList.add('active');
+            playResult(mbtiType); // Play sound for result
 
-            let mbti = "";
-            mbti += (scores.E >= scores.I) ? "E" : "I";
-            mbti += (scores.S >= scores.N) ? "S" : "N";
-            mbti += (scores.T >= scores.F) ? "T" : "F";
-            mbti += (scores.J >= scores.P) ? "J" : "P";
-            currentMbti = mbti; // Store MBTI globally
+            const r = resultsData[mbtiType];
             
-            // ✨ 결과 소리 재생 (E는 팡파레, I는 매직사운드)
-            playResult(mbti);
-
-            const r = resultsData[mbti];
-            
-            document.getElementById('mbti-result').innerText = mbti;
+            document.getElementById('mbti-badge').innerText = mbtiType; // Correct ID
             document.getElementById('food-name').innerText = `${r.food} ${r.emoji}`;
             
             if (curLang === 'en') {
@@ -553,17 +554,69 @@
             }
             
             document.getElementById('k-match').innerText = r.kstar;
+
+            // Also update result-specific texts in case language was just switched
+            updateUIText(); 
         }
 
+        // Modified calculateResult to use showResultScreen
+        function calculateResult() {
+            document.getElementById('loading-screen').classList.remove('active');
+            // document.getElementById('result-screen').classList.add('active'); // No longer needed here
+
+            let mbti = "";
+            mbti += (scores.E >= scores.I) ? "E" : "I";
+            mbti += (scores.S >= scores.N) ? "S" : "N";
+            mbti += (scores.T >= scores.F) ? "T" : "F";
+            mbti += (scores.J >= scores.P) ? "J" : "P";
+            currentMbti = mbti; // Store MBTI globally
+            
+            showResultScreen(currentMbti); // Call new function to display result
+        }
+
+        // Modified shareResult to copy the specific result link
         function shareResult() {
              playClick();
-             const dummyUrl = window.location.href; 
-             navigator.clipboard.writeText(dummyUrl).then(() => {
-                 alert((curLang === 'en') ? "Link copied!" : "Na-copy na ang link!");
+             const shareUrl = window.location.origin + window.location.pathname + '?mbti=' + currentMbti;
+             navigator.clipboard.writeText(shareUrl).then(() => {
+                 alert((curLang === 'en') ? "Result link copied to clipboard!" : "Na-copy na ang link ng resulta!");
              });
         }
+        
+        // --- Social Sharing Functions ---
+        function shareToFacebook() {
+            playClick();
+            if (!currentMbti) {
+                alert((curLang === 'en') ? "Please complete the test first to share your result!" : "Paki-kumpleto muna ang test bago mag-share ng resulta!");
+                return;
+            }
+            const shareUrl = window.location.origin + window.location.pathname + '?mbti=' + currentMbti;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+        }
 
-        // --- Screen Navigation Functions ---
+        function shareToInstagram() {
+            playClick();
+            alert((curLang === 'en') ? "Direct web sharing to Instagram feed/stories is not supported. Please take a screenshot of your result and share it directly on Instagram, don't forget to tag us!" : "Hindi suportado ang direktang pag-share sa Instagram feed/stories. Paki-screenshot ang iyong resulta at i-share ito nang direkta sa Instagram, huwag kalimutan kaming i-tag!");
+            // As discussed, direct web sharing to Instagram is highly restricted.
+            // A more involved solution would require server-side image generation and Instagram API integration,
+            // which is out of scope for a simple client-side form.
+        }
+
+
+        // New function to check for MBTI in URL and display result
+        function displayResultFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mbtiFromUrl = urlParams.get('mbti');
+            if (mbtiFromUrl && resultsData[mbtiFromUrl]) {
+                currentMbti = mbtiFromUrl;
+                showResultScreen(currentMbti);
+            } else {
+                // If no MBTI in URL or invalid, show start screen
+                showStartScreen();
+            }
+        }
+
+// --- Screen Navigation Functions ---
         function hideAllScreens() {
             document.querySelectorAll('.screen').forEach(screen => {
                 screen.classList.remove('active');
@@ -586,6 +639,8 @@
             updateUIText(); // Update UI text for contact screen
         }
 
+        // Call this on page load to check for share links
+        displayResultFromUrl(); 
     </script>
 </body>
 </html>
