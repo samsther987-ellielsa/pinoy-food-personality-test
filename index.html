@@ -450,9 +450,13 @@
                 }
                 document.getElementById('result-label').innerText = t.resultLabel; // Update result label
                 
-                // Update social sharing buttons
-                document.getElementById('facebook-share-btn').innerText = t.facebookShare;
-                document.getElementById('instagram-share-btn').innerText = t.instagramShare;
+                // Update social sharing buttons (with existence check)
+                if (document.getElementById('facebook-share-btn')) {
+                    document.getElementById('facebook-share-btn').innerText = t.facebookShare;
+                }
+                if (document.getElementById('instagram-share-btn')) {
+                    document.getElementById('instagram-share-btn').innerText = t.instagramShare;
+                }
             } else if (document.getElementById('contact-screen').classList.contains('active')) {
                 document.getElementById('contact-title').innerText = t.contactTitle;
                 document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
@@ -540,9 +544,13 @@
             document.getElementById('result-screen').classList.add('active');
             playResult(mbtiType); // Play sound for result
 
+            // Clear previous content of food-desc and mission-text
+            document.getElementById('food-desc').innerText = "";
+            document.getElementById('mission-text').innerText = "";
+
             const r = resultsData[mbtiType];
             
-            document.getElementById('mbti-badge').innerText = mbtiType; // Correct ID
+            document.getElementById('mbti-result').innerText = mbtiType; 
             document.getElementById('food-name').innerText = `${r.food} ${r.emoji}`;
             
             if (curLang === 'en') {
