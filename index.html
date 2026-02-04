@@ -177,6 +177,8 @@
     <audio id="audio-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
     <audio id="audio-result-e" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
     <audio id="audio-result-i" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+    <audio id="audio-result-s" src="https://assets.mixkit.co/active_storage/sfx/2855/2855-preview.mp3"></audio> <!-- Placeholder for Sensing sound -->
+    <audio id="audio-result-n" src="https://assets.mixkit.co/active_storage/sfx/3181/3181-preview.mp3"></audio> <!-- Placeholder for Intuition sound -->
 
     <script>
         let curLang = 'en'; 
@@ -347,21 +349,34 @@
         const clickSound = document.getElementById('audio-click');
         const resultSoundE = document.getElementById('audio-result-e'); // Fanfare
         const resultSoundI = document.getElementById('audio-result-i'); // Magic Chime
+        const resultSoundS = document.getElementById('audio-result-s'); // Placeholder for Sensing sound
+        const resultSoundN = document.getElementById('audio-result-n'); // Placeholder for Intuition sound
 
         function playClick() {
             clickSound.currentTime = 0;
             clickSound.play().catch(e => console.log("Audio play blocked by browser"));
         }
 
-        function playResult(type) {
-            // E 타입이면 팡파레, I 타입이면 매직 사운드
-            if (type.includes('E')) {
+        function playResult(mbti) {
+            // Play E/I sound first
+            if (mbti.includes('E')) {
                 resultSoundE.currentTime = 0;
-                resultSoundE.play().catch(e => console.log("Audio play blocked"));
-            } else {
+                resultSoundE.play().catch(e => console.log("Audio play blocked (E)"));
+            } else if (mbti.includes('I')) {
                 resultSoundI.currentTime = 0;
-                resultSoundI.play().catch(e => console.log("Audio play blocked"));
+                resultSoundI.play().catch(e => console.log("Audio play blocked (I)"));
             }
+
+            // Play S/N sound after a short delay
+            setTimeout(() => {
+                if (mbti.includes('S')) {
+                    resultSoundS.currentTime = 0;
+                    resultSoundS.play().catch(e => console.log("Audio play blocked (S)"));
+                } else if (mbti.includes('N')) {
+                    resultSoundN.currentTime = 0;
+                    resultSoundN.play().catch(e => console.log("Audio play blocked (N)"));
+                }
+            }, 200); // 200ms delay for the second sound
         }
 
         function toggleLang() {
