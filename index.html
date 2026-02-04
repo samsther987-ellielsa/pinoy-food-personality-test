@@ -184,7 +184,8 @@
                        style="width: calc(100% - 20px); padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd;">
                 <textarea name="message" id="contact-message" placeholder="Your Message" required
                           style="width: calc(100% - 20px); padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; height: 120px; resize: vertical;"></textarea>
-                <button class="btn" type="submit" id="contact-submit" style="background-color: #4CAF50;">Send</button>
+                <button class="btn" type="submit" id="contact-submit" style="background-color: #4CAF50;">Send Inquiry</button>
+                <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="contact-back">Back to Home</button>
             </form>
         </div>
 
@@ -253,7 +254,7 @@
                 { en: "I am often described as 'cold' or 'rational'.", tl: "Sabi nila 'cold' daw ako o masyadong lohikal.", invert: false, type: "TF" },
                 { en: "I easily empathize with other people's problems.", tl: "Madali akong maawa sa problema ng iba.", invert: true, type: "TF" },
                 { en: "Efficiency is more important than cooperation.", tl: "Mas mahalaga ang bilis kaysa samahan.", invert: false, type: "TF" },
-                { en: "I try not to hurt anyone's feelings.", tl: "Iniiwasan kong makasakit ng damdamin.", invert: true, type: "TF" }
+                { en: "I try not to hurt anyone's feelings.", tl: "Iniiwasan akong makasakit ng damdamin.", invert: true, type: "TF" }
             ],
             JP: [
                 { en: "I like to have a detailed plan before traveling.", tl: "Gusto ko may itinerary bago bumyahe.", invert: false, type: "JP" },
@@ -277,7 +278,7 @@
             "INTP": { 
                 food: "Balut", emoji: "🥚",
                 enDesc: "You are unique, complex, and full of surprises, just like Balut. Many people might misunderstand you at first glance, but those who are brave enough to get to know you find a hidden gem. You live in your own world of theories and ideas. You are unconventional and always thinking outside the box.", 
-                tlDesc: "Kakaiba ka at puno ng surpresa, parang Balut. Maraming hindi ka agad naiintindihan sa unang tingin, pero ang mga tunay na nakakakilala sayo ay alam na special ka. May sarili kang mundo. Hindi ka sumusunod sa uso, at lagi kang may kakaibang ideas na ikaw lang ang nakakaisip.", 
+                tlDesc: "Kakaiba ka at puno ng surpresa, parang Balut. Maraming hindi ka agad naiintindihan sa unang tingin, pero ang mga tunay na nakakakilala sayo ay alam na special ka. May sarili mong mundo. Hindi ka sumusunod sa uso, at lagi kang may kakaibang ideas na ikaw lang ang nakakaisip.", 
                 kstar: "Jin (BTS), Kenma (Haikyuu)", enAct: "Watch a documentary or learn a weird fact.", tlAct: "Manood ng documentary o mag-research ng weird facts." 
             },
             "ENTJ": { 
@@ -428,7 +429,7 @@
             document.getElementById('share-btn').innerText = t.shareBtn;
             document.getElementById('retry-btn').innerText = t.retryBtn;
             
-            // This line needs to be added:
+            // Update contact button text
             document.getElementById('contact-btn').innerText = t.contactBtn;
 
             if(document.getElementById('quiz-screen').classList.contains('active')) {
@@ -450,8 +451,7 @@
                 document.getElementById('contact-email').placeholder = t.contactEmail;
                 document.getElementById('contact-message').placeholder = t.contactMessage;
                 document.getElementById('contact-submit').innerText = t.contactSubmit;
-                // This line needs to be removed:
-                // document.getElementById('contact-back').innerText = t.contactBack;
+                document.getElementById('contact-back').innerText = t.contactBack; // Re-add this line
             }
         }
 
