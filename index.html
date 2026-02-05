@@ -150,7 +150,10 @@
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+        <button class="icon-btn" onclick="showAboutScreen()" id="about-btn">ℹ️ About</button>
         <button class="icon-btn" onclick="showContactScreen()" id="contact-btn">✉️ Contact</button>
+        <button class="icon-btn" onclick="showPrivacyScreen()" id="privacy-btn">🔒 Privacy</button>
+        <button class="icon-btn" onclick="showTermsScreen()" id="terms-btn">📝 Terms</button>
     </div>
 
     <div class="container">
@@ -176,7 +179,7 @@
         </div>
 
         <div id="loading-screen" class="screen">
-            <h2 id="analyzing-text">Analyzing your taste...</h2>
+            <h2 class="title" id="analyzing-text">Analyzing your taste...</h2>
             <div class="loader-container">
                 <div class="percentage" id="percentage">0%</div>
                 <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
@@ -225,6 +228,131 @@
             </form>
         </div>
 
+        <div id="about-screen" class="screen">
+            <h2 class="title" id="about-title">About This Test</h2>
+            <div class="info-box">
+                <div class="info-content" id="about-content">
+                    <p>Welcome to the <strong>Pinoy Food Personality Test</strong>! This interactive quiz goes beyond simple entertainment; it's a <strong>Professional Cultural Project</strong> aimed at showcasing the rich and diverse culinary heritage of the Philippines. By blending the fascinating world of MBTI personality types with the vibrant flavors of Filipino cuisine, we offer users a uniquely personalized cultural experience.</p>
+                    <p><strong>Our Mission:</strong> We believe that food is a powerful gateway to culture. This test serves as an engaging platform to introduce global audiences to the depth and variety of Filipino dishes, connecting them to their own personalities in an insightful and memorable way. Discover whether your traits align with the bold essence of <em>Kapeng Barako</em>, the comforting warmth of <em>Champorado</em>, or the dynamic mix of a <em>Halo-Halo</em>.</p>
+                    <p>This project is crafted to foster a deeper appreciation for Filipino gastronomy and culture, providing an educational yet incredibly fun journey of self-discovery. Share your unique Pinoy food personality and K-Pop twin with the world!</p>
+                </div>
+            </div>
+            <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="about-back">Back to Home</button>
+        </div>
+
+        <!-- Privacy Policy Screen -->
+        <div id="privacy-screen" class="screen">
+            <h2 class="title" id="privacy-title">Privacy Policy</h2>
+            <div class="info-box">
+                <div class="info-content" id="privacy-content">
+                    <h3>1. Introduction</h3>
+                    <p>This Privacy Policy describes how Pinoy Food Personality Test ("we," "us," or "our") collects, uses, and discloses information when you use our Pinoy Food Personality Test (the "Service").</p>
+
+                    <h3>2. Information We Collect</h3>
+                    <p>When you use our Service, we may collect the following types of information:</p>
+                    <ul>
+                        <li><strong>Personality Test Answers:</strong> Your responses to the quiz questions are collected to determine your personality type and provide you with a result. These answers are not stored in a personally identifiable way and are used only for the immediate purpose of generating your quiz result.</li>
+                        <li><strong>Usage Data:</strong> We may collect information on how the Service is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.</li>
+                        <li><strong>Cookies:</strong> We use cookies to track the activity on our Service and hold certain information. Cookies are files with a small amount of data that are sent to your browser from a website and stored on your device.</li>
+                    </ul>
+
+                    <h3>3. Use of Data</h3>
+                    <p>We use the collected data for various purposes:</p>
+                    <ul>
+                        <li>To provide and maintain the Service</li>
+                        <li>To personalize your experience and deliver the quiz results</li>
+                        <li>To monitor the usage of the Service</li>
+                        <li>To detect, prevent, and address technical issues</li>
+                        <li>To show you relevant advertisements via Google AdSense.</li>
+                    </ul>
+
+                    <h3>4. Disclosure of Data</h3>
+                    <p>We may share your information in the following situations:</p>
+                    <ul>
+                        <li><strong>With Service Providers:</strong> We may employ third-party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services, or to assist us in analyzing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</li>
+                        <li><strong>Google AdSense:</strong> We use Google AdSense to display advertisements. Google uses cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Ads Settings</a>.</li>
+                        <li><strong>Legal Requirements:</strong> We may disclose your Data in the good faith belief that such action is necessary to: comply with a legal obligation, protect and defend the rights or property of Pinoy Food Personality Test, prevent or investigate possible wrongdoing in connection with the Service, protect the personal safety of users of the Service or the public, protect against legal liability.</li>
+                    </ul>
+
+                    <h3>5. Security of Data</h3>
+                    <p>The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+                    <h3>6. Your Data Protection Rights</h3>
+                    <p>Depending on your location, you may have the following data protection rights:</p>
+                    <ul>
+                        <li>The right to access, update, or to delete the information we have on you.</li>
+                        <li>The right to rectify any information that is inaccurate or incomplete.</li>
+                        <li>The right to object to our processing of your Personal Data.</li>
+                        <li>The right to request that we restrict the processing of your personal information.</li>
+                        <li>The right to data portability.</li>
+                        <li>The right to withdraw consent.</li>
+                    </ul>
+                    <p>Please note that we may ask you to verify your identity before responding to such requests.</p>
+
+                    <h3>7. Links to Other Sites</h3>
+                    <p>Our Service may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+                    <p>We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+
+                    <h3>8. Children's Privacy</h3>
+                    <p>Our Service does not address anyone under the age of 18 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+                    <h3>9. Changes to This Privacy Policy</h3>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+                    <h3>10. Contact Us</h3>
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <ul>
+                        <li>By email: samsther987@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="privacy-back">Back to Home</button>
+        </div>
+
+        <!-- Terms of Service Screen -->
+        <div id="terms-screen" class="screen">
+            <h2 class="title" id="terms-title">Terms of Service</h2>
+            <div class="info-box">
+                <div class="info-content" id="terms-content">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing and using the Pinoy Food Personality Test website (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of the terms, then you may not access the Service.</p>
+
+                    <h3>2. Use of Service</h3>
+                    <ul>
+                        <li>The Service is provided for entertainment purposes only.</li>
+                        <li>You agree to use the Service only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the Service.</li>
+                        <li>You must not misuse our Service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful.</li>
+                    </ul>
+
+                    <h3>3. Intellectual Property</h3>
+                    <p>The Service and its original content (excluding content provided by users), features and functionality are and will remain the exclusive property of Pinoy Food Personality Test and its licensors. The Service is protected by copyright, trademark, and other laws of both the Philippines and foreign countries.</p>
+                    <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Pinoy Food Personality Test.</p>
+
+                    <h3>4. Disclaimer of Warranties</h3>
+                    <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.</p>
+                    <p>Pinoy Food Personality Test does not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.</p>
+
+                    <h3>5. Limitation of Liability</h3>
+                    <p>In no event shall Pinoy Food Personality Test, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.</p>
+
+                    <h3>6. Governing Law</h3>
+                    <p>These Terms shall be governed and constructed in accordance with the laws of the Philippines, without regard to its conflict of law provisions.</p>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
+
+                    <h3>7. Changes to Terms</h3>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+                    <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+
+                    <h3>8. Contact Us</h3>
+                    <p>If you have any questions about these Terms, please contact us:</p>
+                    <ul>
+                        <li>By email: samsther987@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="terms-back">Back to Home</button>
+        </div>
+
     </div>
 
     <audio id="audio-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
@@ -248,7 +376,9 @@
                 contactSubtitle: "Please fill out the form below and we'll get back to you soon.",
                 contactName: "Your Name", contactEmail: "Your Email", contactMessage: "Your Message",
                 contactSubmit: "Send Inquiry", contactBack: "Back to Home",
-                facebookShare: "Share in Facebook 📘", instagramShare: "Share in Instagram 📸"
+                facebookShare: "Share in Facebook 📘", instagramShare: "Share in Instagram 📸",
+                privacyBtn: "🔒 Privacy", privacyTitle: "Privacy Policy",
+                termsBtn: "📝 Terms", termsTitle: "Terms of Service"
             },
             tl: {
                 subtitle: "Alamin ang iyong Soul Food at K-Pop Twin!", startBtn: "Tara Kain! (Simula)",
@@ -259,7 +389,9 @@
                 contactSubtitle: "Punan ang form sa ibaba at babalikan ka namin.",
                 contactName: "Pangalan mo", contactEmail: "Email mo", contactMessage: "Mensahe mo",
                 contactSubmit: "Ipadala ang Inquiry", contactBack: "Bumalik sa Home",
-                facebookShare: "I-share sa Facebook 📘", instagramShare: "I-share sa Instagram 📸"
+                facebookShare: "I-share sa Facebook 📘", instagramShare: "I-share sa Instagram 📸",
+                privacyBtn: "🔒 Privacy", privacyTitle: "Patakaran sa Pagkapribado",
+                termsBtn: "📝 Tuntunin ng Serbisyo", termsTitle: "Mga Tuntunin ng Serbisyo"
             }
         };
 
@@ -471,6 +603,14 @@
             // Update contact button text
             document.getElementById('contact-btn').innerText = t.contactBtn;
 
+            // Update new privacy and terms button text
+            if (document.getElementById('privacy-btn')) {
+                document.getElementById('privacy-btn').innerText = t.privacyBtn;
+            }
+            if (document.getElementById('terms-btn')) {
+                document.getElementById('terms-btn').innerText = t.termsBtn;
+            }
+
             if(document.getElementById('quiz-screen').classList.contains('active')) {
                  showQuestion(false);
             } else if (document.getElementById('result-screen').classList.contains('active') && currentMbti) {
@@ -497,6 +637,12 @@
                 document.getElementById('contact-message').placeholder = t.contactMessage;
                 document.getElementById('contact-submit').innerText = t.contactSubmit;
                 document.getElementById('contact-back').innerText = t.contactBack; 
+            } else if (document.getElementById('privacy-screen').classList.contains('active')) {
+                document.getElementById('privacy-title').innerText = t.privacyTitle;
+                document.getElementById('privacy-back').innerText = t.contactBack; // Reuse contactBack for now
+            } else if (document.getElementById('terms-screen').classList.contains('active')) {
+                document.getElementById('terms-title').innerText = t.termsTitle;
+                document.getElementById('terms-back').innerText = t.contactBack; // Reuse contactBack for now
             }
         }
 
@@ -600,9 +746,43 @@
             if (curLang === 'en') {
                 document.getElementById('food-desc').innerText = r.enDesc;
                 document.getElementById('mission-text').innerText = r.enAct;
+                
+                // Update new privacy and terms button text
+                if (document.getElementById('privacy-btn')) {
+                    document.getElementById('privacy-btn').innerText = uiText[curLang].privacyBtn;
+                }
+                if (document.getElementById('terms-btn')) {
+                    document.getElementById('terms-btn').innerText = uiText[curLang].termsBtn;
+                }
+
+                if (document.getElementById('privacy-screen').classList.contains('active')) {
+                    document.getElementById('privacy-title').innerText = uiText[curLang].privacyTitle;
+                    document.getElementById('privacy-back').innerText = uiText[curLang].contactBack;
+                } else if (document.getElementById('terms-screen').classList.contains('active')) {
+                    document.getElementById('terms-title').innerText = uiText[curLang].termsTitle;
+                    document.getElementById('terms-back').innerText = uiText[curLang].contactBack;
+                }
+
+
             } else {
                 document.getElementById('food-desc').innerText = r.tlDesc;
                 document.getElementById('mission-text').innerText = r.tlAct;
+
+                // Update new privacy and terms button text
+                if (document.getElementById('privacy-btn')) {
+                    document.getElementById('privacy-btn').innerText = uiText[curLang].privacyBtn;
+                }
+                if (document.getElementById('terms-btn')) {
+                    document.getElementById('terms-btn').innerText = uiText[curLang].termsBtn;
+                }
+
+                if (document.getElementById('privacy-screen').classList.contains('active')) {
+                    document.getElementById('privacy-title').innerText = uiText[curLang].privacyTitle;
+                    document.getElementById('privacy-back').innerText = uiText[curLang].contactBack;
+                } else if (document.getElementById('terms-screen').classList.contains('active')) {
+                    document.getElementById('terms-title').innerText = uiText[curLang].termsTitle;
+                    document.getElementById('terms-back').innerText = uiText[curLang].contactBack;
+                }
             }
             
             document.getElementById('k-match').innerText = r.kstar;
@@ -697,6 +877,16 @@
         function showContactScreen() {
             showScreen('contact-screen');
             updateUIText(); // Update UI text for contact screen
+        }
+        
+        function showPrivacyScreen() {
+            showScreen('privacy-screen');
+            updateUIText();
+        }
+
+        function showTermsScreen() {
+            showScreen('terms-screen');
+            updateUIText();
         }
 
         // Call this on page load to check for share links
