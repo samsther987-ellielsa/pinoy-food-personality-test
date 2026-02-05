@@ -241,7 +241,7 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn" type="button" onclick="showStartScreen()" style="background-color: #ccc; margin-top: 10px;" id="about-back">Back to Home</button>
+            <button class="btn" type="button" onclick="hideAbout()" style="background-color: #ccc; margin-top: 10px;" id="about-back">Back to Home</button>
         </div>
 
         <!-- Privacy Policy Screen -->
@@ -360,7 +360,7 @@
     </div>
 
         <div class="result-footer-links">
-                <a href="#" onclick="showAboutScreen()">About</a> |
+                <a href="#" onclick="showAbout()">About</a> |
                 <a href="#" onclick="showContactScreen()">Contact</a> |
                 <a href="#" onclick="showPrivacyScreen()">Privacy Policy</a> |
                 <a href="#" onclick="showTermsScreen()">Terms of Service</a>
@@ -883,6 +883,21 @@
         function showStartScreen() {
             showScreen('start-screen');
             updateUIText(); // Update UI text when returning to start screen
+        }
+
+        function showAbout() {
+            const modal = document.getElementById('about-modal') || document.getElementById('about-screen');
+            if (modal) {
+                hideAllScreens();
+                modal.style.display = 'flex';
+            }
+        }
+        function hideAbout() {
+            const modal = document.getElementById('about-modal') || document.getElementById('about-screen');
+            if (modal) {
+                modal.style.display = 'none';
+                showStartScreen(); // Go back to start screen after hiding
+            }
         }
 
         function showContactScreen() {
