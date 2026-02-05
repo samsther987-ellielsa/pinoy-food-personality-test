@@ -150,10 +150,6 @@
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
-        <button class="icon-btn" onclick="showAboutScreen()" id="about-btn">ℹ️ About</button>
-        <button class="icon-btn" onclick="showContactScreen()" id="contact-btn">✉️ Contact</button>
-        <button class="icon-btn" onclick="showPrivacyScreen()" id="privacy-btn">🔒 Privacy</button>
-        <button class="icon-btn" onclick="showTermsScreen()" id="terms-btn">📝 Terms</button>
     </div>
 
     <div class="container">
@@ -210,7 +206,12 @@
             <button class="btn" onclick="location.reload()" style="background-color: transparent; border: 2px solid var(--text); color: var(--text);" id="retry-btn">Try Again 🔄</button>
             <!-- Social Sharing Buttons -->
             <button class="btn" onclick="shareToFacebook()" style="background-color: #3b5998; margin-top: 20px;" id="facebook-share-btn"></button>
-            
+            <div class="result-footer-links">
+                <a href="#" onclick="showAboutScreen()">About</a> |
+                <a href="#" onclick="showContactScreen()">Contact</a> |
+                <a href="#" onclick="showPrivacyScreen()">Privacy Policy</a> |
+                <a href="#" onclick="showTermsScreen()">Terms of Service</a>
+            </div>
         </div>
 
         <div id="contact-screen" class="screen">
@@ -600,16 +601,7 @@
             document.getElementById('share-btn').innerText = t.shareBtn;
             document.getElementById('retry-btn').innerText = t.retryBtn;
             
-            // Update contact button text
-            document.getElementById('contact-btn').innerText = t.contactBtn;
-
-            // Update new privacy and terms button text
-            if (document.getElementById('privacy-btn')) {
-                document.getElementById('privacy-btn').innerText = t.privacyBtn;
-            }
-            if (document.getElementById('terms-btn')) {
-                document.getElementById('terms-btn').innerText = t.termsBtn;
-            }
+            // Navigation links are now in a dedicated footer or not updated by UI text.
 
             if(document.getElementById('quiz-screen').classList.contains('active')) {
                  showQuestion(false);
