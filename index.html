@@ -142,7 +142,7 @@
         .mission-box { border-color: #20c997; background: rgba(32, 201, 151, 0.05); }
 
         .progress-container { width: 100%; background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; margin-bottom: 20px; }
-        .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s; border-radius: 4px; }
+        .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.1s; border-radius: 4px; }
     </style>
 </head>
 <body data-theme="light">
@@ -202,16 +202,11 @@
                 <div class="info-content" id="mission-text">Mission here</div>
             </div>
             
-            <button class="btn" onclick="shareResult()" style="background-color: var(--text); color: var(--bg);" id="share-btn">Share Result 📤</button>
-            <button class="btn" onclick="location.reload()" style="background-color: transparent; border: 2px solid var(--text); color: var(--text);" id="retry-btn">Try Again 🔄</button>
+            <button class="btn" onclick="shareResult()" style="background-color: var(--text); color: var(--bg);" id="share-btn"></button>
+            <button class="btn" onclick="location.reload()" style="background-color: transparent; border: 2px solid var(--text); color: var(--text);" id="retry-btn"></button>
             <!-- Social Sharing Buttons -->
             <button class="btn" onclick="shareToFacebook()" style="background-color: #3b5998; margin-top: 20px;" id="facebook-share-btn"></button>
-            <div class="result-footer-links">
-                <a href="#" onclick="showAboutScreen()">About</a> |
-                <a href="#" onclick="showContactScreen()">Contact</a> |
-                <a href="#" onclick="showPrivacyScreen()">Privacy Policy</a> |
-                <a href="#" onclick="showTermsScreen()">Terms of Service</a>
-            </div>
+            
         </div>
 
         <div id="contact-screen" class="screen">
@@ -356,6 +351,12 @@
 
     </div>
 
+        <div class="result-footer-links">
+                <a href="#" onclick="showAboutScreen()">About</a> |
+                <a href="#" onclick="showContactScreen()">Contact</a> |
+                <a href="#" onclick="showPrivacyScreen()">Privacy Policy</a> |
+                <a href="#" onclick="showTermsScreen()">Terms of Service</a>
+            </div>
     <audio id="audio-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
     <audio id="audio-result-e" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
     <audio id="audio-result-i" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
@@ -420,10 +421,10 @@
             TF: [
                 { en: "I follow logic more than my heart.", tl: "Mas sinusunod ko ang utak ko kaysa puso.", invert: false, type: "TF" },
                 { en: "Being honest is more important than not hurting feelings.", tl: "Mas okay nang prangka kaysa maging plastic.", invert: false, type: "TF" },
-                { en: "I make decisions based on emotions.", tl: "Nagde-decide ako base sa nararamdaman ko.", invert: true, type: "TF" },
+                { en: "I make decisions based on emotions.", tl: "Nagde-decide ako base sa nararamdaram고, invert: true, type: "TF" },
                 { en: "I prioritize harmony over being right.", tl: "Mas mahalaga sakin na walang away kaysa ako ang tama.", invert: true, type: "TF" },
                 { en: "I am often described as 'cold' or 'rational'.", tl: "Sabi nila 'cold' daw ako o masyadong lohikal.", invert: false, type: "TF" },
-                { en: "I easily empathize with other people's problems.", tl: "Madali akong maawa sa problema ng iba.", invert: true, type: "TF" },
+                { en: "I easily empathize with other people's problems.", tl: "Madali akong maawa sa 문제의 다른 요소.", invert: true, type: "TF" },
                 { en: "Efficiency is more important than cooperation.", tl: "Mas mahalaga ang bilis kaysa samahan.", invert: false, type: "TF" },
                 { en: "I try not to hurt anyone's feelings.", tl: "Iniiwasan akong makasakit ng damdamin.", invert: true, type: "TF" }
             ],
@@ -468,12 +469,12 @@
                 food: "Kare-Kare", emoji: "🥜",
                 enDesc: "You are Kare-Kare: rich, complex, and deep. You are not a simple dish; you have layers of flavor. You are quiet but have a very rich inner world. You need your 'bagoong' (close friends) to truly feel complete. You are rare and special, and people appreciate your depth once they understand you.", 
                 tlDesc: "Ikaw ay Kare-Kare: mayaman sa lasa at malalim. Hindi ka simple; marami kang layers. Tahimik ka lang pero sobrang lalim ng iniisip mo. Kailangan mo ng 'bagoong' (tunay na kaibigan) para kumpleto ang araw mo. Special ka at rare, kaya swerte ang nakakakilala sayo.", 
-                kstar: "IU, Elsa (Frozen)", enAct: "Write in your journal or meditate.", tlAct: "Magsulat sa diary o mag-meditate." 
+                kstar: "IU, Elsa (Frozen)", enAct: "Write in your journal or meditate.", tlAct: "Magsulat sa diary o mag-mediate." 
             },
             "INFP": { 
                 food: "Champorado", emoji: "🍫",
                 enDesc: "Sweet, warm, and comforting. Like Champorado on a rainy day, you heal people's souls. You are a dreamer with a soft heart. You value authenticity and feelings. You might be a bit slow to open up, but you are incredibly sweet once you trust someone. You live in your own cozy world.", 
-                tlDesc: "Matamis at mainit. Parang Champorado sa tag-ulan, ikaw ang comfort food ng lahat. Dreamer ka at malambot ang puso. Mahalaga sayo ang totoong nararamdaman. Medyo mahiyain ka sa una, pero sobrang tamis mo magmahal. May sarili kang cozy na mundo.", 
+                tlDesc: "Matamis at mainit. Parang Champorado sa tag-ulan, ikaw ang comfort food ng lahat. Dreamer ka at malambot ang puso. Mahalaga sayo ang totoong nararamdaram. 메디요 마히야인 카 사 우나, Pero sobrang tamis mo magmahal. 메이 사릴리 캉 코지 나 문도.", 
                 kstar: "V (BTS), Jennie (Blackpink)", enAct: "Listen to sad songs and look at the sky.", tlAct: "Makinig sa sad songs habang nakatingin sa langit." 
             },
             "ENFJ": { 
@@ -521,7 +522,7 @@
             "ISFP": { 
                 food: "Buko Pie", emoji: "🥥",
                 enDesc: "You are Buko Pie: hard on the outside (crust) but soft and sweet on the inside. You are artistic and aesthetic. You don't show your feelings easily to strangers, but you are deeply caring to those you love. You have a unique style and appreciate the simple beauties of life.", 
-                tlDesc: "Ikaw ang Buko Pie: matigas sa labas (crust) pero malambot at matamis sa loob. Artistic ka. Hindi mo agad pinapakita ang feelings mo sa iba, pero sobrang bait mo sa mga mahal mo. May sarili kang style at na-aappreciate mo ang ganda ng buhay.", 
+                tlDesc: "Ikaw ang Buko Pie: matigas sa labas (crust) pero malambot at matamis sa loob. Artistic ka. Hindi mo agad pinapakita ang feelings ko sa iba, pero sobrang bait mo sa mga mahal mo. May sarili kang style at na-aappreciate mo ang ganda ng buhay.", 
                 kstar: "Jungkook (BTS), Harry Potter", enAct: "Draw, paint, or take aesthetic photos.", tlAct: "Mag-drawing o kumuha ng aesthetic na photos." 
             },
             "ESTP": { 
@@ -803,7 +804,7 @@
              playClick();
              const shareUrl = window.location.origin + window.location.pathname + '?mbti=' + currentMbti;
              navigator.clipboard.writeText(shareUrl).then(() => {
-                 alert((curLang === 'en') ? "Result link copied to clipboard!" : "Na-copy na ang link ng resulta!");
+                 alert((curLang === 'en') ? "Result link copied to clipboard!" : "Na-copy na ang link ng 결과!");
              });
         }
         
