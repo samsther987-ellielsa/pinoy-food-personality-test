@@ -1,90 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5RJVV65C');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinoy Food Personality Test: Discover Your Soul Food & K-Pop Twin!</title>
     <meta name="description" content="Discover your Pinoy food personality and K-Pop twin with this fun and engaging personality test. Find out if you're a bold Sisig, a comforting Sinigang, or a sweet Halo-Halo!">
     <link rel="canonical" href="https://pinoyfoodtest.com/">
-    <!-- Favicon -->
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph / Social Media Sharing Image -->
     <meta property="og:image" content="./share-image.png">
     <meta property="og:title" content="Pinoy Food Personality Test">
     <meta property="og:description" content="Discover your soul food & K-Pop twin!">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- iOS Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3390185075238000"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-3390185075238000">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="css/common.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3390185075238000" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SJWW8WS8Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2SJWW8WS8Y');
-    </script>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vcynsui6iv");
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://pinoyfoodtest.com/"
-      },
-      "headline": "Pinoy Food Personality Test: Discover Your Soul Food & K-Pop Twin!",
-      "description": "Discover your Pinoy food personality and K-Pop twin with this fun and engaging personality test. Find out if you're a bold Sisig, a comforting Sinigang, or a sweet Halo-Halo!",
-      "image": "https://pinoyfoodtest.com/share-image.png",
-      "author": {
-        "@type": "Organization",
-        "name": "Pinoy Food Personality Test"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Pinoy Food Personality Test",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://pinoyfoodtest.com/favicon.ico"
-        }
-      },
-      "datePublished": "2026-02-06",
-      "dateModified": "2026-02-06"
-    }
     </script>
 </head>
 <body data-theme="light">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RJVV65C"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
@@ -95,228 +37,23 @@
             <h1 class="title">Pinoy Food<br>Personality Test 🇵🇭</h1>
             <p class="subtitle" id="subtitle-text">Discover your soul food & K-Pop twin!</p>
             <div id="start-screen-emoji">🍛</div>
-            <button class="btn btn-start" onclick="startQuiz()" id="start-btn">Let's Eat! (Start)</button>
+            <button class="btn btn-start" onclick="location.href='quiz.html'" id="start-btn">Let's Eat! (Start)</button>
         </div>
-
-        <div id="quiz-screen" class="screen">
-            <div class="progress-container"><div class="progress-bar" id="progress"></div></div>
-            <div id="q-counter">Q1 / 16</div>
-            <h2 id="question-text">Question?</h2>
-            
-            <div id="options-container">
-                <button class="btn" onclick="nextQuestion(3)" id="opt-0">Super Agree! 😍</button>
-                <button class="btn" onclick="nextQuestion(1)" id="opt-1">Agree 🙂</button>
-                <button class="btn" onclick="nextQuestion(-1)" id="opt-2">Disagree 😕</button>
-                <button class="btn" onclick="nextQuestion(-3)" id="opt-3">Super Disagree! 🙅‍♂️</button>
-            </div>
-            <button class="btn btn-back" onclick="prevQuestion()" id="back-btn">Previous</button>
-        </div>
-
-        <div id="loading-screen" class="screen">
-            <h2 class="title" id="analyzing-text">Analyzing your taste...</h2>
-            <div class="loader-container">
-                <div class="percentage" id="percentage">0%</div>
-                <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
-            </div>
-            <p id="loading-sub">Comparing with K-Pop Stars...</p>
-        </div>
-
-        <div id="result-screen" class="screen">
-            <div class="mbti-badge" id="mbti-result">ESTJ</div>
-            <div id="result-label">YOUR SOUL FOOD</div>
-            <h2 class="food-name" id="food-name">Lechon 👑</h2>
-            
-            <div class="info-box">
-                <div class="info-content" id="food-desc">Description here...</div>
-            </div>
-
-            <div class="info-box k-star-box">
-                <div class="info-title">🎤 K-Pop / K-Drama Twin</div>
-                <div class="info-content" id="k-match">Match Name</div>
-            </div>
-
-            <div class="info-box mission-box">
-                <div class="info-title">📅 Today's Mission</div>
-                <div class="info-content" id="mission-text">Mission here</div>
-            </div>
-            
-            <button class="btn" onclick="shareResult()" id="share-btn"></button>
-            <button class="btn" onclick="location.reload()" id="retry-btn"></button>
-            <!-- Social Sharing Buttons -->
-            <button class="btn" onclick="shareToFacebook()" id="facebook-share-btn"></button>
-            
-        </div>
-
-        <div id="contact-screen" class="screen">
-            <h2 class="title" id="contact-title">Inquiry / Partnership</h2>
-            <p class="subtitle" id="contact-subtitle">Please fill out the form below and we'll get back to you soon.</p>
-            <form action="https://formspree.io/f/xlglqkoe" method="POST" id="contact-form">
-                <input type="text" name="name" id="contact-name" placeholder="Your Name" required>
-                <input type="email" name="email" id="contact-email" placeholder="Your Email" required>
-                <textarea name="message" id="contact-message" placeholder="Your Message" required></textarea>
-                <button class="btn" type="submit" id="contact-submit">Send Inquiry</button>
-                <button class="btn" type="button" onclick="showStartScreen()" id="contact-back">Back to Home</button>
-            </form>
-        </div>
-
-        <div id="about-screen" class="screen">
-            <h2 class="title" id="about-title">About This Test</h2>
-            <div class="info-box">
-                <div class="info-content" id="about-content">
-                    <h3>About Pinoy Food Personality Test</h3>
-                    <p>Welcome to the Pinoy Food Personality Test! We believe that food is more than just sustenance—it's a reflection of our personality and heritage. Our mission is to blend the scientific approach of the MBTI (Myers-Briggs Type Indicator) with the rich, diverse flavors of Filipino Cuisine.</p>
-                    <p>Whether you’re a bold and adventurous Sisig or a comforting and reliable Sinigang, our interactive test helps you discover your "Foodie Alter Ego." To make it even more exciting, we’ve connected each result to K-Pop stars and K-Drama characters who share your personality traits, bridging the gap between Filipino culture and the global Hallyu wave.</p>
-                    <h3>Why we built this:</h3>
-                    <ul>
-                        <li>Cultural Celebration: To showcase the unique characteristics of Filipino food to a global audience.</li>
-                        <li>Interactive Fun: To provide a high-quality, engaging digital experience, especially for the Millennial and Gen Z generations.</li>
-                        <li>Personal Discovery: To give users a fun way to relate their personality to the dishes they love.</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="btn" type="button" onclick="hideAbout()" id="about-back">Back to Home</button>
-        </div>
-
-        <!-- Privacy Policy Screen -->
-        <div id="privacy-screen" class="screen">
-            <h2 class="title" id="privacy-title">Privacy Policy</h2>
-            <div class="info-box">
-                <div class="info-content" id="privacy-content">
-                    <h3>1. Introduction</h3>
-                    <p>This Privacy Policy describes how Pinoy Food Personality Test ("we," "us," or "our") collects, uses, and discloses information when you use our Pinoy Food Personality Test (the "Service").</p>
-
-                    <h3>2. Information We Collect</h3>
-                    <p>When you use our Service, we may collect the following types of information:</p>
-                    <ul>
-                        <li><strong>Personality Test Answers:</strong> Your responses to the quiz questions are collected to determine your personality type and provide you with a result. These answers are not stored in a personally identifiable way and are used only for the immediate purpose of generating your quiz result.</li>
-                        <li><strong>Usage Data:</strong> We may collect information on how the Service is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.</li>
-                        <li><strong>Cookies:</strong> We use cookies to track the activity on our Service and hold certain information. Cookies are files with a small amount of data that are sent to your browser from a website and stored on your device.</li>
-                    </ul>
-
-                    <h3>3. Use of Data</h3>
-                    <p>We use the collected data for various purposes:</p>
-                    <ul>
-                        <li>To provide and maintain the Service</li>
-                        <li>To personalize your experience and deliver the quiz results</li>
-                        <li>To monitor the usage of the Service</li>
-                        <li>To detect, prevent, and address technical issues</li>
-                        <li>To show you relevant advertisements via Google AdSense.</li>
-                    </ul>
-
-                    <h3>4. Disclosure of Data</h3>
-                    <p>We may share your information in the following situations:</p>
-                    <ul>
-                        <li><strong>With Service Providers:</strong> We may employ third-party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services, or to assist us in analyzing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</li>
-                        <li><strong>Google AdSense:</strong> We use Google AdSense to display advertisements. Google uses cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>.</li>
-                        <li><strong>Legal Requirements:</strong> We may disclose your Data in the good faith belief that such action is necessary to: comply with a legal obligation, protect and defend the rights or property of Pinoy Food Personality Test, prevent or investigate possible wrongdoing in connection with the Service, protect the personal safety of users of the Service or the public, protect against legal liability.</li>
-                    </ul>
-
-                    <h3>5. Security of Data</h3>
-                    <p>The security of your data is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
-
-                    <h3>6. Your Data Protection Rights</h3>
-                    <p>Depending on your location, you may have the following data protection rights:</p>
-                    <ul>
-                        <li>The right to access, update, or to delete the information we have on you.</li>
-                        <li>The right to rectify any information that is inaccurate or incomplete.</li>
-                        <li>The right to object to our processing of your Personal Data.</li>
-                        <li>The right to request that we restrict the processing of your personal information.</li>
-                        <li>The right to data portability.</li>
-                        <li>The right to withdraw consent.</li>
-                    </ul>
-                    <p>Please note that we may ask you to verify your identity before responding to such requests.</p>
-
-                    <h3>7. Links to Other Sites</h3>
-                    <p>Our Service may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
-                    <p>We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
-
-                    <h3>8. Children's Privacy</h3>
-                    <p>Our Service does not address anyone under the age of 18 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
-
-                    <h3>9. Changes to This Privacy Policy</h3>
-                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-
-                    <h3>10. Contact Us</h3>
-                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                    <ul>
-                        <li>By email: samsther987@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="btn" type="button" onclick="showStartScreen()" id="privacy-back">Back to Home</button>
-        </div>
-
-        <!-- Terms of Service Screen -->
-        <div id="terms-screen" class="screen">
-            <h2 class="title" id="terms-title">Terms of Service</h2>
-            <div class="info-box">
-                <div class="info-content" id="terms-content">
-                    <h3>1. Acceptance of Terms</h3>
-                    <p>By accessing and using the Pinoy Food Personality Test website (the "Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of the terms, then you may not access the Service.</p>
-
-                    <h3>2. Use of Service</h3>
-                    <ul>
-                        <li>The Service is provided for entertainment purposes only.</li>
-                        <li>You agree to use the Service only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the Service.</li>
-                        <li>You must not misuse our Service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful.</li>
-                    </ul>
-
-                    <h3>3. Intellectual Property</h3>
-                    <p>The Service and its original content (excluding content provided by users), features and functionality are and will remain the exclusive property of Pinoy Food Personality Test and its licensors. The Service is protected by copyright, trademark, and other laws of both the Philippines and foreign countries.</p>
-                    <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Pinoy Food Personality Test.</p>
-
-                    <h3>4. Disclaimer of Warranties</h3>
-                    <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.</p>
-                    <p>Pinoy Food Personality Test does not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.</p>
-
-                    <h3>5. Limitation of Liability</h3>
-                  <p>In no event shall Pinoy Food Personality Test, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.</p>
-
-                    <h3>6. Governing Law</h3>
-                    <p>These Terms shall be governed and constructed in accordance with the laws of the Philippines, without regard to its conflict of law provisions.</p>
-                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
-
-                    <h3>7. Changes to Terms</h3>
-                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                    <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
-
-                    <h3>8. Contact Us</h3>
-                    <p>If you have any questions about these Terms, please contact us:</p>
-                    <ul>
-                        <li>By email: samsther987@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="btn" type="button" onclick="showStartScreen()" id="terms-back">Back to Home</button>
-        </div>
-
     </div>
 
-        <div class="result-footer-links">
-                <a href="#" onclick="showAbout()">About</a> |
-                <a href="#" onclick="showContactScreen()">Contact</a> |
-                <a href="#" onclick="showPrivacyScreen()">Privacy Policy</a> |
-                <a href="#" onclick="showTermsScreen()">Terms of Service</a>
-            </div>
-    <audio id="audio-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
-    <audio id="audio-result-e" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
-    <audio id="audio-result-i" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
-    <audio id="audio-result-s" src="https://assets.mixkit.co/active_storage/sfx/2855/2855-preview.mp3"></audio> <!-- Placeholder for Sensing sound -->
-    <audio id="audio-result-n" src="https://assets.mixkit.co/active_storage/sfx/3181/3181-preview.mp3"></audio> <!-- Placeholder for Intuition sound -->
+    <div class="result-footer-links">
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Service</a>
+    </div>
 
-    <script src="script.js" defer></script>
+    <script src="js/common.js"></script>
     <script>
       window.Userback = window.Userback || {};
       Userback.access_token = "A-o9sDgI9hDwIoxRHv3GhRCcSsj";
       (function(d) {
-        var s = d.createElement('script');s.async = true;s.src = 'https://static.userback.io/widget/v1.js';(d.head || d.body).appendChild(s);
-      })(document);
-    </script>
-    <script>
-      window.Userback = window.Userback || {};
-      Userback.access_token = "A-o9sDgI9hDwIoxRHv3GhRCcSsj";
-      (function(d) {
-        var s = d.createElement('script');s.async = true;s.src = 'https://static.userback.io/widget/v1.js';(d.head || d.body).appendChild(s);
+        var s = d.createElement('script');s.async=true;s.src='https://static.userback.io/widget/v1.js';(d.head||d.body).appendChild(s);
       })(document);
     </script>
 </body>
