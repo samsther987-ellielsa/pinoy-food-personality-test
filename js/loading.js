@@ -54,25 +54,13 @@ function startLoading() {
             mbti += (scores.T >= scores.F) ? "T" : "F";
             mbti += (scores.J >= scores.P) ? "J" : "P";
             
-            playResultSound(mbti);
+            // 효과음 제거 (결과 페이지에서 재생)
             
             setTimeout(() => {
                 window.location.href = `result.html?mbti=${mbti}`;
             }, 500);
         }
     }, interval);
-}
-
-function playResultSound(mbti) {
-    try {
-        if (mbti.includes('E')) {
-            document.getElementById('audio-result-e').play();
-        } else if (mbti.includes('I')) {
-            document.getElementById('audio-result-i').play();
-        }
-    } catch (e) {
-        console.log("Audio play blocked");
-    }
 }
 
 window.onload = function() {

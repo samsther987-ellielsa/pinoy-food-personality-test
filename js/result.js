@@ -196,3 +196,22 @@ function updateResultLang() {
         document.getElementById('mission-text').innerText = (curLang === 'en') ? r.enAct : r.tlAct;
     }
 }
+
+// 모든 MBTI 타입별 효과음 재생
+function playResultSound(mbti) {
+    try {
+        // 각 글자별로 효과음 재생 (순차적으로)
+        const letters = mbti.split('');
+        
+        letters.forEach((letter, index) => {
+            setTimeout(() => {
+                const audio = document.getElementById(`audio-result-${letter}`);
+                if (audio) {
+                    audio.play().catch(e => console.log(`Audio play blocked (${letter})`));
+                }
+            }, index * 300); // 0.3초 간격으로 재생
+        });
+    } catch (e) {
+        console.log("Audio error:", e);
+    }
+}
