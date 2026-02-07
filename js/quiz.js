@@ -49,12 +49,12 @@ function showQuestion() {
     let q = activeQuestions[qIndex];
     document.getElementById('q-counter').innerText = `Q${qIndex + 1} / 16`;
     document.getElementById('question-text').innerText = (curLang === 'en') ? q.en : q.tl;
-
+    
     const opts = uiText[curLang].options;
     for(let i=0; i<4; i++) {
         document.getElementById(`opt-${i}`).innerText = opts[i];
     }
-
+    
     let percent = (qIndex / 16) * 100;
     document.getElementById('progress').style.width = percent + "%";
     document.getElementById('back-btn').style.display = (qIndex > 0) ? 'flex' : 'none';
@@ -74,7 +74,7 @@ function nextQuestion(point) {
     if (qIndex < 16) {
         showQuestion();
     } else {
-        calculateResult();
+        goToLoading();
     }
 }
 
@@ -82,7 +82,7 @@ function prevQuestion() {
     if (qIndex > 0) {
         qIndex--;
         const lastAnswer = answerHistory.pop();
-
+        
         let typeChars = ['EI', 'SN', 'TF', 'JP'][Math.floor(qIndex / 4)].split('');
         let finalPoint = lastAnswer.invert ? -lastAnswer.point : lastAnswer.point;
 
@@ -93,12 +93,7 @@ function prevQuestion() {
     }
 }
 
-function calculateResult() {
-    let mbti = "";
-    mbti += (scores.E >= scores.I) ? "E" : "I";
-    mbti += (scores.S >= scores.N) ? "S" : "N";
-    mbti += (scores.T >= scores.F) ? "T" : "F";
-    mbti += (scores.J >= scores.P) ? "J" : "P";
-
-    window.location.href = `result.html?mbti=${mbti}`;
+function goToLoading() {
+    const scoresJson = encodeURIComponent(JSON.stringify(scores));
+    window.location.href = `loading.html?scores=${scoresJson}`;
 }

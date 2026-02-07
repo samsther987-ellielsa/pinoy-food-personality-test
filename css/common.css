@@ -281,3 +281,28 @@
                 font-size: 0.8rem;
             }
         }
+#loading-messages {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--sub-text);
+    min-height: 30px;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.loader-fill {
+    transition: width 0.03s linear;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.percentage {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
