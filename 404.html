@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Pinoy Food Personality Test</title>
+    <meta name="description" content="Oops! This page doesn't exist. Let's get you back to discovering your Pinoy food personality!">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-emoji {
+            font-size: 8rem;
+            margin-bottom: 20px;
+            animation: shake 2s infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 20px 0 10px 0;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--sub-text);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-btn {
+            background-color: var(--primary);
+            color: var(--btn-text);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+        }
+        
+        .error-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+        }
+        
+        .error-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        
+        .error-btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .error-btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--btn-text);
+        }
+        
+        .popular-links {
+            margin-top: 50px;
+        }
+        
+        .popular-links h3 {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+        
+        .popular-links a {
+            display: inline-block;
+            margin: 5px 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .popular-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="top-bar">
+        <button class="icon-btn" onclick="location.href='index.html'">🏠 Home</button>
+        <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+    </div>
+
+    <div class="container">
+        <div class="error-container">
+            <div class="error-emoji">🍽️</div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title" id="error-title">Oops! This dish doesn't exist!</h2>
+            <p class="error-message" id="error-message">
+                Looks like this page went on vacation to the Philippines without telling us. 
+                But don't worry - let's get you back to discovering your soul food!
+            </p>
+            
+            <div class="error-buttons">
+                <a href="index.html" class="error-btn">🍛 Take the Test</a>
+                <a href="about.html" class="error-btn error-btn-secondary">ℹ️ Learn More</a>
+            </div>
+            
+            <div class="popular-links">
+                <h3>Popular Results:</h3>
+                <a href="result.html?mbti=INTJ">☕ Kapeng Barako (INTJ)</a>
+                <a href="result.html?mbti=ENFP">🌈 Halo-Halo (ENFP)</a>
+                <a href="result.html?mbti=ISTJ">🥘 Adobo (ISTJ)</a>
+                <a href="result.html?mbti=INFP">🍫 Champorado (INFP)</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-footer-links">
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Service</a>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script>
+        // 다국어 지원
+        const error404Text = {
+            en: {
+                title: "Oops! This dish doesn't exist!",
+                message: "Looks like this page went on vacation to the Philippines without telling us. But don't worry - let's get you back to discovering your soul food!"
+            },
+            tl: {
+                title: "Oops! Walang ganitong pagkain!",
+                message: "Mukhang nag-vacation sa Pilipinas ang page na 'to nang hindi nagsabi. Pero okay lang - balik tayo sa pag-discover ng soul food mo!"
+            }
+        };
+        
+        // 언어 전환 오버라이드
+        const originalToggleLang = toggleLang;
+        toggleLang = function() {
+            originalToggleLang();
+            const t = error404Text[curLang];
+            document.getElementById('error-title').innerText = t.title;
+            document.getElementById('error-message').innerText = t.message;
+        };
+    </script>
+</body>
+</html>
