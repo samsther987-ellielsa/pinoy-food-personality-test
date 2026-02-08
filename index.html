@@ -56,5 +56,34 @@
         var s = d.createElement('script');s.async=true;s.src='https://static.userback.io/widget/v1.js';(d.head||d.body).appendChild(s);
       })(document);
     </script>
+    <script>
+        // 이전 결과 표시
+        window.onload = function() {
+            const lastMBTI = localStorage.getItem('lastMBTI');
+            const lastDate = localStorage.getItem('lastTestDate');
+
+            if (lastMBTI && lastDate) {
+                const date = new Date(lastDate);
+                const days = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
+
+                const container = document.getElementById('start-screen');
+                const resultBox = document.createElement('div');
+                resultBox.className = 'previous-result-box';
+                resultBox.innerHTML = `
+                    <p style="font-size: 0.9rem; color: var(--sub-text); margin-bottom: 8px;">
+                        Last result (${days} day${days !== 1 ? 's' : ''} ago):
+                    </p>
+                    <a href="result.html?mbti=${lastMBTI}" style="text-decoration: none;">
+                        <div style="background: var(--primary); color: white; padding: 12px; border-radius: 10px; font-weight: 600;">
+                            ${lastMBTI} - View Result →
+                        </div>
+                    </a>
+                `;
+
+                const startBtn = document.getElementById('start-btn');
+                container.insertBefore(resultBox, startBtn);
+            }
+        };
+    </script>
 </body>
 </html>

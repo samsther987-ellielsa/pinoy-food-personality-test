@@ -379,3 +379,17 @@
         font-size: 1.5rem;
     }
 }
+
+/* 이전 결과 박스 */
+.previous-result-box {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 15px;
+    border: 2px dashed var(--primary);
+}
+
+.previous-result-box a div:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}

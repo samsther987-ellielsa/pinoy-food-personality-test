@@ -54,8 +54,10 @@ function startLoading() {
             mbti += (scores.T >= scores.F) ? "T" : "F";
             mbti += (scores.J >= scores.P) ? "J" : "P";
             
-            // 효과음 제거 (결과 페이지에서 재생)
-            
+            // 결과 저장
+            localStorage.setItem('lastMBTI', mbti);
+            localStorage.setItem('lastTestDate', new Date().toISOString());
+
             setTimeout(() => {
                 window.location.href = `result.html?mbti=${mbti}`;
             }, 500);
