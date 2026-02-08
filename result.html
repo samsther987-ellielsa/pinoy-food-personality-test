@@ -10,11 +10,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Result - Pinoy Food Personality Test</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- Preload 중요 리소스 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    <link rel="preload" href="css/common.css" as="style">
+    <link rel="preload" href="js/common.js" as="script">
+    <link rel="preload" href="js/result.js" as="script">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
+
+    <meta property="og:url" content="https://pinoyfoodtest.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pinoy Food Personality Test">
+    <meta property="og:description" content="Discover your soul food & K-Pop twin!">
+    <meta property="og:image" content="https://pinoyfoodtest.com/share-image.png">
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3390185075238000" crossorigin="anonymous"></script>
     <script src="js/meta-tags.js"></script>
+
+    <style>
+        /* 인라인 크리티컬 CSS - 즉시 렌더링 */
+        body { margin: 0; font-family: 'Poppins', sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .screen { display: none; }
+        .screen.active { display: block; }
+    </style>
 </head>
 <body data-theme="light">
     <div class="top-bar">
@@ -29,23 +52,21 @@
             <h2 class="food-name" id="food-name">Lechon 👑</h2>
 
             <div class="info-box">
-                <div class="info-content" id="food-desc">Description here...</div>
+                <div class="info-content" id="food-desc">Loading...</div>
             </div>
 
             <div class="info-box k-star-box">
                 <div class="info-title">🎤 K-Pop / K-Drama Twin</div>
-                <div class="info-content" id="k-match">Match Name</div>
+                <div class="info-content" id="k-match">Loading...</div>
             </div>
 
             <div class="info-box mission-box">
                 <div class="info-title">📅 Today's Mission</div>
-                <div class="info-content" id="mission-text">Mission here</div>
+                <div class="info-content" id="mission-text">Loading...</div>
             </div>
 
-            <!-- Try Again 버튼 -->
             <button class="btn btn-retry" onclick="location.href='index.html'" id="retry-btn">Try Again 🔄</button>
 
-            <!-- 소셜 공유 아이콘 버튼 -->
             <div class="share-label">Share your result:</div>
             <div class="social-icons">
                 <button class="social-icon messenger" onclick="shareToMessenger()" title="Messenger">
@@ -77,14 +98,15 @@
         <a href="terms.html">Terms of Service</a>
     </div>
 
-    <audio id="audio-result-E" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
-    <audio id="audio-result-I" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
-    <audio id="audio-result-S" src="https://assets.mixkit.co/active_storage/sfx/2855/2855-preview.mp3"></audio>
-    <audio id="audio-result-N" src="https://assets.mixkit.co/active_storage/sfx/3181/3181-preview.mp3"></audio>
-    <audio id="audio-result-T" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
-    <audio id="audio-result-F" src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3"></audio>
-    <audio id="audio-result-J" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
-    <audio id="audio-result-P" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+    <!-- 오디오는 lazy load -->
+    <audio id="audio-result-E" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
+    <audio id="audio-result-I" preload="none" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+    <audio id="audio-result-S" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2855/2855-preview.mp3"></audio>
+    <audio id="audio-result-N" preload="none" src="https://assets.mixkit.co/active_storage/sfx/3181/3181-preview.mp3"></audio>
+    <audio id="audio-result-T" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+    <audio id="audio-result-F" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3"></audio>
+    <audio id="audio-result-J" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <audio id="audio-result-P" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
 
     <script src="js/common.js"></script>
     <script src="js/result.js"></script>
