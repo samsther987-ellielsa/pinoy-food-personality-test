@@ -306,3 +306,76 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* Try Again 버튼 */
+.btn-retry {
+    padding: 18px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* 공유 라벨 */
+.share-label {
+    font-size: 0.9rem;
+    color: var(--sub-text);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* 소셜 아이콘 컨테이너 */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* 소셜 아이콘 버튼 */
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 rgba(0,0,0,0.2);
+}
+
+.social-icon:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/* 소셜 아이콘 색상 */
+.social-icon i {
+    font-size: 1.6rem;
+}
+
+.social-icon.messenger { background-color: #0084FF; color: white; }
+.social-icon.facebook { background-color: #1877F2; color: white; }
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+.social-icon.twitter { background-color: #000000; color: white; }
+.social-icon.tiktok { background-color: #000000; color: white; }
+.social-icon.copy { background-color: #6c757d; color: white; }
+
+@media (max-width: 400px) {
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}

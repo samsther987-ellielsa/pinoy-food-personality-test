@@ -202,7 +202,7 @@ function playResultSound(mbti) {
     try {
         // 각 글자별로 효과음 재생 (순차적으로)
         const letters = mbti.split('');
-        
+
         letters.forEach((letter, index) => {
             setTimeout(() => {
                 const audio = document.getElementById(`audio-result-${letter}`);
@@ -214,4 +214,43 @@ function playResultSound(mbti) {
     } catch (e) {
         console.log("Audio error:", e);
     }
+}
+
+// Messenger 공유
+function shareToMessenger() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`fb-messenger://share/?link=${url}`, '_blank');
+}
+
+// Instagram (스토리 공유는 앱에서만 가능, 링크 복사로 대체)
+function shareToInstagram() {
+    copyLink();
+    alert((curLang === 'en')
+        ? "Link copied! Open Instagram and paste in your story 📸"
+        : "Na-copy ang link! Buksan ang Instagram at i-paste sa story mo 📸");
+}
+
+// Twitter/X 공유
+function shareToTwitter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const mbti = urlParams.get('mbti');
+    const r = resultsData[mbti];
+    const text = encodeURIComponent(`I'm ${r.food} ${r.emoji} (${mbti})! What's your Pinoy food personality?`);
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+}
+
+// TikTok (링크 복사)
+function shareToTikTok() {
+    copyLink();
+    alert((curLang === 'en')
+        ? "Link copied! Share it in your TikTok bio or comments 🎵"
+        : "Na-copy ang link! I-share sa TikTok bio o comments mo 🎵");
+}
+
+// 링크 복사
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        alert((curLang === 'en') ? "Link copied! 🔗" : "Na-copy ang link! 🔗");
+    });
 }
