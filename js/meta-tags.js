@@ -110,12 +110,12 @@ function setDynamicMetaTags() {
         setOGTag('og:title', meta.title);
         setOGTag('og:description', meta.description);
         setOGTag('og:url', window.location.href);
-        setOGTag('og:image', `${window.location.origin}/share-image.png`);
+        setOGTag('og:image', 'https://pinoyfoodtest.com/share-image.png');
         
         setOGTag('twitter:card', 'summary_large_image');
         setOGTag('twitter:title', meta.title);
         setOGTag('twitter:description', meta.description);
-        setOGTag('twitter:image', `${window.location.origin}/share-image.png`);
+        setOGTag('twitter:image', 'https://pinoyfoodtest.com/share-image.png');
     }
 }
 
