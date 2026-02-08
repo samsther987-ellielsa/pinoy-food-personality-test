@@ -140,7 +140,7 @@ window.onload = function() {
         
         // 줄바꿈 처리
         const descText = (curLang === 'en') ? r.enDesc : r.tlDesc;
-        document.getElementById('food-desc').innerHTML = descText.replace(/\n/g, '<br><br>');
+        document.getElementById('food-desc').innerHTML = descText.replace(/\n\n/g, '<br>').replace(/\n/g, ' ');
         
         document.getElementById('k-match').innerText = r.kstar;
         document.getElementById('mission-text').innerText = (curLang === 'en') ? r.enAct : r.tlAct;
@@ -192,7 +192,7 @@ function updateResultLang() {
     if (mbti && resultsData[mbti]) {
         const r = resultsData[mbti];
         const descText = (curLang === 'en') ? r.enDesc : r.tlDesc;
-        document.getElementById('food-desc').innerHTML = descText.replace(/\n/g, '<br><br>');
+        document.getElementById('food-desc').innerHTML = descText.replace(/\n\n/g, '<br>').replace(/\n/g, ' ');
         document.getElementById('mission-text').innerText = (curLang === 'en') ? r.enAct : r.tlAct;
     }
 }
