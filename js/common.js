@@ -82,3 +82,12 @@ if (document.readyState === 'loading') {
 } else {
     updateUIText();
 }
+
+// MBTI 페이지 언어 전환
+if (typeof updateMBTILang === 'function') {
+    const originalToggleLang2 = toggleLang;
+    toggleLang = function() {
+        originalToggleLang2();
+        updateMBTILang();
+    };
+}

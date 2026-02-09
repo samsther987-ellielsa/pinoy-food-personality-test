@@ -393,3 +393,14 @@
     transform: scale(1.02);
     transition: transform 0.2s;
 }
+
+/* Mobile top-bar fix */
+@media (max-width: 600px) {
+    .top-bar {
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+    .icon-btn {
+        min-width: 80px;
+    }
+}

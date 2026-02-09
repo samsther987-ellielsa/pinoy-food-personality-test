@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MBTI - Pinoy Food Personality Test</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body data-theme="light">
+    <div class="top-bar">
+        <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
+        <button class="icon-btn" onclick="location.href='about-mbti.html'" id="mbti-btn">ℹ️ MBTI</button>
+        <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+    </div>
+
+    <div class="container">
+        <h1 id="mbti-title">About MBTI</h1>
+
+        <div class="info-box" id="mbti-content">
+            <p id="intro">The Myers-Briggs Type Indicator (MBTI) is a self-report personality assessment developed by Katharine Cook Briggs and her daughter Isabel Briggs Myers, based on Carl Jung's theory of psychological types. It categorizes individuals into 16 personality types through four dichotomies: Extraversion (E) vs. Introversion (I), Sensing (S) vs. Intuition (N), Thinking (T) vs. Feeling (F), and Judging (J) vs. Perceiving (P).</p>
+
+            <h3 id="components-title">Core Components</h3>
+            <ul id="components-list">
+                <li><strong>Energy Direction:</strong> Extraversion (E) / Introversion (I)</li>
+                <li><strong>Perception:</strong> Sensing (S) / Intuition (N)</li>
+                <li><strong>Decision Making:</strong> Thinking (T) / Feeling (F)</li>
+                <li><strong>Lifestyle:</strong> Judging (J) / Perceiving (P)</li>
+            </ul>
+
+            <h3 id="features-title">Key Features & Applications</h3>
+            <ul id="features-list">
+                <li><strong id="self-understanding">Self-Understanding & Communication:</strong> <span id="self-text">Helps understand your own tendencies and appreciate differences in others for better communication.</span></li>
+                <li><strong id="applications">Applications:</strong> <span id="app-text">Used in career counseling, relationships, team building, and personal development.</span></li>
+                <li><strong id="limitations">Limitations:</strong> <span id="limit-text">As a self-report test, results depend on honest responses. Some critics question its scientific validity.</span></li>
+            </ul>
+
+            <h3 id="types-title">16 Personality Types</h3>
+            <ul id="types-list">
+                <li><strong>Analysts:</strong> INTJ, INTP, ENTJ, ENTP</li>
+                <li><strong>Diplomats:</strong> INFJ, INFP, ENFJ, ENFP</li>
+                <li><strong>Sentinels:</strong> ISTJ, ISFJ, ESTJ, ESFJ</li>
+                <li><strong>Explorers:</strong> ISTP, ISFP, ESTP, ESFP</li>
+            </ul>
+        </div>
+
+        <button class="btn" onclick="location.href='index.html'" id="back-home">Back to Test 🍛</button>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/about-mbti.js"></script>
+</body>
+</html>
