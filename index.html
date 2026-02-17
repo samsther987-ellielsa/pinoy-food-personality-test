@@ -45,6 +45,88 @@
         </div>
     </div>
 
+    <!-- Intro Section -->
+    <div class="intro-section" id="intro-section">
+        <div class="info-box">
+            <h3 id="intro-title">What is Pinoy Food Personality Test?</h3>
+            <p id="intro-desc">Pinoy Food Personality Test is a fun, interactive quiz that connects your MBTI personality type to a Filipino dish that matches your soul. Based on the Myers-Briggs Type Indicator framework, we pair each of the 16 personality types with an iconic Filipino food — from bold Sisig to comforting Sinigang. Plus, discover your K-Pop and K-Drama character twin!</p>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="how-it-works" id="how-it-works">
+        <h3 id="how-title">How It Works</h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong id="step1-title">Answer 16 Fun Questions</strong>
+                    <span id="step1-desc">Quick personality questions about your daily habits, preferences, and social style.</span>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong id="step2-title">Get Your MBTI Type</strong>
+                    <span id="step2-desc">Our algorithm analyzes your answers across 4 personality dimensions (E/I, S/N, T/F, J/P).</span>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <strong id="step3-title">Meet Your Soul Food</strong>
+                    <span id="step3-desc">Discover which Filipino dish matches your personality, along with your K-Pop/K-Drama twin!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="intro-section">
+        <div class="info-box">
+            <div class="faq-section" id="faq-section">
+                <h3 id="faq-title">Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q1" onclick="toggleFaq(this)">Is this test scientifically accurate?</button>
+                    <div class="faq-answer">
+                        <p id="faq-a1">This test is designed for entertainment and cultural celebration. While it uses the MBTI framework's four dimensions, it is not a clinical psychological assessment. Think of it as a fun way to explore personality through the lens of Filipino cuisine!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q2" onclick="toggleFaq(this)">How many questions are there?</button>
+                    <div class="faq-answer">
+                        <p id="faq-a2">The test consists of 16 questions — 4 for each MBTI dimension. Questions are randomly selected from a pool of 48 for a fresh experience each time you take the test.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q3" onclick="toggleFaq(this)">What Filipino foods are included?</button>
+                    <div class="faq-answer">
+                        <p id="faq-a3">We feature 16 iconic Filipino dishes including Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Bibingka, Pancit Canton, Bulalo, Taho, Balut, Turon, and Tinola — one for each MBTI type!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q4" onclick="toggleFaq(this)">Is my data saved or shared?</button>
+                    <div class="faq-answer">
+                        <p id="faq-a4">Your quiz answers are processed entirely in your browser and are never sent to any server. Only your final MBTI result is saved locally on your device so you can revisit it later. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noscript fallback for SEO/AdSense -->
+    <noscript>
+        <div class="container">
+            <div class="noscript-content">
+                <h2>Pinoy Food Personality Test</h2>
+                <p>Discover which Filipino food matches your MBTI personality type! This interactive quiz connects the 16 Myers-Briggs personality types to iconic Filipino dishes, plus K-Pop and K-Drama character matches.</p>
+                <h3>Featured Filipino Foods</h3>
+                <p>Adobo (ISTJ) - Sinigang (ISFJ) - Lechon (ESTJ) - Halo-Halo (ENFP) - Sisig (ESTP) - Kare-Kare (ESFJ) - Lumpia (ISFP) - Champorado (INFP) - Kapeng Barako (INTJ) - Bibingka (ESFP) - Pancit Canton (ENTP) - Bulalo (ENFJ) - Taho (INFJ) - Balut (ISTP) - Turon (ENTJ) - Tinola (INTP)</p>
+                <p>Please enable JavaScript to take the personality test.</p>
+            </div>
+        </div>
+    </noscript>
+
     <div class="result-footer-links">
         <a href="about.html">About</a> |
         <a href="contact.html">Contact</a> |
@@ -87,6 +169,82 @@
                 const startBtn = document.getElementById('start-btn');
                 container.insertBefore(resultBox, startBtn);
             }
+        };
+    </script>
+    <!-- FAQ toggle -->
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Bilingual support for new sections
+        const indexText = {
+            en: {
+                introTitle: "What is Pinoy Food Personality Test?",
+                introDesc: "Pinoy Food Personality Test is a fun, interactive quiz that connects your MBTI personality type to a Filipino dish that matches your soul. Based on the Myers-Briggs Type Indicator framework, we pair each of the 16 personality types with an iconic Filipino food — from bold Sisig to comforting Sinigang. Plus, discover your K-Pop and K-Drama character twin!",
+                howTitle: "How It Works",
+                step1Title: "Answer 16 Fun Questions",
+                step1Desc: "Quick personality questions about your daily habits, preferences, and social style.",
+                step2Title: "Get Your MBTI Type",
+                step2Desc: "Our algorithm analyzes your answers across 4 personality dimensions (E/I, S/N, T/F, J/P).",
+                step3Title: "Meet Your Soul Food",
+                step3Desc: "Discover which Filipino dish matches your personality, along with your K-Pop/K-Drama twin!",
+                faqTitle: "Frequently Asked Questions",
+                faqQ1: "Is this test scientifically accurate?",
+                faqA1: "This test is designed for entertainment and cultural celebration. While it uses the MBTI framework's four dimensions, it is not a clinical psychological assessment. Think of it as a fun way to explore personality through the lens of Filipino cuisine!",
+                faqQ2: "How many questions are there?",
+                faqA2: "The test consists of 16 questions — 4 for each MBTI dimension. Questions are randomly selected from a pool of 48 for a fresh experience each time you take the test.",
+                faqQ3: "What Filipino foods are included?",
+                faqA3: "We feature 16 iconic Filipino dishes including Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Bibingka, Pancit Canton, Bulalo, Taho, Balut, Turon, and Tinola — one for each MBTI type!",
+                faqQ4: "Is my data saved or shared?",
+                faqA4: 'Your quiz answers are processed entirely in your browser and are never sent to any server. Only your final MBTI result is saved locally on your device so you can revisit it later. See our <a href="privacy.html">Privacy Policy</a> for full details.'
+            },
+            tl: {
+                introTitle: "Ano ang Pinoy Food Personality Test?",
+                introDesc: "Ang Pinoy Food Personality Test ay isang masaya at interactive na quiz na nag-uugnay ng iyong MBTI personality type sa isang Filipino dish na tugma sa iyong pagkatao. Gamit ang Myers-Briggs Type Indicator framework, ini-match namin ang bawat isa sa 16 na personality types sa iconic na Filipino food — mula sa matapang na Sisig hanggang sa nakakaaliw na Sinigang. Bonus: alamin din ang iyong K-Pop at K-Drama character twin!",
+                howTitle: "Paano Gumagana",
+                step1Title: "Sagutin ang 16 na Tanong",
+                step1Desc: "Mabilisang personality questions tungkol sa iyong mga gawi, preference, at social style.",
+                step2Title: "Alamin ang MBTI Type Mo",
+                step2Desc: "Sinusuri ng algorithm ang iyong mga sagot sa 4 na personality dimensions (E/I, S/N, T/F, J/P).",
+                step3Title: "Kilalanin ang Soul Food Mo",
+                step3Desc: "Alamin kung aling Filipino dish ang tugma sa personality mo, kasama ang K-Pop/K-Drama twin mo!",
+                faqTitle: "Mga Madalas na Tanong",
+                faqQ1: "Siyentipiko ba ang test na ito?",
+                faqA1: "Ang test na ito ay para sa entertainment at cultural celebration. Bagama't gumagamit ito ng MBTI framework, hindi ito clinical psychological assessment. Isipin mo itong masayang paraan para i-explore ang personality sa pamamagitan ng Filipino cuisine!",
+                faqQ2: "Ilan ang mga tanong?",
+                faqA2: "Ang test ay binubuo ng 16 na tanong — 4 para sa bawat MBTI dimension. Random ang pagpili ng mga tanong mula sa 48 para fresh ang experience sa bawat pagkuha ng test.",
+                faqQ3: "Anong mga Filipino food ang kasama?",
+                faqA3: "May 16 iconic na Filipino dish kami kabilang ang Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Bibingka, Pancit Canton, Bulalo, Taho, Balut, Turon, at Tinola — isa para sa bawat MBTI type!",
+                faqQ4: "Nase-save o nisha-share ba ang data ko?",
+                faqA4: 'Ang mga sagot mo sa quiz ay pinoprocess lang sa browser mo at hindi ipinapadala sa kahit anong server. Ang final MBTI result mo lang ang nase-save sa device mo para ma-revisit mo ito. Tingnan ang aming <a href="privacy.html">Privacy Policy</a> para sa buong detalye.'
+            }
+        };
+
+        // Override toggleLang to update new sections
+        const origToggleLang = toggleLang;
+        toggleLang = function() {
+            origToggleLang();
+            const t = indexText[curLang];
+            document.getElementById('intro-title').innerText = t.introTitle;
+            document.getElementById('intro-desc').innerText = t.introDesc;
+            document.getElementById('how-title').innerText = t.howTitle;
+            document.getElementById('step1-title').innerText = t.step1Title;
+            document.getElementById('step1-desc').innerText = t.step1Desc;
+            document.getElementById('step2-title').innerText = t.step2Title;
+            document.getElementById('step2-desc').innerText = t.step2Desc;
+            document.getElementById('step3-title').innerText = t.step3Title;
+            document.getElementById('step3-desc').innerText = t.step3Desc;
+            document.getElementById('faq-title').innerText = t.faqTitle;
+            document.getElementById('faq-q1').firstChild.textContent = t.faqQ1;
+            document.getElementById('faq-q2').firstChild.textContent = t.faqQ2;
+            document.getElementById('faq-q3').firstChild.textContent = t.faqQ3;
+            document.getElementById('faq-q4').firstChild.textContent = t.faqQ4;
+            document.getElementById('faq-a1').innerHTML = t.faqA1;
+            document.getElementById('faq-a2').innerHTML = t.faqA2;
+            document.getElementById('faq-a3').innerHTML = t.faqA3;
+            document.getElementById('faq-a4').innerHTML = t.faqA4;
         };
     </script>
     <!-- Facebook App ID는 선택사항 -->

@@ -15,19 +15,35 @@
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
     </div>
 
-    <div class="container">
-        <div id="contact-screen" class="screen active">
-            <h2 class="title" id="contact-title">Inquiry / Partnership</h2>
-            <p class="subtitle" id="contact-subtitle">Please fill out the form below and we'll get back to you soon.</p>
-            <form action="https://formspree.io/f/xlglqkoe" method="POST" id="contact-form">
-                <input type="text" name="name" id="contact-name" placeholder="Your Name" required>
-                <input type="email" name="email" id="contact-email" placeholder="Your Email" required>
-                <textarea name="message" id="contact-message" placeholder="Your Message" required></textarea>
-                <button class="btn" type="submit" id="contact-submit">Send Inquiry</button>
-                <button class="btn" type="button" onclick="location.href='index.html'" id="contact-back">Back to Home</button>
-            </form>
+    <main>
+        <div class="container">
+            <div id="contact-screen" class="screen active">
+                <h2 class="title" id="contact-title">Inquiry / Partnership</h2>
+                <p class="subtitle" id="contact-subtitle">Please fill out the form below and we'll get back to you soon.</p>
+
+                <div class="contact-guidance" id="contact-guidance">
+                    <p><strong>We'd love to hear from you!</strong> Whether you have feedback about your quiz results, suggestions for new features, questions about the test, or partnership proposals — feel free to reach out.</p>
+                    <p>Common topics we can help with:</p>
+                    <ul style="text-align: left; font-size: 0.9rem; line-height: 1.6; color: var(--sub-text); padding-left: 20px; margin-bottom: 15px;">
+                        <li>Feedback on quiz results and food matches</li>
+                        <li>Suggestions for new Filipino dishes or K-Pop/K-Drama matches</li>
+                        <li>Bug reports or technical issues</li>
+                        <li>Media and partnership inquiries</li>
+                        <li>Content collaboration proposals</li>
+                    </ul>
+                    <p>You can also email us directly at <strong>samsther987@gmail.com</strong>. We typically respond within 1-2 business days.</p>
+                </div>
+
+                <form action="https://formspree.io/f/xlglqkoe" method="POST" id="contact-form">
+                    <input type="text" name="name" id="contact-name" placeholder="Your Name" required>
+                    <input type="email" name="email" id="contact-email" placeholder="Your Email" required>
+                    <textarea name="message" id="contact-message" placeholder="Your Message" required></textarea>
+                    <button class="btn" type="submit" id="contact-submit">Send Inquiry</button>
+                    <button class="btn" type="button" onclick="location.href='index.html'" id="contact-back">Back to Home</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
     <div class="result-footer-links">
         <a href="about.html">About</a> |

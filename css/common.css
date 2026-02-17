@@ -1,4 +1,8 @@
-:root {
+*, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
             --primary: #F48C06;
             --accent: #D00000;
             --bg: #FFF8E1;
@@ -32,12 +36,12 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            box-sizing: border-box;
             transition: background 0.3s, color 0.3s;
+            overflow-x: hidden;
         }
 
         .top-bar {
-            width: 100%; max-width: 500px; display: flex; justify-content: space-between; margin-bottom: 20px;
+            width: 100%; max-width: 500px; display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;
         }
         .icon-btn {
             background: var(--card-bg); border: 2px solid var(--primary); color: var(--text);
@@ -99,10 +103,12 @@
             font-weight: bold; display: inline-block; margin-bottom: 10px; letter-spacing: 2px;
         }
         
-        .food-name { 
-            font-size: 3.2rem; font-weight: 900; color: var(--accent); 
-            margin: 5px 0 25px 0; line-height: 1.1; 
+        .food-name {
+            font-size: 3.2rem; font-weight: 900; color: var(--accent);
+            margin: 5px 0 25px 0; line-height: 1.1;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
         
         .info-box {
@@ -326,16 +332,17 @@
 /* 소셜 아이콘 컨테이너 */
 .social-icons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 20px;
 }
 
 /* 소셜 아이콘 버튼 */
 .social-icon {
-    width: 60px;
-    height: 60px;
+    flex: 1;
+    max-width: 55px;
+    aspect-ratio: 1;
     border: none;
     border-radius: 12px;
     font-size: 1.8rem;
@@ -374,9 +381,11 @@
 
 @media (max-width: 400px) {
     .social-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+        max-width: 45px;
+        border-radius: 10px;
+    }
+    .social-icon i {
+        font-size: 1.3rem;
     }
 }
 
@@ -394,13 +403,269 @@
     transition: transform 0.2s;
 }
 
+/* Result footer links */
+.result-footer-links {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--sub-text);
+}
+
+.result-footer-links a {
+    color: var(--sub-text);
+    text-decoration: none;
+}
+
+.result-footer-links a:hover {
+    color: var(--primary);
+}
+
 /* Mobile top-bar fix */
 @media (max-width: 600px) {
     .top-bar {
-        justify-content: space-between;
-        padding: 10px 15px;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 10px;
     }
     .icon-btn {
         min-width: 80px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
+}
+
+/* ====== Content Enhancement Styles ====== */
+
+/* Intro Section (index.html) */
+.intro-section {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.intro-section .info-box {
+    background: var(--card-bg);
+    border-left: 5px solid var(--primary);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.intro-section h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+}
+
+.intro-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 10px 0;
+}
+
+/* How It Works Steps */
+.how-it-works {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+.how-it-works h3 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.step-number {
+    background: var(--primary);
+    color: var(--btn-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    text-align: left;
+}
+
+.step-content strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.step-content span {
+    font-size: 0.85rem;
+    color: var(--sub-text);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 20px;
+}
+
+.faq-section h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.faq-item {
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 15px 15px;
+}
+
+.faq-answer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--sub-text);
+    margin: 0;
+}
+
+/* Legal Pages (privacy, terms) */
+.legal-content {
+    text-align: left;
+}
+
+.legal-content h3 {
+    color: var(--accent);
+    font-size: 1rem;
+    margin: 20px 0 8px 0;
+}
+
+.legal-content h3:first-child {
+    margin-top: 0;
+}
+
+.legal-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 10px 0;
+}
+
+.legal-content ul {
+    padding-left: 20px;
+    margin: 5px 0 10px 0;
+}
+
+.legal-content li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.legal-content .update-date {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--sub-text);
+    font-size: 0.85rem;
+}
+
+/* Contact guidance */
+.contact-guidance {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-guidance p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--sub-text);
+    margin: 0 0 8px 0;
+}
+
+/* Noscript content */
+.noscript-content {
+    text-align: left;
+    padding: 20px;
+}
+
+.noscript-content h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.noscript-content h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 15px 0 5px 0;
+}
+
+.noscript-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
 }

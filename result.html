@@ -34,8 +34,8 @@
 
     <style>
         /* 인라인 크리티컬 CSS - 즉시 렌더링 */
-        body { margin: 0; font-family: 'Poppins', sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .container { max-width: 500px; margin: 0 auto; padding: 20px; }
         .screen { display: none; }
         .screen.active { display: block; }
     </style>
@@ -99,6 +99,26 @@
         <a href="privacy.html">Privacy Policy</a> |
         <a href="terms.html">Terms of Service</a>
     </div>
+
+    <!-- Noscript fallback for SEO/AdSense -->
+    <noscript>
+        <div class="container">
+            <div class="noscript-content">
+                <h2>Your Pinoy Food Personality Result</h2>
+                <p>Discover your Filipino food personality match based on your MBTI type! Each of the 16 personality types is paired with an iconic Filipino dish along with a K-Pop/K-Drama character twin.</p>
+                <h3>16 Personality Food Matches</h3>
+                <p><strong>ISTJ - Adobo:</strong> The timeless classic, reliable and deeply rooted in tradition.</p>
+                <p><strong>ISFJ - Sinigang:</strong> Warm, comforting, and always there when you need it.</p>
+                <p><strong>ESTJ - Lechon:</strong> Bold, commanding, the centerpiece of every celebration.</p>
+                <p><strong>ENFP - Halo-Halo:</strong> Colorful, creative, a vibrant mix of everything wonderful.</p>
+                <p><strong>ESTP - Sisig:</strong> Adventurous, bold, and sizzling with energy.</p>
+                <p><strong>INTJ - Kapeng Barako:</strong> Strong, independent, with depth and intensity.</p>
+                <p><strong>INFP - Champorado:</strong> Sweet, comforting, and uniquely heartwarming.</p>
+                <p><strong>INFJ - Taho:</strong> Gentle, layered, and quietly soulful.</p>
+                <p>Please enable JavaScript to view your full personalized result.</p>
+            </div>
+        </div>
+    </noscript>
 
     <!-- 오디오는 lazy load -->
     <audio id="audio-result-E" preload="none" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
