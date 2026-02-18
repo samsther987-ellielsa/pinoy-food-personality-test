@@ -159,3 +159,52 @@ function goToLoading() {
     const scoresJson = encodeURIComponent(JSON.stringify(scores));
     window.location.href = `loading.html?scores=${scoresJson}`;
 }
+
+// Bilingual support for quiz page content sections
+const quizPageText = {
+    en: {
+        tipsTitle: "Tips for Accurate Results",
+        tipsDesc: "Answer based on your natural instincts, not how you think you should respond. There are no right or wrong answers \u2014 each response helps us match you with the perfect Filipino dish and K-Pop/K-Drama character twin.",
+        dimTitle: "The 4 Personality Dimensions",
+        dimEiLabel: "Extraversion (E) vs Introversion (I):",
+        dimEiDesc: "How you recharge your energy \u2014 through social interaction or quiet reflection.",
+        dimSnLabel: "Sensing (S) vs Intuition (N):",
+        dimSnDesc: "How you process information \u2014 through concrete facts or abstract patterns.",
+        dimTfLabel: "Thinking (T) vs Feeling (F):",
+        dimTfDesc: "How you make decisions \u2014 through logic and analysis or values and empathy.",
+        dimJpLabel: "Judging (J) vs Perceiving (P):",
+        dimJpDesc: "How you approach life \u2014 with structure and planning or flexibility and spontaneity."
+    },
+    tl: {
+        tipsTitle: "Mga Tips para sa Tamang Resulta",
+        tipsDesc: "Sagutin batay sa iyong natural na instinct, hindi kung ano ang tingin mong tamang sagot. Walang mali o tamang sagot \u2014 bawat tugon ay tumutulong sa pag-match sa iyo ng perpektong Filipino dish at K-Pop/K-Drama character twin.",
+        dimTitle: "Ang 4 na Personality Dimensions",
+        dimEiLabel: "Extraversion (E) vs Introversion (I):",
+        dimEiDesc: "Paano ka nag-recharge ng energy \u2014 sa pakikisalamuha o tahimik na pagninilay.",
+        dimSnLabel: "Sensing (S) vs Intuition (N):",
+        dimSnDesc: "Paano mo pinoproseso ang impormasyon \u2014 sa mga katotohanan o abstract na patterns.",
+        dimTfLabel: "Thinking (T) vs Feeling (F):",
+        dimTfDesc: "Paano ka nagde-desisyon \u2014 sa lohika at pagsusuri o sa values at empathy.",
+        dimJpLabel: "Judging (J) vs Perceiving (P):",
+        dimJpDesc: "Paano mo hinaharap ang buhay \u2014 may balak at plano o flexible at spontaneous."
+    }
+};
+
+// Override toggleLang to update quiz page sections
+const origToggleLangQuiz = toggleLang;
+toggleLang = function() {
+    origToggleLangQuiz();
+    const t = quizPageText[curLang];
+    const el = (id) => document.getElementById(id);
+    if (el('quiz-tips-title')) el('quiz-tips-title').innerText = t.tipsTitle;
+    if (el('quiz-tips-desc')) el('quiz-tips-desc').innerText = t.tipsDesc;
+    if (el('quiz-dim-title')) el('quiz-dim-title').innerText = t.dimTitle;
+    if (el('dim-ei-label')) el('dim-ei-label').innerText = t.dimEiLabel;
+    if (el('dim-ei-desc')) el('dim-ei-desc').innerText = t.dimEiDesc;
+    if (el('dim-sn-label')) el('dim-sn-label').innerText = t.dimSnLabel;
+    if (el('dim-sn-desc')) el('dim-sn-desc').innerText = t.dimSnDesc;
+    if (el('dim-tf-label')) el('dim-tf-label').innerText = t.dimTfLabel;
+    if (el('dim-tf-desc')) el('dim-tf-desc').innerText = t.dimTfDesc;
+    if (el('dim-jp-label')) el('dim-jp-label').innerText = t.dimJpLabel;
+    if (el('dim-jp-desc')) el('dim-jp-desc').innerText = t.dimJpDesc;
+};
