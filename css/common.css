@@ -669,3 +669,30 @@
     line-height: 1.5;
     margin: 0 0 8px 0;
 }
+
+/* Food matches grid for result page */
+.food-matches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.food-match-item {
+    padding: 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.food-match-item strong {
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.food-match-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 5px 0 0 0;
+    color: var(--sub-text);
+}

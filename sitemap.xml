@@ -23,6 +23,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- MBTI 정보 페이지 -->
+  <url>
+    <loc>https://pinoyfoodtest.com/about-mbti.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   
   <!-- Contact 페이지 -->
   <url>
