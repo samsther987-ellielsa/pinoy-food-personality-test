@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
 
+    <meta name="description" content="Discover your Filipino food personality! See which of the 16 iconic Filipino dishes matches your MBTI personality type, plus your K-Pop/K-Drama character twin.">
+    <link rel="canonical" href="https://pinoyfoodtest.com/result.html">
     <meta property="og:url" content="https://pinoyfoodtest.com/result.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="My Pinoy Food Personality Result">
@@ -29,6 +31,17 @@
     <meta property="og:image" content="https://pinoyfoodtest.com/share-image.png">
     <meta property="og:site_name" content="Pinoy Food Personality Test">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinoyfoodtest.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Quiz", "item": "https://pinoyfoodtest.com/quiz.html" },
+        { "@type": "ListItem", "position": 3, "name": "Your Result", "item": "https://pinoyfoodtest.com/result.html" }
+      ]
+    }
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3390185075238000" crossorigin="anonymous"></script>
     <script src="js/meta-tags.js"></script>
 
@@ -46,6 +59,10 @@
         <button class="icon-btn" onclick="location.href='about-mbti.html'" id="mbti-btn">ℹ️ MBTI</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
     </div>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &rsaquo; <a href="quiz.html">Quiz</a> &rsaquo; <span>Your Result</span>
+    </nav>
 
     <div class="container">
         <div id="result-screen" class="screen active">
@@ -93,19 +110,11 @@
         </div>
     </div>
 
-    <!-- AdSense Ad Unit - After result content -->
-    <div class="ad-container" style="max-width: 500px; margin: 20px auto; text-align: center;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3390185075238000"
-             data-ad-slot="auto"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+    <!-- AdSense Auto Ads handles ad placement automatically via the head script -->
 
     <div class="result-footer-links">
         <a href="about.html">About</a> |
+        <a href="food-guide.html">Food Guide</a> |
         <a href="contact.html">Contact</a> |
         <a href="privacy.html">Privacy Policy</a> |
         <a href="terms.html">Terms of Service</a>
@@ -119,67 +128,83 @@
             <div class="food-matches-grid">
                 <div class="food-match-item">
                     <strong>ISTJ - Adobo 🥘</strong>
-                    <p>The timeless classic. Reliable, deeply rooted in tradition, and the backbone everyone leans on when things get real. Like Adobo, ISTJs are consistent, dependable, and universally respected.</p>
+                    <p>The timeless classic of Filipino cuisine. Reliable, deeply rooted in tradition, and the backbone everyone leans on when things get real. Like Adobo — the unofficial national dish of the Philippines — ISTJs are consistent, dependable, and universally respected. They bring order to chaos and never let anyone down. Just like how every Filipino household has their own Adobo recipe passed down through generations, ISTJs carry tradition with pride.</p>
+                    <p><em>K-Star Twin: Irene (Red Velvet) — disciplined, elegant, a natural leader behind the scenes.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ISFJ - Sinigang 🍲</strong>
-                    <p>The warm hug people need after a hard day. ISFJs remember birthdays, notice when something's off, and always know what to say. Comforting and always there when you need it.</p>
+                    <p>The warm hug people need after a hard day. ISFJs remember birthdays, notice when something's off, and always know what to say. Sinigang — with its comforting sour tamarind broth — is the soup every Filipino craves during rainy days. ISFJs are the emotional anchors of their groups, nurturing everyone with quiet dedication. Their warmth is felt most when life gets stormy.</p>
+                    <p><em>K-Star Twin: Dahyun (Twice) — cheerful, thoughtful, always putting others' happiness first.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>INFJ - Kare-Kare 🥜</strong>
-                    <p>Layers upon layers of depth that people rarely fully understand. Rare, misunderstood, but absolutely unforgettable. INFJs feel everything intensely and see patterns others miss.</p>
+                    <p>Layers upon layers of depth that people rarely fully understand. INFJs are like Kare-Kare — the rich peanut-based Filipino stew that takes patience and skill to prepare. They feel everything intensely and see patterns others miss. Rare and often misunderstood, but absolutely unforgettable once you take the time to know them. Their idealism and empathy create a powerful combination that changes the people around them.</p>
+                    <p><em>K-Star Twin: IU — deeply introspective, artistic, connecting with people through heartfelt storytelling.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>INTJ - Kapeng Barako ☕</strong>
-                    <p>Strong, independent, with depth and intensity. INTJs see five steps ahead while everyone else is stuck on step one. Plans? They have backup plans for their backup plans.</p>
+                    <p>Strong, independent, with depth and intensity that commands respect. INTJs are like Kapeng Barako — the bold Batangas coffee known for its robust flavor and no-nonsense character. They see five steps ahead while everyone else is stuck on step one. Plans? They have backup plans for their backup plans. Their strategic minds and relentless drive make them natural architects of ambitious visions.</p>
+                    <p><em>K-Star Twin: G-Dragon (BigBang) — visionary, trend-setting, always ahead of the curve.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ISTP - Kinilaw 🐟</strong>
-                    <p>Fresh, no-nonsense, surprisingly complex. ISTPs can fix anything, stay cool under pressure, and don't waste time on drama. They speak in actions, not words.</p>
+                    <p>Fresh, no-nonsense, surprisingly complex beneath the surface. Like Kinilaw — the Filipino ceviche made with raw fish, vinegar, and citrus — ISTPs are straightforward yet multi-layered. They can fix anything, stay cool under pressure, and don't waste time on drama. Independent problem-solvers who speak through actions rather than words, they thrive when given the freedom to figure things out their own way.</p>
+                    <p><em>K-Star Twin: Suga (BTS) — cool, analytical, sharp-witted with hidden depths of passion.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ISFP - Buko Pie 🥥</strong>
-                    <p>Quiet on the outside, sweet and artistic on the inside. ISFPs see beauty where others don't and express themselves through creativity. Softer than they let on.</p>
+                    <p>Quiet on the outside, sweet and artistic on the inside. ISFPs are like Buko Pie — the beloved coconut-filled pastry from Laguna that surprises with its gentle sweetness. They see beauty where others don't and express themselves through creativity. Softer than they let on, they experience the world through their senses and have an innate talent for making ordinary moments feel meaningful.</p>
+                    <p><em>K-Star Twin: Jungkook (BTS) — talented, humble, expressing emotions through art and music.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>INFP - Champorado 🍫</strong>
-                    <p>Sweet, comforting, and uniquely heartwarming. INFPs feel everything in technicolor while the world operates in black and white. Dreamers with big hearts.</p>
+                    <p>Sweet, comforting, and uniquely heartwarming. INFPs are like Champorado — the Filipino chocolate rice porridge that warms both body and soul. They feel everything in technicolor while the world operates in black and white. Dreamers with enormous hearts, they carry a rich inner world of imagination and idealism. Their authenticity and compassion create safe spaces where others feel free to be themselves.</p>
+                    <p><em>K-Star Twin: V (BTS) — dreamy, artistic, seeing the world through a unique and beautiful lens.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>INTP - Balut 🥚</strong>
-                    <p>People don't get you at first glance, but those brave enough to look deeper find something fascinating. INTPs live in their heads, building theories most won't understand for years.</p>
+                    <p>People don't get you at first glance, but those brave enough to look deeper find something fascinating. Like Balut — the iconic Filipino fertilized duck egg that challenges first impressions — INTPs are intellectually rich beneath their quiet exterior. They live in their heads, building theories and connections most won't understand for years. Their curiosity knows no bounds, and their unconventional thinking often leads to groundbreaking insights.</p>
+                    <p><em>K-Star Twin: Jin (BTS) — surprisingly deep thinker behind an easygoing exterior.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ESTP - Isaw 🍢</strong>
-                    <p>Street-smart, bold, living on the edge. ESTPs are the 'let's just do it' people who make life an adventure. Risk-takers and thrill-seekers who jump first and ask questions later.</p>
+                    <p>Street-smart, bold, and living on the edge. Like Isaw — the beloved Filipino street food grilled chicken intestines — ESTPs are the adventurous souls who make life exciting. They're the "let's just do it" people who jump first and ask questions later. Risk-takers and thrill-seekers, they have an infectious energy that turns every ordinary moment into an adventure worth telling stories about.</p>
+                    <p><em>K-Star Twin: Jimin (BTS) — charismatic, spontaneous, electrifying every room they enter.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ESFP - Crispy Pata 🍖</strong>
-                    <p>Loud, proud, and impossible to ignore! ESFPs are the life of every party, turning regular Tuesdays into celebrations. Living proof that life is meant to be enjoyed.</p>
+                    <p>Loud, proud, and impossible to ignore — just like the sizzling, golden-brown Crispy Pata that steals the spotlight at every Filipino celebration. ESFPs are the life of every party, turning regular Tuesdays into celebrations worth remembering. They live in the moment with contagious enthusiasm and have a gift for making everyone around them feel alive. Life is meant to be enjoyed, and ESFPs prove it daily.</p>
+                    <p><em>K-Star Twin: Rain — showstopper energy, effortless charisma, born to entertain.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ENFP - Halo-Halo 🌈</strong>
-                    <p>Literally everything at once and it somehow works! ENFPs are beautiful chaos — contagious energy, wild ideas, and life with them is never, ever boring.</p>
+                    <p>Literally everything at once — and it somehow works beautifully! Like Halo-Halo, the iconic Filipino shaved ice dessert layered with beans, fruits, jellies, and leche flan, ENFPs are a vibrant mix of creativity and warmth. They radiate contagious energy and wild ideas that inspire everyone around them. Life with an ENFP is never boring; they bring color, spontaneity, and genuine excitement to everything they touch.</p>
+                    <p><em>K-Star Twin: Sana (Twice) — bubbly, warm, spreading joy to everyone she meets.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ENTP - Sisig 🌶️</strong>
-                    <p>Chaotic, spicy, impossible to ignore. ENTPs question everything, debate anything, and innovate through disruption. Boredom is their enemy, routine their nightmare.</p>
+                    <p>Chaotic, spicy, and impossible to ignore. Like Sisig — the sizzling Kapampangan dish that transformed humble pig parts into a culinary masterpiece — ENTPs are born innovators. They question everything, debate anything, and thrive on intellectual disruption. Boredom is their enemy and routine their nightmare. Their quick wit and unconventional thinking make them the catalysts for change wherever they go.</p>
+                    <p><em>K-Star Twin: Jay Park — rule-breaker, multi-talented, always reinventing the game.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ESTJ - Pancit Canton 🍜</strong>
-                    <p>Structured, essential, gets things done. While everyone's still discussing the plan, ESTJs have already executed it. The project manager friend who conquers to-do lists before breakfast.</p>
+                    <p>Structured, essential, and endlessly reliable. Like Pancit Canton — the go-to stir-fried noodle dish found in every Filipino pantry — ESTJs get things done efficiently and without complaint. While everyone's still discussing the plan, ESTJs have already executed it. They are the project manager friends who conquer to-do lists before breakfast and keep everything running like clockwork.</p>
+                    <p><em>K-Star Twin: BamBam (GOT7) — organized, driven, leading by example with boundless energy.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ESFJ - Lumpia 🌯</strong>
-                    <p>Literally everyone's favorite. ESFJs are the glue of their friend groups, planning gatherings and making sure nobody feels left out. Their love language is feeding people.</p>
+                    <p>Literally everyone's favorite — and for good reason. Like Lumpia, the crispy Filipino spring rolls that appear at every family gathering and fiesta, ESFJs are the social glue that holds friend groups together. They plan gatherings, remember everyone's preferences, and make sure nobody feels left out. Their love language is feeding people, and their warmth creates a sense of belonging wherever they go.</p>
+                    <p><em>K-Star Twin: J-Hope (BTS) — sunshine energy, caring, lifting everyone's spirits.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ENFJ - Taho 🥤</strong>
-                    <p>The sweetness people need to start their day. ENFJs genuinely care, remember small details, and make everyone feel seen. Their superpower is making people believe in themselves.</p>
+                    <p>The sweetness people need to start their day right. Like Taho — the warm silken tofu treat sold by roaming vendors every Filipino morning — ENFJs bring comfort and encouragement to everyone they meet. They genuinely care about others, remember small details, and have a supernatural ability to make people feel seen. Their superpower is making people believe in themselves even when doubt creeps in.</p>
+                    <p><em>K-Star Twin: Jimin (BTS) — empathetic, graceful, touching hearts with sincerity.</em></p>
                 </div>
                 <div class="food-match-item">
                     <strong>ENTJ - Lechon 👑</strong>
-                    <p>Everyone's waiting for them to arrive. ENTJs walk into a room and things start happening. They don't wait for opportunities — they create them, optimize them, then scale them.</p>
+                    <p>The centerpiece everyone's been waiting for. Like Lechon — the majestic whole roasted pig that commands attention at every Filipino feast — ENTJs walk into a room and things start happening. They don't wait for opportunities; they create them, optimize them, then scale them. Natural-born leaders with unwavering ambition, they set the standard and inspire others to rise to meet it.</p>
+                    <p><em>K-Star Twin: Ko Moon-young (It's Okay to Not Be Okay) — commanding, brilliant, unapologetically bold.</em></p>
                 </div>
             </div>
         </div>

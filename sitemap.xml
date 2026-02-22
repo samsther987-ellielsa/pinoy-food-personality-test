@@ -1,155 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 홈페이지 -->
   <url>
     <loc>https://pinoyfoodtest.com/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- 퀴즈 페이지 -->
+
   <url>
     <loc>https://pinoyfoodtest.com/quiz.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- About 페이지 -->
+
+  <url>
+    <loc>https://pinoyfoodtest.com/food-guide.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://pinoyfoodtest.com/about.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- MBTI 정보 페이지 -->
   <url>
     <loc>https://pinoyfoodtest.com/about-mbti.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Contact 페이지 -->
+
   <url>
     <loc>https://pinoyfoodtest.com/contact.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <!-- Privacy Policy -->
+
   <url>
     <loc>https://pinoyfoodtest.com/privacy.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Terms of Service -->
+
   <url>
     <loc>https://pinoyfoodtest.com/terms.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- 16개 MBTI 결과 페이지 -->
+
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=INTJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=INTP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ENTJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ENTP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=INFJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=INFP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ENFJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ENFP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ISTJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ISFJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ESTJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ESFJ</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ISTP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ISFP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ESTP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/result.html?mbti=ESFP</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
