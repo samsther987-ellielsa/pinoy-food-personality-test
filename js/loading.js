@@ -59,7 +59,7 @@ function startLoading() {
             localStorage.setItem('lastTestDate', new Date().toISOString());
 
             setTimeout(() => {
-                window.location.href = `result.html?mbti=${mbti}`;
+                window.location.href = `results/${mbti.toLowerCase()}.html`;
             }, 500);
         }
     }, interval);

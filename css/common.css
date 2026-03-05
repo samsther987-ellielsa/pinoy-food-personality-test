@@ -713,3 +713,125 @@
 .breadcrumb a:hover {
     text-decoration: underline;
 }
+
+/* Related personality types grid */
+.related-types-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.related-type-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 8px;
+    background: var(--bg);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.related-type-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.related-type-badge {
+    background: var(--text);
+    color: var(--bg);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.related-type-food {
+    color: var(--sub-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Blog card styles */
+.blog-card {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 12px;
+}
+
+.blog-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+}
+
+.blog-card h3 a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.blog-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.blog-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--sub-text);
+    margin: 0;
+}
+
+.blog-card .blog-meta {
+    font-size: 0.75rem;
+    color: var(--sub-text);
+    margin-top: 8px;
+}
+
+/* Popular results grid on homepage */
+.popular-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.popular-result-card {
+    display: block;
+    padding: 12px;
+    background: var(--bg);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    text-align: center;
+}
+
+.popular-result-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.popular-result-card .popular-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popular-result-card .popular-type {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text);
+    display: block;
+}
+
+.popular-result-card .popular-food {
+    font-size: 0.8rem;
+    color: var(--sub-text);
+    display: block;
+    margin-top: 3px;
+}

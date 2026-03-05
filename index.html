@@ -30,7 +30,7 @@
       "inLanguage": ["en", "tl"],
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://pinoyfoodtest.com/result.html?mbti={search_term_string}",
+        "target": "https://pinoyfoodtest.com/results/{search_term_string}.html",
         "query-input": "required name=search_term_string"
       }
     }
@@ -152,6 +152,55 @@
         </div>
     </div>
 
+    <!-- Popular Results -->
+    <div class="intro-section" id="popular-results-section">
+        <div class="info-box">
+            <h3 id="popular-title">Popular Food Personality Matches</h3>
+            <p id="popular-desc">See which Filipino foods match the most popular personality types:</p>
+            <div class="popular-results-grid">
+                <a href="results/enfp.html" class="popular-result-card">
+                    <span class="popular-emoji">🌈</span>
+                    <span class="popular-type">ENFP</span>
+                    <span class="popular-food">Halo-Halo</span>
+                </a>
+                <a href="results/infj.html" class="popular-result-card">
+                    <span class="popular-emoji">🥜</span>
+                    <span class="popular-type">INFJ</span>
+                    <span class="popular-food">Kare-Kare</span>
+                </a>
+                <a href="results/istj.html" class="popular-result-card">
+                    <span class="popular-emoji">🥘</span>
+                    <span class="popular-type">ISTJ</span>
+                    <span class="popular-food">Adobo</span>
+                </a>
+                <a href="results/entp.html" class="popular-result-card">
+                    <span class="popular-emoji">🌶️</span>
+                    <span class="popular-type">ENTP</span>
+                    <span class="popular-food">Sisig</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest from Our Blog -->
+    <div class="intro-section" id="blog-preview-section">
+        <div class="info-box">
+            <h3 id="blog-preview-title">Latest from Our Blog</h3>
+            <div class="blog-card">
+                <h3><a href="blog/filipino-food-culture-guide.html" id="bp-article1">The Complete Guide to Filipino Food Culture</a></h3>
+                <p id="bp-article1-desc">Explore the rich history of Filipino cuisine from pre-colonial preservation to modern innovations.</p>
+            </div>
+            <div class="blog-card">
+                <h3><a href="blog/mbti-food-personality-connection.html" id="bp-article2">How Your Personality Shapes Your Food Preferences</a></h3>
+                <p id="bp-article2-desc">Discover the psychology behind food choices and MBTI personality types.</p>
+            </div>
+            <div class="blog-card">
+                <h3><a href="blog/kpop-filipino-food-culture.html" id="bp-article3">K-Pop Meets Filipino Food: A Cultural Crossover</a></h3>
+                <p id="bp-article3-desc">How the Hallyu wave connects Korean and Filipino food cultures.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- FAQ Section -->
     <div class="intro-section">
         <div class="info-box">
@@ -203,6 +252,7 @@
     <div class="result-footer-links">
         <a href="about.html">About</a> |
         <a href="food-guide.html">Food Guide</a> |
+        <a href="blog.html">Blog</a> |
         <a href="contact.html">Contact</a> |
         <a href="privacy.html">Privacy Policy</a> |
         <a href="terms.html">Terms of Service</a>
@@ -233,7 +283,7 @@
                     <p style="font-size: 0.9rem; color: var(--sub-text); margin-bottom: 8px;">
                         Last result (${days} day${days !== 1 ? 's' : ''} ago):
                     </p>
-                    <a href="result.html?mbti=${lastMBTI}" style="text-decoration: none;">
+                    <a href="results/${lastMBTI.toLowerCase()}.html" style="text-decoration: none;">
                         <div style="background: var(--primary); color: white; padding: 12px; border-radius: 10px; font-weight: 600;">
                             ${lastMBTI} - View Result →
                         </div>
@@ -272,7 +322,16 @@
                 faqQ3: "What Filipino foods are included?",
                 faqA3: "We feature 16 iconic Filipino dishes including Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Bibingka, Pancit Canton, Bulalo, Taho, Balut, Turon, and Tinola — one for each MBTI type!",
                 faqQ4: "Is my data saved or shared?",
-                faqA4: 'Your quiz answers are processed entirely in your browser and are never sent to any server. Only your final MBTI result is saved locally on your device so you can revisit it later. See our <a href="privacy.html">Privacy Policy</a> for full details.'
+                faqA4: 'Your quiz answers are processed entirely in your browser and are never sent to any server. Only your final MBTI result is saved locally on your device so you can revisit it later. See our <a href="privacy.html">Privacy Policy</a> for full details.',
+                popularTitle: "Popular Food Personality Matches",
+                popularDesc: "See which Filipino foods match the most popular personality types:",
+                blogPreviewTitle: "Latest from Our Blog",
+                bpArticle1: "The Complete Guide to Filipino Food Culture",
+                bpArticle1Desc: "Explore the rich history of Filipino cuisine from pre-colonial preservation to modern innovations.",
+                bpArticle2: "How Your Personality Shapes Your Food Preferences",
+                bpArticle2Desc: "Discover the psychology behind food choices and MBTI personality types.",
+                bpArticle3: "K-Pop Meets Filipino Food: A Cultural Crossover",
+                bpArticle3Desc: "How the Hallyu wave connects Korean and Filipino food cultures."
             },
             tl: {
                 introTitle: "Ano ang Pinoy Food Personality Test?",
@@ -292,7 +351,16 @@
                 faqQ3: "Anong mga Filipino food ang kasama?",
                 faqA3: "May 16 iconic na Filipino dish kami kabilang ang Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Bibingka, Pancit Canton, Bulalo, Taho, Balut, Turon, at Tinola — isa para sa bawat MBTI type!",
                 faqQ4: "Nase-save o nisha-share ba ang data ko?",
-                faqA4: 'Ang mga sagot mo sa quiz ay pinoprocess lang sa browser mo at hindi ipinapadala sa kahit anong server. Ang final MBTI result mo lang ang nase-save sa device mo para ma-revisit mo ito. Tingnan ang aming <a href="privacy.html">Privacy Policy</a> para sa buong detalye.'
+                faqA4: 'Ang mga sagot mo sa quiz ay pinoprocess lang sa browser mo at hindi ipinapadala sa kahit anong server. Ang final MBTI result mo lang ang nase-save sa device mo para ma-revisit mo ito. Tingnan ang aming <a href="privacy.html">Privacy Policy</a> para sa buong detalye.',
+                popularTitle: "Mga Sikat na Food Personality Match",
+                popularDesc: "Tingnan kung aling mga Filipino food ang tugma sa pinakasikat na personality types:",
+                blogPreviewTitle: "Pinakabago sa Blog",
+                bpArticle1: "Ang Kumpletong Gabay sa Kulturang Pagkain ng Pilipino",
+                bpArticle1Desc: "Tuklasin ang mayamang kasaysayan ng Filipino cuisine mula sa sinaunang preservation hanggang modernong innovations.",
+                bpArticle2: "Paano Hinuhubog ng Personality Mo ang Food Preferences Mo",
+                bpArticle2Desc: "Tuklasin ang psychology sa likod ng food choices at MBTI personality types.",
+                bpArticle3: "K-Pop at Pagkaing Pilipino: Isang Cultural Crossover",
+                bpArticle3Desc: "Paano nagkokonekta ang Hallyu wave sa Korean at Filipino food cultures."
             }
         };
 
@@ -319,6 +387,15 @@
             document.getElementById('faq-a2').innerHTML = t.faqA2;
             document.getElementById('faq-a3').innerHTML = t.faqA3;
             document.getElementById('faq-a4').innerHTML = t.faqA4;
+            document.getElementById('popular-title').innerText = t.popularTitle;
+            document.getElementById('popular-desc').innerText = t.popularDesc;
+            document.getElementById('blog-preview-title').innerText = t.blogPreviewTitle;
+            document.getElementById('bp-article1').innerText = t.bpArticle1;
+            document.getElementById('bp-article1-desc').innerText = t.bpArticle1Desc;
+            document.getElementById('bp-article2').innerText = t.bpArticle2;
+            document.getElementById('bp-article2-desc').innerText = t.bpArticle2Desc;
+            document.getElementById('bp-article3').innerText = t.bpArticle3;
+            document.getElementById('bp-article3-desc').innerText = t.bpArticle3Desc;
         };
     </script>
     <!-- Facebook App ID는 선택사항 -->

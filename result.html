@@ -44,6 +44,16 @@
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3390185075238000" crossorigin="anonymous"></script>
     <script src="js/meta-tags.js"></script>
+    <script>
+    // Redirect old result.html?mbti=XXXX URLs to new static pages
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var mbti = params.get('mbti');
+        if (mbti) {
+            window.location.replace('results/' + mbti.toLowerCase() + '.html');
+        }
+    })();
+    </script>
 
     <style>
         /* 인라인 크리티컬 CSS - 즉시 렌더링 */
