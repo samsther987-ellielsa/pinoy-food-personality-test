@@ -101,6 +101,15 @@
     </script>
 </head>
 <body data-theme="light">
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="site-nav-logo">🇵🇭 Pinoy Food Test</a>
+        <div class="site-nav-links">
+            <a href="about.html">About</a>
+            <a href="food-guide.html">Food Guide</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="location.href='about-mbti.html'" id="mbti-btn">ℹ️ MBTI</button>
@@ -249,14 +258,17 @@
         </div>
     </noscript>
 
-    <div class="result-footer-links">
-        <a href="about.html">About</a> |
-        <a href="food-guide.html">Food Guide</a> |
-        <a href="blog.html">Blog</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a>
-    </div>
+    <footer class="site-footer">
+        <nav aria-label="Footer navigation">
+            <a href="about.html">About</a> |
+            <a href="food-guide.html">Food Guide</a> |
+            <a href="blog.html">Blog</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a>
+        </nav>
+        <p style="margin-top:8px; font-size:0.8rem; opacity:0.7;">© 2026 Pinoy Food Personality Test · pinoyfoodtest.com</p>
+    </footer>
 
     <script src="js/common.js"></script>
     <script>

@@ -17,6 +17,15 @@
     <meta property="og:site_name" content="Pinoy Food Personality Test">
 </head>
 <body data-theme="light">
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="site-nav-logo">🇵🇭 Pinoy Food Test</a>
+        <div class="site-nav-links">
+            <a href="about.html">About</a>
+            <a href="food-guide.html">Food Guide</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="location.href='about-mbti.html'" id="mbti-btn">ℹ️ MBTI</button>
@@ -56,6 +65,80 @@
             </div>
         </div>
     </main>
+
+    <!-- FAQ Section -->
+    <div class="intro-section" style="max-width:600px; margin: 20px auto; padding: 0 15px;">
+        <div class="info-box">
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">How accurate is the Pinoy Food Personality Test?</button>
+                    <div class="faq-answer">
+                        <p>The Pinoy Food Personality Test is designed for fun and cultural celebration rather than clinical accuracy. It uses the Myers-Briggs Type Indicator (MBTI) framework — a widely recognized personality model built around four dimensions: Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, and Judging/Perceiving. While the MBTI itself has been studied in psychological research, our food pairings are crafted with cultural insight and creativity. Think of your result as a fun mirror of your personality, not a scientific verdict. Many users tell us their result felt surprisingly accurate — and that's the magic of it!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Why did I get a different result when I retook the quiz?</button>
+                    <div class="faq-answer">
+                        <p>Our quiz randomly selects 16 questions from a pool of 48 — so each session presents a slightly different set of questions. This means your answers might shift slightly depending on your mood, the specific questions drawn, or how you interpret borderline situations. Personality is naturally fluid, and the MBTI spectrum recognizes that most people don't fall perfectly at one extreme. If you consistently get two different results, you may be a "borderline" type — which just means you share traits of both foods! We recommend taking the quiz 2-3 times and going with the result that resonates most.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">How were the Filipino food and MBTI pairings decided?</button>
+                    <div class="faq-answer">
+                        <p>Each of the 16 MBTI personality types was paired with an iconic Filipino dish based on the cultural character and personality of that food. For example, Lechon — the grand centerpiece of Filipino celebrations — was matched with ENTJ, the bold natural leader. Sinigang, the comforting sour soup that many Filipinos consider the ultimate home dish, was paired with ISFJ, the warm and nurturing caregiver. Halo-Halo, the colorful mixed dessert, perfectly captures the creative and energetic spirit of the ENFP. These pairings were developed through a combination of cultural research, food history, and personality psychology — and refined based on user feedback.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Is my quiz data stored or shared with anyone?</button>
+                    <div class="faq-answer">
+                        <p>No — your quiz answers are processed entirely in your browser and are never sent to any server. The only data we save is your most recent MBTI result and test date, stored in your browser's localStorage for your convenience (so you can see your previous result when you revisit). We use Google Analytics to understand site traffic patterns, and Google AdSense to show relevant ads — these services may use cookies as described in our <a href="privacy.html">Privacy Policy</a>. We never sell your personal information to third parties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">Can I share my result on social media?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! After completing the quiz, your result page includes a Share button that lets you copy your result or share it directly. We encourage you to share your Filipino food personality with friends — it's a great conversation starter! You can tag your post with #PinoyFoodTest or #PinoyFoodPersonality so we can see your result too. Many users enjoy comparing results with their friends and debating which food matches best. If you want a deeper dive into your food pairing, visit our <a href="food-guide.html">Filipino Food Guide</a> for detailed descriptions of each dish.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">What is K-Pop / K-Drama matching and why is it included?</button>
+                    <div class="faq-answer">
+                        <p>Filipino culture and Korean pop culture (Hallyu) share a deep and growing connection. Millions of Filipinos are passionate fans of K-Pop groups like BTS, BLACKPINK, and aespa, and K-Drama series. We included K-Pop and K-Drama character twins in each result because many of these characters and artists have MBTI types that are well-known to their fans, and because the crossover between Filipino food culture and Korean pop culture is a real and vibrant part of modern Filipino identity. It adds an extra layer of fun and relatability to your result — and sparks great discussions!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">How can I suggest a new Filipino food or MBTI pairing?</button>
+                    <div class="faq-answer">
+                        <p>We love hearing suggestions from the community! Filipino cuisine is incredibly diverse — from Ilocano Pinakbet to Bicolano Laing to Visayan Kinilaw — and we know there are many more dishes that deserve to be highlighted. If you have a food suggestion, a different MBTI pairing idea, or a new K-Pop match that feels more fitting, please use the contact form above. Tell us the dish, the MBTI type you'd pair it with, and why — we'd love to hear your reasoning. The best community suggestions may be featured in future updates to the quiz!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About This Site -->
+    <div class="intro-section" style="max-width:600px; margin: 20px auto 40px; padding: 0 15px;">
+        <div class="info-box">
+            <h3>About This Page</h3>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text);">
+                Pinoy Food Personality Test is an independent project created to celebrate Filipino food culture and make personality testing more fun and culturally relevant. We are a small team passionate about Filipino cuisine, personality psychology, and the growing connection between Filipino and Korean pop culture.
+            </p>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text); margin-top:10px;">
+                Whether you're a proud Filipino wanting to share your culture, an international visitor curious about Filipino food, or a K-Pop fan discovering the Philippines for the first time — we're glad you're here. This site is always evolving, and your feedback genuinely shapes how we improve it.
+            </p>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--text); margin-top:10px;">
+                For partnership inquiries, media features, or content collaborations, please reach out using the form above or email us at <strong>samsther987@gmail.com</strong>. We typically respond within 1-2 business days.
+            </p>
+        </div>
+    </div>
 
     <div class="result-footer-links">
         <a href="about.html">About</a> |
