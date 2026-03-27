@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Pinoy Food Personality Test</title>
+    <meta name="description" content="Privacy Policy for Pinoy Food Personality Test. Learn how we collect, use, and protect your information.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F48C06;
+            --accent: #D00000;
+            --bg: #FFF8E1;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text: #370617;
+            --sub-text: #6a4c93;
+            --shadow: rgba(0,0,0,0.1);
+        }
+        [data-theme="dark"] {
+            --primary: #FFBA08;
+            --accent: #FF6B6B;
+            --bg: #1a1a1a;
+            --card-bg: rgba(40, 40, 40, 0.95);
+            --text: #f0f0f0;
+            --sub-text: #b0b0b0;
+            --shadow: rgba(0,0,0,0.5);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* NAV */
+        nav {
+            background: var(--card-bg);
+            border-bottom: 2px solid var(--primary);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .nav-logo {
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: #fff;
+        }
+        .theme-btn {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .theme-btn:hover { background: var(--primary); color: #fff; }
+
+        /* MAIN */
+        main {
+            max-width: 760px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: var(--sub-text);
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 25px var(--shadow);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        p {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        ul li {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        a { color: var(--primary); }
+
+        /* FOOTER */
+        footer {
+            background: var(--card-bg);
+            border-top: 2px solid var(--primary);
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: var(--sub-text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--sub-text);
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+<nav>
+    <a href="index.html" class="nav-logo">🇵🇭 Pinoy Food Test</a>
+    <div class="nav-links">
+        <a href="index.html">🏠 Quiz</a>
+        <a href="blog/index.html">📝 Blog</a>
+        <a href="about.html">👋 About</a>
+        <a href="contact.html">✉️ Contact</a>
+        <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+    </div>
+</nav>
+
+<main>
+    <div class="page-header">
+        <h1>🔒 Privacy Policy</h1>
+        <p>Last updated: March 27, 2026</p>
+    </div>
+
+    <div class="card">
+        <h2>📋 Introduction</h2>
+        <p>Welcome to <strong>Pinoy Food Personality Test</strong> ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+        <p>Please read this policy carefully. If you disagree with its terms, please discontinue use of our site. We reserve the right to make changes to this policy at any time. We will alert you about any changes by updating the "Last updated" date of this policy.</p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Information We Collect</h2>
+        <p>We collect information in the following ways:</p>
+
+        <p><strong>Information You Provide Voluntarily</strong></p>
+        <p>When you use our personality quiz, you provide responses to questions. We do not collect your name, email address, or any personally identifiable information through the quiz. All quiz results are calculated locally in your browser and are not transmitted to our servers.</p>
+
+        <p><strong>Automatically Collected Information</strong></p>
+        <p>When you visit our website, certain information is automatically collected by standard web technologies, including:</p>
+        <ul>
+            <li>IP address and general geographic location (country/region level)</li>
+            <li>Browser type and version</li>
+            <li>Operating system</li>
+            <li>Pages visited and time spent on each page</li>
+            <li>Referring URL (how you found our site)</li>
+            <li>Device type (mobile, tablet, desktop)</li>
+        </ul>
+        <p>This information is collected via cookies and similar tracking technologies by our analytics and advertising partners (see sections below).</p>
+    </div>
+
+    <div class="card">
+        <h2>🍪 Cookies</h2>
+        <p>Cookies are small text files stored on your device when you visit a website. We use cookies and similar technologies for the following purposes:</p>
+        <ul>
+            <li><strong>Functional cookies:</strong> Remember your language preference (English or Tagalog) and display theme (light or dark mode)</li>
+            <li><strong>Analytics cookies:</strong> Help us understand how visitors interact with our website through Google Analytics</li>
+            <li><strong>Advertising cookies:</strong> Used by Google AdSense to serve relevant advertisements</li>
+        </ul>
+        <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect the functionality of our website.</p>
+    </div>
+
+    <div class="card">
+        <h2>📢 Google AdSense & Advertising</h2>
+        <p>We use Google AdSense to display advertisements on our website. Google AdSense uses cookies and web beacons to serve ads based on your prior visits to our site and other sites on the internet.</p>
+        <p>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the Internet. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+        <ul>
+            <li>Third-party vendors, including Google, use cookies to serve ads based on prior visits to our website</li>
+            <li>Google's advertising requirements can be summed up by Google's Advertising Principles</li>
+            <li>We have implemented the required Google Analytics advertising features</li>
+            <li>You can opt out of Google Analytics using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📈 Google Analytics</h2>
+        <p>We use Google Analytics to analyze how our website is used. Google Analytics collects information such as how often users visit the site, what pages they visit, and what other sites they used prior to coming to our site. We use the information to improve our site.</p>
+        <p>Google Analytics collects only the IP address assigned to you on the date you visit our site, rather than your name or other identifying information. We do not combine the information collected through the use of Google Analytics with personally identifiable information.</p>
+        <p>For more information on how Google collects and processes data, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+    </div>
+
+    <div class="card">
+        <h2>🛡️ How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+            <li>Operate and maintain our website</li>
+            <li>Improve, personalize, and expand our website</li>
+            <li>Understand and analyze how you use our website</li>
+            <li>Develop new products, services, and features</li>
+            <li>Monitor the usage of our website and detect technical issues</li>
+            <li>Serve relevant advertisements through Google AdSense</li>
+        </ul>
+        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential.</p>
+    </div>
+
+    <div class="card">
+        <h2>👶 Children's Privacy</h2>
+        <p>Our website is not directed to children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so we can take necessary action.</p>
+    </div>
+
+    <div class="card">
+        <h2>🌍 Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites, including social media platforms and K-Pop artist pages. We have no control over the content and privacy practices of those sites and are not responsible for their privacy policies. We encourage you to review the privacy policy of every site you visit.</p>
+    </div>
+
+    <div class="card">
+        <h2>✉️ Contact Us</h2>
+        <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+        <ul>
+            <li><strong>Website:</strong> <a href="contact.html">Contact Form</a></li>
+            <li><strong>Page:</strong> Pinoy Food Personality Test</li>
+        </ul>
+        <p>We will respond to your inquiry within a reasonable timeframe.</p>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">🏠 Quiz</a>
+        <a href="blog/index.html">📝 Blog</a>
+        <a href="about.html">👋 About</a>
+        <a href="contact.html">✉️ Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy Policy</a>
+    </div>
+    <p class="footer-copy">© 2026 Pinoy Food Personality Test. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const btn = document.getElementById('theme-btn');
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        btn.textContent = isDark ? '🌙 Dark' : '☀️ Light';
+    }
+</script>
+</body>
+</html>
