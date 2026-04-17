@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pinoyfoodtest.com/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://pinoyfoodtest.com/quiz.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://pinoyfoodtest.com/food-guide.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,28 +44,56 @@
 
   <url>
     <loc>https://pinoyfoodtest.com/blog.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pinoyfoodtest.com/blog/filipino-food-culture-guide.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://pinoyfoodtest.com/blog/mbti-food-personality-connection.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://pinoyfoodtest.com/blog/kpop-filipino-food-culture.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pinoyfoodtest.com/blog/mbti-types-and-eating-habits.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pinoyfoodtest.com/blog/16-filipino-dishes-personality-guide.html</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pinoyfoodtest.com/blog/why-filipinos-love-sharing-food.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pinoyfoodtest.com/blog/introverts-extroverts-filipino-food.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -86,97 +114,97 @@
 
   <url>
     <loc>https://pinoyfoodtest.com/results/intj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/intp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/entj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/entp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/infj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/infp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/enfj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/enfp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/istj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/isfj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/estj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/esfj.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/istp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/isfp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/estp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pinoyfoodtest.com/results/esfp.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

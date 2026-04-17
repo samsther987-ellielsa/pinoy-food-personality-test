@@ -647,6 +647,22 @@
     margin: 0;
 }
 
+/* Static FAQ items (h3+p structure, used on result pages) */
+.faq-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 14px 15px 6px;
+    margin: 0;
+}
+.faq-item > p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+    padding: 0 15px 14px;
+    margin: 0;
+}
+
 /* Legal Pages (privacy, terms) */
 .legal-content {
     text-align: left;

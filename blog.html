@@ -54,6 +54,15 @@
     </script>
 </head>
 <body data-theme="light">
+<nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="site-nav-logo">&#x1F1F5;&#x1F1ED; Pinoy Food Test</a>
+    <div class="site-nav-links">
+        <a href="about.html">About</a>
+        <a href="food-guide.html">Food Guide</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
     <div class="top-bar">
         <button class="icon-btn" onclick="toggleLang()" id="lang-btn">🇺🇸 Eng</button>
         <button class="icon-btn" onclick="location.href='about-mbti.html'" id="mbti-btn">ℹ️ MBTI</button>
@@ -74,6 +83,38 @@
 
         <div class="intro-section">
             <div class="info-box">
+                <p id="blog-intro">Welcome to the Pinoy Food Personality Test blog — your home for deep dives into Filipino food culture, personality psychology, and the surprising connections between who you are and what you eat. Filipino cuisine is one of the world's most diverse and culturally rich food traditions, shaped by thousands of years of history and the meeting of many cultures. Here we explore those stories, alongside the MBTI personality science that helps us understand why certain dishes resonate with certain people. Whether you're here for the food, the psychology, or both — you're in the right place.</p>
+            </div>
+        </div>
+
+        <div class="intro-section">
+            <div class="info-box">
+                <h2 id="latest-articles-title">Latest Articles</h2>
+
+                <div class="blog-card">
+                    <h3><a href="blog/introverts-extroverts-filipino-food.html" id="article7-title">Introverts vs. Extroverts: How Personality Shapes Your Filipino Food Experience</a></h3>
+                    <p id="article7-desc">Are you an introvert who finds comfort in a private bowl of Sinigang, or an extravert who needs a full boodle fight to feel alive? Explore how your energy source fundamentally shapes the way you eat, cook, and share food in Filipino culture.</p>
+                    <div class="blog-meta">April 2026 &middot; 7 min read</div>
+                </div>
+
+                <div class="blog-card">
+                    <h3><a href="blog/why-filipinos-love-sharing-food.html" id="article6-title">Why Filipinos Share Food: The Deep Cultural Roots of Philippine Hospitality</a></h3>
+                    <p id="article6-desc">What does "Kumain ka na ba?" really mean? Explore the cultural philosophy behind Filipino food sharing — from bayanihan and kamayan to padala and the fiesta table — and why food has always been the Filipino language of love.</p>
+                    <div class="blog-meta">April 2026 &middot; 8 min read</div>
+                </div>
+
+                <div class="blog-card">
+                    <h3><a href="blog/16-filipino-dishes-personality-guide.html" id="article5-title">16 Filipino Dishes Matched to 16 Personality Types: The Complete Guide</a></h3>
+                    <p id="article5-desc">A deep dive into all 16 Filipino dish and MBTI personality pairings — why Kare-Kare is INFJ, why Lechon is ENTJ, why Adobo is ISTJ, and the cultural and psychological threads that make each match meaningful.</p>
+                    <div class="blog-meta">April 2026 &middot; 9 min read</div>
+                </div>
+
+                <div class="blog-card">
+                    <h3><a href="blog/mbti-types-and-eating-habits.html" id="article4-title">What Your MBTI Type Says About How You Eat</a></h3>
+                    <p id="article4-desc">Personality science meets your dinner plate. Discover how each of the four MBTI dimensions — Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving — shapes your food preferences, dining habits, and relationship with Filipino cuisine.</p>
+                    <div class="blog-meta">April 2026 &middot; 6 min read</div>
+                </div>
+
                 <div class="blog-card">
                     <h3><a href="blog/filipino-food-culture-guide.html" id="article1-title">The Complete Guide to Filipino Food Culture</a></h3>
                     <p id="article1-desc">From ancient preservation techniques to modern culinary innovations, explore the rich tapestry of Filipino cuisine. Learn about regional specialties, dining traditions, and the cultural significance of food in Philippine life.</p>
@@ -115,6 +156,16 @@
             en: {
                 blogTitle: "Our Blog",
                 blogSubtitle: "Filipino Food, Personality & Culture",
+                latestArticlesTitle: "Latest Articles",
+                blogIntro: "Welcome to the Pinoy Food Personality Test blog — your home for deep dives into Filipino food culture, personality psychology, and the surprising connections between who you are and what you eat. Filipino cuisine is one of the world's most diverse and culturally rich food traditions, shaped by thousands of years of history and the meeting of many cultures. Here we explore those stories, alongside the MBTI personality science that helps us understand why certain dishes resonate with certain people. Whether you're here for the food, the psychology, or both — you're in the right place.",
+                article7Title: "Introverts vs. Extroverts: How Personality Shapes Your Filipino Food Experience",
+                article7Desc: "Are you an introvert who finds comfort in a private bowl of Sinigang, or an extravert who needs a full boodle fight to feel alive? Explore how your energy source fundamentally shapes the way you eat, cook, and share food in Filipino culture.",
+                article6Title: "Why Filipinos Share Food: The Deep Cultural Roots of Philippine Hospitality",
+                article6Desc: "What does 'Kumain ka na ba?' really mean? Explore the cultural philosophy behind Filipino food sharing — from bayanihan and kamayan to padala and the fiesta table — and why food has always been the Filipino language of love.",
+                article5Title: "16 Filipino Dishes Matched to 16 Personality Types: The Complete Guide",
+                article5Desc: "A deep dive into all 16 Filipino dish and MBTI personality pairings — why Kare-Kare is INFJ, why Lechon is ENTJ, why Adobo is ISTJ, and the cultural and psychological threads that make each match meaningful.",
+                article4Title: "What Your MBTI Type Says About How You Eat",
+                article4Desc: "Personality science meets your dinner plate. Discover how each of the four MBTI dimensions — Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving — shapes your food preferences, dining habits, and relationship with Filipino cuisine.",
                 article1Title: "The Complete Guide to Filipino Food Culture",
                 article1Desc: "From ancient preservation techniques to modern culinary innovations, explore the rich tapestry of Filipino cuisine. Learn about regional specialties, dining traditions, and the cultural significance of food in Philippine life.",
                 article2Title: "How Your Personality Type Shapes Your Food Preferences",
@@ -127,6 +178,16 @@
             tl: {
                 blogTitle: "Ang Aming Blog",
                 blogSubtitle: "Pagkaing Pilipino, Personality at Kultura",
+                latestArticlesTitle: "Pinakabagong Artikulo",
+                blogIntro: "Maligayang pagdating sa blog ng Pinoy Food Personality Test — ang iyong tahanan para sa malalim na pagsisiyasat ng kulturang pagkain ng Pilipino, personality psychology, at ang mga kamangha-manghang koneksyon sa pagitan ng kung sino ka at kung ano ang kinakain mo.",
+                article7Title: "Introvert vs. Extravert: Paano Hinuhubog ng Personality ang Filipino Food Experience Mo",
+                article7Desc: "Ikaw ba ay isang introvert na naghahanap ng ginhawa sa isang pribadong bowl ng Sinigang, o isang extravert na kailangan ng buong boodle fight para mabuhay? Tuklasin kung paano hinuhubog ng energy source mo ang paraan ng iyong pagkain.",
+                article6Title: "Bakit Nagbabahagi ng Pagkain ang mga Pilipino: Ang Malalim na Ugat ng Philippine Hospitality",
+                article6Desc: "Ano talaga ang ibig sabihin ng 'Kumain ka na ba?' Tuklasin ang cultural philosophy sa likod ng food sharing ng mga Pilipino — mula sa bayanihan at kamayan hanggang sa padala at fiesta table.",
+                article5Title: "16 Filipino Dishes na Nakatugma sa 16 Personality Types: Ang Kumpletong Gabay",
+                article5Desc: "Isang malalim na pagsisiyasat sa lahat ng 16 Filipino dish at MBTI personality pairings — bakit ang Kare-Kare ay INFJ, bakit ang Lechon ay ENTJ, at kung bakit ang Adobo ay ISTJ.",
+                article4Title: "Ano ang Sinasabi ng MBTI Type Mo Tungkol sa Paraan ng Pagkain Mo",
+                article4Desc: "Nakakatugma ang personality science sa iyong plato. Tuklasin kung paano hinuhubog ng apat na MBTI dimensions ang iyong food preferences, dining habits, at relasyon sa Filipino cuisine.",
                 article1Title: "Ang Kumpletong Gabay sa Kulturang Pagkain ng Pilipino",
                 article1Desc: "Mula sa sinaunang preservation techniques hanggang sa modernong culinary innovations, tuklasin ang rich tapestry ng Filipino cuisine. Alamin ang regional specialties, dining traditions, at cultural significance ng pagkain sa buhay Pilipino.",
                 article2Title: "Paano Hinuhubog ng Personality Type Mo ang Food Preferences Mo",
@@ -144,6 +205,16 @@
             const t = blogText[curLang];
             document.getElementById('blog-title').innerText = t.blogTitle;
             document.getElementById('blog-subtitle').innerText = t.blogSubtitle;
+            document.getElementById('latest-articles-title').innerText = t.latestArticlesTitle;
+            document.getElementById('blog-intro').innerText = t.blogIntro;
+            document.getElementById('article7-title').innerText = t.article7Title;
+            document.getElementById('article7-desc').innerText = t.article7Desc;
+            document.getElementById('article6-title').innerText = t.article6Title;
+            document.getElementById('article6-desc').innerText = t.article6Desc;
+            document.getElementById('article5-title').innerText = t.article5Title;
+            document.getElementById('article5-desc').innerText = t.article5Desc;
+            document.getElementById('article4-title').innerText = t.article4Title;
+            document.getElementById('article4-desc').innerText = t.article4Desc;
             document.getElementById('article1-title').innerText = t.article1Title;
             document.getElementById('article1-desc').innerText = t.article1Desc;
             document.getElementById('article2-title').innerText = t.article2Title;
