@@ -906,3 +906,15 @@
     display: block;
     margin-top: 3px;
 }
+
+/* Dish photography */
+.food-hero { margin: 0 0 16px; }
+.food-figure { margin: 14px 0 6px; }
+.food-hero img,
+.food-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
