@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /backup/
+Disallow: /loading.html
+Disallow: /result.html
+Disallow: /privacy-policy.html
 Sitemap: https://pinoyfoodtest.com/sitemap.xml

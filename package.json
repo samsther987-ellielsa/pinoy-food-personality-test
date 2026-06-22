@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "vercel": "^50.37.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "build": "echo \"Static site: no build step required\"",
+    "test": "playwright test --project=chromium"
   }
 }

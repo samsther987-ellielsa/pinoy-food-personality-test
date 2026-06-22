@@ -168,10 +168,15 @@ function playResultSound(mbti) {
     }
 }
 
+function getResultShareUrl(mbti) {
+    const type = String(mbti || '').trim().toLowerCase();
+    return `${window.location.origin}/results/${type}.html`;
+}
+
 function shareResult() {
     const urlParams = new URLSearchParams(window.location.search);
     const mbti = urlParams.get('mbti');
-    const shareUrl = window.location.origin + `/result.html?mbti=${mbti}`;
+    const shareUrl = getResultShareUrl(mbti);
     navigator.clipboard.writeText(shareUrl).then(() => {
         alert((curLang === 'en') ? "Result link copied to clipboard!" : "Na-copy na ang link!");
     });
@@ -180,7 +185,7 @@ function shareResult() {
 function shareToFacebook() {
     const urlParams = new URLSearchParams(window.location.search);
     const mbti = urlParams.get('mbti');
-    const shareUrl = window.location.origin + `/result.html?mbti=${mbti}`;
+    const shareUrl = getResultShareUrl(mbti);
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
 }
 
