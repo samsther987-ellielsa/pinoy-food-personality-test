@@ -70,3 +70,15 @@ test('every result page shows its dish hero photo', async ({ page }) => {
     expect(loaded, `${type}: hero image actually loads`).toBe(true);
   }
 });
+
+test('food guide shows all 16 dish photos', async ({ page }) => {
+  await page.goto('/food-guide.html');
+  const imgs = page.locator('figure.food-figure img');
+  await expect(imgs).toHaveCount(16);
+  const count = await imgs.count();
+  for (let i = 0; i < count; i++) {
+    await imgs.nth(i).scrollIntoViewIfNeeded();
+    const loaded = await imgs.nth(i).evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0);
+    expect(loaded, `food-guide image #${i + 1} loads`).toBe(true);
+  }
+});
