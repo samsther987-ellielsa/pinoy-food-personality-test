@@ -59,3 +59,14 @@ test('all result pages have valid JSON-LD structured data', async ({ page }) => 
     }
   }
 });
+
+test('every result page shows its dish hero photo', async ({ page }) => {
+  for (const type of MBTI_TYPES) {
+    await page.goto(`/results/${type}.html`);
+    const img = page.locator('figure.food-hero img');
+    await expect(img, `${type}: hero image present`).toHaveCount(1);
+    await expect(img).toHaveAttribute('alt', /\w{8,}/);
+    const loaded = await img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0);
+    expect(loaded, `${type}: hero image actually loads`).toBe(true);
+  }
+});
