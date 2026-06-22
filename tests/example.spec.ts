@@ -40,3 +40,22 @@ test('legacy result URL redirects to static result page', async ({ page }) => {
   await page.waitForURL(/\/results\/intj\.html$/);
   await expect(page.getByRole('heading', { level: 1, name: /Kapeng Barako/i })).toBeVisible();
 });
+
+const MBTI_TYPES = [
+  'intj', 'intp', 'entj', 'entp', 'infj', 'infp', 'enfj', 'enfp',
+  'istj', 'isfj', 'estj', 'esfj', 'istp', 'isfp', 'estp', 'esfp',
+];
+
+test('all result pages have valid JSON-LD structured data', async ({ page }) => {
+  for (const type of MBTI_TYPES) {
+    await page.goto(`/results/${type}.html`);
+    const blocks = await page
+      .locator('script[type="application/ld+json"]')
+      .allTextContents();
+
+    expect(blocks.length, `${type}: expected at least one JSON-LD block`).toBeGreaterThan(0);
+    for (const [i, raw] of blocks.entries()) {
+      expect(() => JSON.parse(raw), `${type} JSON-LD block #${i + 1} must be valid JSON`).not.toThrow();
+    }
+  }
+});
