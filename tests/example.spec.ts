@@ -82,3 +82,29 @@ test('food guide shows all 16 dish photos', async ({ page }) => {
     expect(loaded, `food-guide image #${i + 1} loads`).toBe(true);
   }
 });
+
+const RECIPES = ['adobo', 'sinigang', 'kare-kare', 'lumpia', 'pancit-canton', 'champorado'];
+
+test('recipe pages have ingredients, steps, and valid Recipe JSON-LD', async ({ page }) => {
+  for (const r of RECIPES) {
+    await page.goto(`/recipes/${r}.html`);
+    await expect(page.locator('.recipe-ingredients li').first()).toBeVisible();
+    await expect(page.locator('.recipe-steps li').first()).toBeVisible();
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    for (const b of blocks) {
+      expect(() => JSON.parse(b), `${r}: JSON-LD parses`).not.toThrow();
+    }
+    const hasRecipe = blocks.some((b) => {
+      try { return JSON.parse(b)['@type'] === 'Recipe'; } catch { return false; }
+    });
+    expect(hasRecipe, `${r}: has Recipe JSON-LD`).toBe(true);
+  }
+});
+
+test('recipes hub lists all recipes', async ({ page }) => {
+  await page.goto('/recipes.html');
+  await expect(page.getByRole('heading', { level: 1, name: /Filipino Recipes/i })).toBeVisible();
+  for (const r of RECIPES) {
+    await expect(page.locator(`a[href="recipes/${r}.html"]`).first()).toBeVisible();
+  }
+});
