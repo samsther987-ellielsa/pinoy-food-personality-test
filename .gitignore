@@ -12,3 +12,7 @@ node_modules/
 
 # macOS
 .DS_Store
+
+# Local MCP / editor tooling (not part of the site)
+.mcp.json
+.vscode/
