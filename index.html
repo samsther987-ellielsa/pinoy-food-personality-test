@@ -129,7 +129,7 @@
     <div class="intro-section" id="intro-section">
         <div class="info-box">
             <h3 id="intro-title">What is Pinoy Food Personality Test?</h3>
-            <p id="intro-desc">Pinoy Food Personality Test is a fun, interactive quiz that connects your MBTI personality type to a Filipino dish that matches your soul. Based on the Myers-Briggs Type Indicator framework, we pair each of the 16 personality types with an iconic Filipino food — from bold Sisig to comforting Sinigang. Plus, discover your K-Pop and K-Drama character twin!</p>
+            <p id="intro-desc">Pinoy Food Personality Test is your playful guide to Filipino food and culture. Cook real recipes for classics like Adobo and Sinigang, explore our Filipino Food Guide and blog, and — just for fun — take the personality quiz that matches your MBTI type to an iconic Filipino dish (plus your K-Pop and K-Drama twin!).</p>
         </div>
     </div>
 
@@ -188,6 +188,23 @@
                     <span class="popular-food">Sisig</span>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Cook It Yourself: Recipes -->
+    <div class="intro-section" id="recipes-section">
+        <div class="info-box">
+            <h3 id="recipes-title">Cook It Yourself: Filipino Recipes</h3>
+            <p id="recipes-desc">Beyond the quiz — real, step-by-step recipes for the iconic Filipino dishes on this site. Start with these classics:</p>
+            <div class="recipe-grid">
+                <a href="recipes/adobo.html"><img src="images/dishes/adobo.jpg" width="1000" height="667" alt="Chicken adobo" loading="lazy"><span>Chicken Adobo</span></a>
+                <a href="recipes/sinigang.html"><img src="images/dishes/sinigang.jpg" width="1000" height="667" alt="Pork sinigang" loading="lazy"><span>Pork Sinigang</span></a>
+                <a href="recipes/kare-kare.html"><img src="images/dishes/kare-kare.jpg" width="1000" height="667" alt="Kare-kare" loading="lazy"><span>Kare-Kare</span></a>
+                <a href="recipes/lumpia.html"><img src="images/dishes/lumpia.jpg" width="1000" height="667" alt="Lumpiang Shanghai" loading="lazy"><span>Lumpiang Shanghai</span></a>
+                <a href="recipes/pancit-canton.html"><img src="images/dishes/pancit-canton.jpg" width="1000" height="667" alt="Pancit canton" loading="lazy"><span>Pancit Canton</span></a>
+                <a href="recipes/champorado.html"><img src="images/dishes/champorado.jpg" width="1000" height="667" alt="Champorado" loading="lazy"><span>Champorado</span></a>
+            </div>
+            <p style="margin-top:14px;"><a href="recipes.html" style="font-weight:600;">See all recipes →</a></p>
         </div>
     </div>
 
@@ -318,7 +335,9 @@
         const indexText = {
             en: {
                 introTitle: "What is Pinoy Food Personality Test?",
-                introDesc: "Pinoy Food Personality Test is a fun, interactive quiz that connects your MBTI personality type to a Filipino dish that matches your soul. Based on the Myers-Briggs Type Indicator framework, we pair each of the 16 personality types with an iconic Filipino food — from bold Sisig to comforting Sinigang. Plus, discover your K-Pop and K-Drama character twin!",
+                introDesc: "Pinoy Food Personality Test is your playful guide to Filipino food and culture. Cook real recipes for classics like Adobo and Sinigang, explore our Filipino Food Guide and blog, and — just for fun — take the personality quiz that matches your MBTI type to an iconic Filipino dish (plus your K-Pop and K-Drama twin!).",
+                recipesTitle: "Cook It Yourself: Filipino Recipes",
+                recipesDesc: "Beyond the quiz — real, step-by-step recipes for the iconic Filipino dishes on this site. Start with these classics:",
                 howTitle: "How It Works",
                 step1Title: "Answer 16 Fun Questions",
                 step1Desc: "Quick personality questions about your daily habits, preferences, and social style.",
@@ -347,7 +366,9 @@
             },
             tl: {
                 introTitle: "Ano ang Pinoy Food Personality Test?",
-                introDesc: "Ang Pinoy Food Personality Test ay isang masaya at interactive na quiz na nag-uugnay ng iyong MBTI personality type sa isang Filipino dish na tugma sa iyong pagkatao. Gamit ang Myers-Briggs Type Indicator framework, ini-match namin ang bawat isa sa 16 na personality types sa iconic na Filipino food — mula sa matapang na Sisig hanggang sa nakakaaliw na Sinigang. Bonus: alamin din ang iyong K-Pop at K-Drama character twin!",
+                introDesc: "Ang Pinoy Food Personality Test ang iyong masayang gabay sa pagkain at kultura ng Pilipinas. Lutuin ang totoong recipe ng mga klasiko tulad ng Adobo at Sinigang, tuklasin ang aming Filipino Food Guide at blog, at — para sa saya — subukan ang personality quiz na tumutugma sa iyong MBTI type sa isang iconic na Filipino dish (kasama ang iyong K-Pop at K-Drama twin!).",
+                recipesTitle: "Lutuin Mo Mismo: Filipino Recipes",
+                recipesDesc: "Higit pa sa quiz — totoong hakbang-hakbang na recipe para sa mga iconic na Filipino dish sa site na ito. Simulan sa mga klasikong ito:",
                 howTitle: "Paano Gumagana",
                 step1Title: "Sagutin ang 16 na Tanong",
                 step1Desc: "Mabilisang personality questions tungkol sa iyong mga gawi, preference, at social style.",
@@ -401,6 +422,8 @@
             document.getElementById('faq-a4').innerHTML = t.faqA4;
             document.getElementById('popular-title').innerText = t.popularTitle;
             document.getElementById('popular-desc').innerText = t.popularDesc;
+            document.getElementById('recipes-title').innerText = t.recipesTitle;
+            document.getElementById('recipes-desc').innerText = t.recipesDesc;
             document.getElementById('blog-preview-title').innerText = t.blogPreviewTitle;
             document.getElementById('bp-article1').innerText = t.bpArticle1;
             document.getElementById('bp-article1-desc').innerText = t.bpArticle1Desc;
