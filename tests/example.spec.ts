@@ -94,10 +94,15 @@ test('recipe pages have ingredients, steps, and valid Recipe JSON-LD', async ({ 
     for (const b of blocks) {
       expect(() => JSON.parse(b), `${r}: JSON-LD parses`).not.toThrow();
     }
-    const hasRecipe = blocks.some((b) => {
-      try { return JSON.parse(b)['@type'] === 'Recipe'; } catch { return false; }
-    });
-    expect(hasRecipe, `${r}: has Recipe JSON-LD`).toBe(true);
+    const recipe = blocks.map((b) => { try { return JSON.parse(b); } catch { return null; } })
+      .find((o) => o && o['@type'] === 'Recipe');
+    expect(recipe, `${r}: has Recipe JSON-LD`).toBeTruthy();
+    // Google Search Console: every HowToStep needs name + url + text
+    for (const [i, step] of (recipe.recipeInstructions || []).entries()) {
+      expect(step.name, `${r} step ${i + 1}: name`).toBeTruthy();
+      expect(step.text, `${r} step ${i + 1}: text`).toBeTruthy();
+      expect(step.url, `${r} step ${i + 1}: url`).toMatch(/#step\d+$/);
+    }
   }
 });
 
