@@ -1,0 +1,11 @@
+# Repo files that are not part of the published site.
+# Without this, Vercel deploys every git-tracked file, making internal
+# planning docs and logs publicly reachable.
+
+docs/
+tests/
+scripts/
+.github/
+*.md
+*.ts
+*.log
