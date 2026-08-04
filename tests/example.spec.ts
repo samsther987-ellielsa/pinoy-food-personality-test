@@ -113,3 +113,25 @@ test('recipes hub lists all recipes', async ({ page }) => {
     await expect(page.locator(`a[href="recipes/${r}.html"]`).first()).toBeVisible();
   }
 });
+
+test('food guide links to all 16 result pages, and the language toggle rewrites them', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+
+  await page.goto('/food-guide.html');
+  const links = page.locator('a.dish-result-link');
+  await expect(links).toHaveCount(MBTI_TYPES.length);
+
+  for (const t of MBTI_TYPES) {
+    await expect(page.locator(`a.dish-result-link[href="results/${t}.html"]`)).toHaveCount(1);
+  }
+
+  // Every result page must be reachable by a static link, not sitemap-only.
+  const first = links.first();
+  await expect(first).toHaveText(/See the full ISTJ profile/);
+
+  await page.getByRole('button', { name: /Eng|Tag/i }).click();
+  await expect(first).toHaveText(/Tingnan ang buong profile ng ISTJ/);
+
+  expect(errors, 'no JS errors during language toggle').toEqual([]);
+});
