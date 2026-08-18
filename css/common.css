@@ -938,3 +938,8 @@
 .dish-result-cta { margin: 8px 0 22px; }
 .dish-result-link { font-weight: 600; color: var(--primary, #e63946); text-decoration: none; }
 .dish-result-link:hover { text-decoration: underline; }
+
+/* Homepage hero secondary links */
+.hero-links { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; }
+.hero-links a { font-weight: 600; font-size: 0.95rem; color: var(--text-secondary, #666); text-decoration: none; border-bottom: 1px solid transparent; }
+.hero-links a:hover { color: var(--primary, #e63946); border-bottom-color: currentColor; }

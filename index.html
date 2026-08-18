@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinoy Food Personality Test: Discover Your Soul Food & K-Pop Twin!</title>
-    <meta name="description" content="Discover your Pinoy food personality and K-Pop twin with this fun and engaging personality test. Find out if you're a bold Sisig, a comforting Sinigang, or a sweet Halo-Halo!">
+    <meta name="description" content="Filipino recipes, a guide to 16 iconic dishes, and writing on Philippine food culture — from adobo's regional variations to hosting a kamayan. Plus a personality quiz that matches your MBTI type to a dish.">
     <link rel="canonical" href="https://pinoyfoodtest.com/">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <meta property="og:url" content="https://pinoyfoodtest.com/">
@@ -50,10 +50,10 @@
         },
         {
           "@type": "Question",
-          "name": "How many questions are in the Pinoy Food Personality Test?",
+          "name": "Which Filipino dishes have full recipes on this site?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The test consists of 16 questions — 4 for each MBTI dimension. Questions are randomly selected from a pool of 48 for a fresh experience each time you take the test."
+            "text": "Six so far, with complete ingredient lists and step-by-step instructions: Chicken Adobo, Pork Sinigang, Kare-Kare, Lumpiang Shanghai, Pancit Canton, and Champorado. The other ten dishes on the site have detailed profiles in the Filipino Food Guide."
           }
         },
         {
@@ -123,14 +123,55 @@
             <p class="subtitle" id="subtitle-text">Discover your soul food & K-Pop twin!</p>
             <div id="start-screen-emoji">🍛</div>
             <button class="btn btn-start" onclick="location.href='quiz.html'" id="start-btn">Let's Eat! (Start)</button>
+            <p class="hero-links">
+                <a href="recipes.html" id="hero-link-recipes">Filipino Recipes</a>
+                <a href="food-guide.html" id="hero-link-guide">Food Guide</a>
+                <a href="blog.html" id="hero-link-blog">Blog</a>
+            </p>
         </div>
     </div>
 
     <!-- Intro Section -->
     <div class="intro-section" id="intro-section">
         <div class="info-box">
-            <h3 id="intro-title">What is Pinoy Food Personality Test?</h3>
-            <p id="intro-desc">Pinoy Food Personality Test is your playful guide to Filipino food and culture. Cook real recipes for classics like Adobo and Sinigang, explore our Filipino Food Guide and blog, and — just for fun — take the personality quiz that matches your MBTI type to an iconic Filipino dish (plus your K-Pop and K-Drama twin!).</p>
+            <h3 id="intro-title">Filipino Food, Cooked and Explained</h3>
+            <p id="intro-desc">Pinoy Food Test is a Filipino food site. It has step-by-step recipes for classics like Adobo, Sinigang and Kare-Kare, a guide to 16 iconic dishes, and long-form writing on Philippine food culture — why sinigang has a dozen regional souring agents, how to host a kamayan, what the superstitions around the dinner table actually mean. And, just for fun, a personality quiz that matches your MBTI type to a dish.</p>
+        </div>
+    </div>
+
+    <!-- Cook It Yourself: Recipes -->
+    <div class="intro-section" id="recipes-section">
+        <div class="info-box">
+            <h3 id="recipes-title">Cook It Yourself: Filipino Recipes</h3>
+            <p id="recipes-desc">Real, step-by-step recipes for the iconic Filipino dishes on this site — ingredient lists, timings, and the small details that decide whether it tastes right. Start with these classics:</p>
+            <div class="recipe-grid">
+                <a href="recipes/adobo.html"><img src="images/dishes/adobo.jpg" width="1000" height="667" alt="Chicken adobo" loading="lazy"><span>Chicken Adobo</span></a>
+                <a href="recipes/sinigang.html"><img src="images/dishes/sinigang.jpg" width="1000" height="667" alt="Pork sinigang" loading="lazy"><span>Pork Sinigang</span></a>
+                <a href="recipes/kare-kare.html"><img src="images/dishes/kare-kare.jpg" width="1000" height="667" alt="Kare-kare" loading="lazy"><span>Kare-Kare</span></a>
+                <a href="recipes/lumpia.html"><img src="images/dishes/lumpia.jpg" width="1000" height="667" alt="Lumpiang Shanghai" loading="lazy"><span>Lumpiang Shanghai</span></a>
+                <a href="recipes/pancit-canton.html"><img src="images/dishes/pancit-canton.jpg" width="1000" height="667" alt="Pancit canton" loading="lazy"><span>Pancit Canton</span></a>
+                <a href="recipes/champorado.html"><img src="images/dishes/champorado.jpg" width="1000" height="667" alt="Champorado" loading="lazy"><span>Champorado</span></a>
+            </div>
+            <p style="margin-top:14px;"><a href="recipes.html" style="font-weight:600;">See all recipes →</a></p>
+        </div>
+    </div>
+
+    <!-- Latest from Our Blog -->
+    <div class="intro-section" id="blog-preview-section">
+        <div class="info-box">
+            <h3 id="blog-preview-title">Latest from Our Blog</h3>
+            <div class="blog-card">
+                <h3><a href="blog/introverts-extroverts-filipino-food.html" id="bp-article1">Introverts vs. Extroverts: How Personality Shapes Your Filipino Food Experience</a></h3>
+                <p id="bp-article1-desc">Are you a solo-Sinigang introvert or a boodle-fight extravert? Explore how your energy type shapes the way you eat.</p>
+            </div>
+            <div class="blog-card">
+                <h3><a href="blog/why-filipinos-love-sharing-food.html" id="bp-article2">Why Filipinos Share Food: The Deep Cultural Roots of Philippine Hospitality</a></h3>
+                <p id="bp-article2-desc">What does "Kumain ka na ba?" really mean? The cultural philosophy behind Filipino food sharing.</p>
+            </div>
+            <div class="blog-card">
+                <h3><a href="blog/16-filipino-dishes-personality-guide.html" id="bp-article3">16 Filipino Dishes Matched to 16 Personality Types: The Complete Guide</a></h3>
+                <p id="bp-article3-desc">A deep dive into every food-personality pairing and why each match works.</p>
+            </div>
         </div>
     </div>
 
@@ -192,43 +233,7 @@
         </div>
     </div>
 
-    <!-- Cook It Yourself: Recipes -->
-    <div class="intro-section" id="recipes-section">
-        <div class="info-box">
-            <h3 id="recipes-title">Cook It Yourself: Filipino Recipes</h3>
-            <p id="recipes-desc">Beyond the quiz — real, step-by-step recipes for the iconic Filipino dishes on this site. Start with these classics:</p>
-            <div class="recipe-grid">
-                <a href="recipes/adobo.html"><img src="images/dishes/adobo.jpg" width="1000" height="667" alt="Chicken adobo" loading="lazy"><span>Chicken Adobo</span></a>
-                <a href="recipes/sinigang.html"><img src="images/dishes/sinigang.jpg" width="1000" height="667" alt="Pork sinigang" loading="lazy"><span>Pork Sinigang</span></a>
-                <a href="recipes/kare-kare.html"><img src="images/dishes/kare-kare.jpg" width="1000" height="667" alt="Kare-kare" loading="lazy"><span>Kare-Kare</span></a>
-                <a href="recipes/lumpia.html"><img src="images/dishes/lumpia.jpg" width="1000" height="667" alt="Lumpiang Shanghai" loading="lazy"><span>Lumpiang Shanghai</span></a>
-                <a href="recipes/pancit-canton.html"><img src="images/dishes/pancit-canton.jpg" width="1000" height="667" alt="Pancit canton" loading="lazy"><span>Pancit Canton</span></a>
-                <a href="recipes/champorado.html"><img src="images/dishes/champorado.jpg" width="1000" height="667" alt="Champorado" loading="lazy"><span>Champorado</span></a>
-            </div>
-            <p style="margin-top:14px;"><a href="recipes.html" style="font-weight:600;">See all recipes →</a></p>
-        </div>
-    </div>
-
-    <!-- Latest from Our Blog -->
-    <div class="intro-section" id="blog-preview-section">
-        <div class="info-box">
-            <h3 id="blog-preview-title">Latest from Our Blog</h3>
-            <div class="blog-card">
-                <h3><a href="blog/introverts-extroverts-filipino-food.html" id="bp-article1">Introverts vs. Extroverts: How Personality Shapes Your Filipino Food Experience</a></h3>
-                <p id="bp-article1-desc">Are you a solo-Sinigang introvert or a boodle-fight extravert? Explore how your energy type shapes the way you eat.</p>
-            </div>
-            <div class="blog-card">
-                <h3><a href="blog/why-filipinos-love-sharing-food.html" id="bp-article2">Why Filipinos Share Food: The Deep Cultural Roots of Philippine Hospitality</a></h3>
-                <p id="bp-article2-desc">What does "Kumain ka na ba?" really mean? The cultural philosophy behind Filipino food sharing.</p>
-            </div>
-            <div class="blog-card">
-                <h3><a href="blog/16-filipino-dishes-personality-guide.html" id="bp-article3">16 Filipino Dishes Matched to 16 Personality Types: The Complete Guide</a></h3>
-                <p id="bp-article3-desc">A deep dive into every food-personality pairing and why each match works.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ Section -->
+        <!-- FAQ Section -->
     <div class="intro-section">
         <div class="info-box">
             <div class="faq-section" id="faq-section">
@@ -240,9 +245,9 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" id="faq-q2" onclick="toggleFaq(this)">How many questions are there?</button>
+                    <button class="faq-question" id="faq-q2" onclick="toggleFaq(this)">Which Filipino dishes have full recipes?</button>
                     <div class="faq-answer">
-                        <p id="faq-a2">The test consists of 16 questions — 4 for each MBTI dimension. Questions are randomly selected from a pool of 48 for a fresh experience each time you take the test.</p>
+                        <p id="faq-a2">Six so far, with complete ingredient lists and step-by-step instructions: Chicken Adobo, Pork Sinigang, Kare-Kare, Lumpiang Shanghai, Pancit Canton, and Champorado. The other ten dishes on the site have detailed profiles in the Filipino Food Guide.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -336,10 +341,10 @@
         // Bilingual support for new sections
         const indexText = {
             en: {
-                introTitle: "What is Pinoy Food Personality Test?",
-                introDesc: "Pinoy Food Personality Test is your playful guide to Filipino food and culture. Cook real recipes for classics like Adobo and Sinigang, explore our Filipino Food Guide and blog, and — just for fun — take the personality quiz that matches your MBTI type to an iconic Filipino dish (plus your K-Pop and K-Drama twin!).",
+                introTitle: "Filipino Food, Cooked and Explained",
+                introDesc: "Pinoy Food Test is a Filipino food site. It has step-by-step recipes for classics like Adobo, Sinigang and Kare-Kare, a guide to 16 iconic dishes, and long-form writing on Philippine food culture — why sinigang has a dozen regional souring agents, how to host a kamayan, what the superstitions around the dinner table actually mean. And, just for fun, a personality quiz that matches your MBTI type to a dish.",
                 recipesTitle: "Cook It Yourself: Filipino Recipes",
-                recipesDesc: "Beyond the quiz — real, step-by-step recipes for the iconic Filipino dishes on this site. Start with these classics:",
+                recipesDesc: "Real, step-by-step recipes for the iconic Filipino dishes on this site — ingredient lists, timings, and the small details that decide whether it tastes right. Start with these classics:",
                 howTitle: "How It Works",
                 step1Title: "Answer 16 Fun Questions",
                 step1Desc: "Quick personality questions about your daily habits, preferences, and social style.",
@@ -350,8 +355,8 @@
                 faqTitle: "Frequently Asked Questions",
                 faqQ1: "Is this test scientifically accurate?",
                 faqA1: "This test is designed for entertainment and cultural celebration. While it uses the MBTI framework's four dimensions, it is not a clinical psychological assessment. Think of it as a fun way to explore personality through the lens of Filipino cuisine!",
-                faqQ2: "How many questions are there?",
-                faqA2: "The test consists of 16 questions — 4 for each MBTI dimension. Questions are randomly selected from a pool of 48 for a fresh experience each time you take the test.",
+                faqQ2: "Which Filipino dishes have full recipes?",
+                faqA2: "Six so far, with complete ingredient lists and step-by-step instructions: Chicken Adobo, Pork Sinigang, Kare-Kare, Lumpiang Shanghai, Pancit Canton, and Champorado. The other ten dishes on the site have detailed profiles in the Filipino Food Guide.",
                 faqQ3: "What Filipino foods are included?",
                 faqA3: "We feature 16 iconic Filipino dishes including Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Pancit Canton, Taho, Balut, Kinilaw, Buko Pie, Isaw, and Crispy Pata — one for each MBTI type!",
                 faqQ4: "Is my data saved or shared?",
@@ -364,13 +369,16 @@
                 bpArticle2: "Why Filipinos Share Food: The Deep Cultural Roots of Philippine Hospitality",
                 bpArticle2Desc: "What does 'Kumain ka na ba?' really mean? The cultural philosophy behind Filipino food sharing.",
                 bpArticle3: "16 Filipino Dishes Matched to 16 Personality Types: The Complete Guide",
-                bpArticle3Desc: "A deep dive into every food-personality pairing and why each match works."
+                bpArticle3Desc: "A deep dive into every food-personality pairing and why each match works.",
+                heroLinkRecipes: "Filipino Recipes",
+                heroLinkGuide: "Food Guide",
+                heroLinkBlog: "Blog"
             },
             tl: {
-                introTitle: "Ano ang Pinoy Food Personality Test?",
-                introDesc: "Ang Pinoy Food Personality Test ang iyong masayang gabay sa pagkain at kultura ng Pilipinas. Lutuin ang totoong recipe ng mga klasiko tulad ng Adobo at Sinigang, tuklasin ang aming Filipino Food Guide at blog, at — para sa saya — subukan ang personality quiz na tumutugma sa iyong MBTI type sa isang iconic na Filipino dish (kasama ang iyong K-Pop at K-Drama twin!).",
+                introTitle: "Pagkaing Pilipino, Niluto at Ipinaliwanag",
+                introDesc: "Ang Pinoy Food Test ay isang site tungkol sa pagkaing Pilipino. May hakbang-hakbang na recipe para sa mga klasiko tulad ng Adobo, Sinigang at Kare-Kare, isang gabay sa 16 iconic na ulam, at malalimang sulatin tungkol sa kultura ng pagkain sa Pilipinas — kung bakit may sampung rehiyonal na pampaasim ang sinigang, paano mag-host ng kamayan, at ano talaga ang ibig sabihin ng mga pamahiin sa hapag. At, para sa saya, isang personality quiz na tumutugma sa MBTI type mo sa isang ulam.",
                 recipesTitle: "Lutuin Mo Mismo: Filipino Recipes",
-                recipesDesc: "Higit pa sa quiz — totoong hakbang-hakbang na recipe para sa mga iconic na Filipino dish sa site na ito. Simulan sa mga klasikong ito:",
+                recipesDesc: "Totoong hakbang-hakbang na recipe para sa mga iconic na Filipino dish sa site na ito — listahan ng sangkap, timing, at ang maliliit na detalye na nagpapasya kung tama ang lasa. Simulan sa mga klasikong ito:",
                 howTitle: "Paano Gumagana",
                 step1Title: "Sagutin ang 16 na Tanong",
                 step1Desc: "Mabilisang personality questions tungkol sa iyong mga gawi, preference, at social style.",
@@ -381,8 +389,8 @@
                 faqTitle: "Mga Madalas na Tanong",
                 faqQ1: "Siyentipiko ba ang test na ito?",
                 faqA1: "Ang test na ito ay para sa entertainment at cultural celebration. Bagama't gumagamit ito ng MBTI framework, hindi ito clinical psychological assessment. Isipin mo itong masayang paraan para i-explore ang personality sa pamamagitan ng Filipino cuisine!",
-                faqQ2: "Ilan ang mga tanong?",
-                faqA2: "Ang test ay binubuo ng 16 na tanong — 4 para sa bawat MBTI dimension. Random ang pagpili ng mga tanong mula sa 48 para fresh ang experience sa bawat pagkuha ng test.",
+                faqQ2: "Aling mga Filipino dish ang may buong recipe?",
+                faqA2: "Anim sa ngayon, kumpleto ang listahan ng sangkap at hakbang-hakbang na instructions: Chicken Adobo, Pork Sinigang, Kare-Kare, Lumpiang Shanghai, Pancit Canton, at Champorado. Ang sampung iba pang ulam sa site ay may detalyadong profile sa Filipino Food Guide.",
                 faqQ3: "Anong mga Filipino food ang kasama?",
                 faqA3: "May 16 iconic na Filipino dish kami kabilang ang Adobo, Sinigang, Lechon, Halo-Halo, Sisig, Kare-Kare, Lumpia, Champorado, Kapeng Barako, Pancit Canton, Taho, Balut, Kinilaw, Buko Pie, Isaw, at Crispy Pata — isa para sa bawat MBTI type!",
                 faqQ4: "Nase-save o nisha-share ba ang data ko?",
@@ -395,7 +403,10 @@
                 bpArticle2: "Bakit Nagbabahagi ng Pagkain ang mga Pilipino: Ang Malalim na Ugat ng Philippine Hospitality",
                 bpArticle2Desc: "Ano talaga ang ibig sabihin ng 'Kumain ka na ba?' Ang cultural philosophy sa likod ng food sharing ng mga Pilipino.",
                 bpArticle3: "16 Filipino Dishes na Nakatugma sa 16 Personality Types: Ang Kumpletong Gabay",
-                bpArticle3Desc: "Isang malalim na pagsisiyasat sa bawat food-personality pairing at kung bakit gumagana ang bawat pagtutugma."
+                bpArticle3Desc: "Isang malalim na pagsisiyasat sa bawat food-personality pairing at kung bakit gumagana ang bawat pagtutugma.",
+                heroLinkRecipes: "Mga Filipino Recipe",
+                heroLinkGuide: "Gabay sa Pagkain",
+                heroLinkBlog: "Blog"
             }
         };
 
@@ -433,6 +444,9 @@
             document.getElementById('bp-article2-desc').innerText = t.bpArticle2Desc;
             document.getElementById('bp-article3').innerText = t.bpArticle3;
             document.getElementById('bp-article3-desc').innerText = t.bpArticle3Desc;
+            document.getElementById('hero-link-recipes').innerText = t.heroLinkRecipes;
+            document.getElementById('hero-link-guide').innerText = t.heroLinkGuide;
+            document.getElementById('hero-link-blog').innerText = t.heroLinkBlog;
         };
     </script>
     <!-- Facebook App ID는 선택사항 -->

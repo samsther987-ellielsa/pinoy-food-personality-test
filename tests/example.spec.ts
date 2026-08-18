@@ -135,3 +135,56 @@ test('food guide links to all 16 result pages, and the language toggle rewrites 
 
   expect(errors, 'no JS errors during language toggle').toEqual([]);
 });
+
+const NOINDEXED_POSTS = [
+  'filipino-food-culture-guide',
+  'mbti-food-personality-connection',
+  'mbti-types-and-eating-habits',
+  'global-rise-of-filipino-food',
+];
+
+test('quiz outputs and low-value posts are noindex and absent from the sitemap', async ({ page, request }) => {
+  const sitemap = await (await request.get('/sitemap.xml')).text();
+
+  for (const t of MBTI_TYPES) {
+    await page.goto(`/results/${t}.html`);
+    await expect(
+      page.locator('meta[name="robots"]'),
+      `results/${t} must be noindex`
+    ).toHaveAttribute('content', /noindex/);
+    expect(sitemap, `results/${t} must not be in the sitemap`).not.toContain(`/results/${t}<`);
+  }
+
+  for (const slug of NOINDEXED_POSTS) {
+    await page.goto(`/blog/${slug}.html`);
+    await expect(
+      page.locator('meta[name="robots"]'),
+      `blog/${slug} must be noindex`
+    ).toHaveAttribute('content', /noindex/);
+    expect(sitemap, `blog/${slug} must not be in the sitemap`).not.toContain(`/blog/${slug}<`);
+  }
+});
+
+test('homepage leads with editorial content, and the quiz sections follow', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('/');
+
+  const order = await page.evaluate(() =>
+    ['recipes-section', 'blog-preview-section', 'how-it-works', 'popular-results-section']
+      .map((id) => document.getElementById(id)!.getBoundingClientRect().top + window.scrollY)
+  );
+  expect(order, 'recipes → blog → how-it-works → popular results').toEqual([...order].sort((a, b) => a - b));
+
+  // Hero offers content destinations, not only the quiz.
+  for (const id of ['hero-link-recipes', 'hero-link-guide', 'hero-link-blog']) {
+    await expect(page.locator(`#${id}`)).toBeVisible();
+  }
+
+  await expect(page.locator('#hero-link-recipes')).toHaveText('Filipino Recipes');
+  await page.getByRole('button', { name: /Eng|Tag/i }).click();
+  await expect(page.locator('#hero-link-recipes')).toHaveText('Mga Filipino Recipe');
+  await expect(page.locator('#faq-q2')).toHaveText(/Aling mga Filipino dish/);
+
+  expect(errors, 'no JS errors during language toggle').toEqual([]);
+});
