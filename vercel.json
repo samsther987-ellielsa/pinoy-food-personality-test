@@ -1,3 +1,50 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog/16-filipino-dishes-personality-guide",
+      "destination": "/food-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/filipino-food-culture-guide",
+      "destination": "/food-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/global-rise-of-filipino-food",
+      "destination": "/food-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mbti-food-personality-connection",
+      "destination": "/about-mbti",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mbti-types-and-eating-habits",
+      "destination": "/about-mbti",
+      "permanent": true
+    },
+    {
+      "source": "/blog/kpop-filipino-food-culture",
+      "destination": "/about-mbti",
+      "permanent": true
+    },
+    {
+      "source": "/blog/introverts-extroverts-filipino-food",
+      "destination": "/blog/how-to-host-kamayan",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-filipinos-love-sharing-food",
+      "destination": "/blog/how-to-host-kamayan",
+      "permanent": true
+    },
+    {
+      "source": "/blog/filipino-comfort-food-psychology",
+      "destination": "/blog/filipino-breakfast-guide",
+      "permanent": true
+    }
+  ]
 }

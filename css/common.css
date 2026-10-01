@@ -2,6 +2,20 @@
             box-sizing: border-box;
         }
 
+[hidden] { display: none !important; }
+main a { color: var(--accent); text-underline-offset: 2px; }
+.privacy-choices { width: 100%; max-width: 500px; margin: 16px 0; font-size: 0.85rem; line-height: 1.6; }
+.privacy-choices summary { cursor: pointer; font-weight: 600; }
+.privacy-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.privacy-actions button { font: inherit; padding: 10px 14px; color: var(--text); background: var(--card-bg); border: 1px solid var(--primary); border-radius: 8px; cursor: pointer; }
+.hero-primary { text-decoration: none; }
+.quiz-intro { width: 100%; max-width: 500px; margin-top: 20px; text-align: center; }
+.article-sources { border-top: 1px solid var(--primary); margin-top: 24px; padding-top: 12px; overflow-wrap: anywhere; }
+.content-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.85rem; text-align: left; }
+.content-table th, .content-table td { border-bottom: 1px solid var(--shadow); padding: 10px 6px; vertical-align: top; overflow-wrap: anywhere; }
+.recipe-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 12px 0; }
+.recipe-tools button { font: inherit; background: none; border: 1px solid var(--primary); border-radius: 8px; color: var(--text); padding: 8px 14px; cursor: pointer; }
+
         :root {
             --primary: #F48C06;
             --accent: #D00000;
@@ -943,3 +957,14 @@
 .hero-links { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; }
 .hero-links a { font-weight: 600; font-size: 0.95rem; color: var(--text-secondary, #666); text-decoration: none; border-bottom: 1px solid transparent; }
 .hero-links a:hover { color: var(--primary, #e63946); border-bottom-color: currentColor; }
+
+@media print {
+    body { background: white; color: black; display: block; }
+    .site-nav, .top-bar, .breadcrumb, .result-footer-links, .privacy-choices, .recipe-tools, .recipe-quiz-link { display: none; }
+    .container, .intro-section { max-width: none; width: 100%; box-shadow: none; }
+    .info-box, .container { background: white; color: black; box-shadow: none; }
+    .food-hero { display: none; }
+    .recipe-cols { display: block; }
+}
+
+#contact-form label { display: block; margin-top: 12px; text-align: left; }

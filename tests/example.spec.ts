@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 
 test('home page exposes quiz and content navigation', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Pinoy Food Personality Test/);
+  await expect(page).toHaveTitle(/Filipino Recipes and Food Guides/);
   const mainNav = page.getByLabel('Main navigation');
   await expect(mainNav.getByRole('link', { name: /Food Guide/i })).toBeVisible();
   await expect(mainNav.getByRole('link', { name: /Blog/i })).toBeVisible();
@@ -136,14 +137,10 @@ test('food guide links to all 16 result pages, and the language toggle rewrites 
   expect(errors, 'no JS errors during language toggle').toEqual([]);
 });
 
-const NOINDEXED_POSTS = [
-  'filipino-food-culture-guide',
-  'mbti-food-personality-connection',
-  'mbti-types-and-eating-habits',
-  'global-rise-of-filipino-food',
-];
+const MERGED_POSTS: { source: string; destination: string; permanent: boolean }[] =
+  JSON.parse(readFileSync('vercel.json', 'utf8')).redirects;
 
-test('quiz outputs and low-value posts are noindex and absent from the sitemap', async ({ page, request }) => {
+test('quiz outputs are noindex and merged posts redirect outside the sitemap', async ({ page, request }) => {
   const sitemap = await (await request.get('/sitemap.xml')).text();
 
   for (const t of MBTI_TYPES) {
@@ -155,13 +152,15 @@ test('quiz outputs and low-value posts are noindex and absent from the sitemap',
     expect(sitemap, `results/${t} must not be in the sitemap`).not.toContain(`/results/${t}<`);
   }
 
-  for (const slug of NOINDEXED_POSTS) {
-    await page.goto(`/blog/${slug}.html`);
-    await expect(
-      page.locator('meta[name="robots"]'),
-      `blog/${slug} must be noindex`
-    ).toHaveAttribute('content', /noindex/);
-    expect(sitemap, `blog/${slug} must not be in the sitemap`).not.toContain(`/blog/${slug}<`);
+  for (const { source, destination, permanent } of MERGED_POSTS) {
+    expect(permanent).toBe(true);
+    for (const path of [source, source + '.html']) {
+      const response = await request.get(path, { maxRedirects: 0 });
+      expect(response.status(), path).toBe(308);
+      expect(response.headers().location, path).toBe(destination);
+    }
+    expect((await request.get(destination)).ok(), destination).toBe(true);
+    expect(sitemap, `${source} must not be in the sitemap`).not.toContain(`${source}<`);
   }
 });
 

@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { createReadStream, existsSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -7,6 +7,7 @@ const root = join(fileURLToPath(new URL("..", import.meta.url)));
 const host = process.env.HOST || "127.0.0.1";
 const preferredPort = Number(process.env.PORT || 3000);
 const maxPort = preferredPort + 10;
+const redirects = JSON.parse(readFileSync(join(root, "vercel.json"), "utf8")).redirects || [];
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -24,17 +25,25 @@ function resolvePath(urlPath) {
   const cleanPath = normalize(decoded).replace(/^(\.\.[/\\])+/, "");
   const path = join(root, cleanPath === "/" ? "index.html" : cleanPath);
 
-  if (existsSync(path)) return path;
+  if (existsSync(path) && statSync(path).isFile()) return path;
   if (existsSync(`${path}.html`)) return `${path}.html`;
 
   return join(root, "404.html");
 }
 
 const server = createServer((request, response) => {
+  const url = new URL(request.url || "/", "http://localhost");
+  const redirect = redirects.find(({ source }) => source === url.pathname.replace(/\.html$/, ""));
+  if (redirect) {
+    response.writeHead(308, { Location: redirect.destination + url.search });
+    response.end();
+    return;
+  }
   const filePath = resolvePath(request.url || "/");
   const ext = extname(filePath);
 
   response.setHeader("Content-Type", contentTypes[ext] || "application/octet-stream");
+  if (filePath === join(root, "404.html")) response.statusCode = 404;
   createReadStream(filePath)
     .on("error", () => {
       response.writeHead(500);

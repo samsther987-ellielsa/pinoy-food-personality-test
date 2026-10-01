@@ -50,6 +50,13 @@ function toggleTheme() {
 
 function updateUIText() {
     const t = uiText[curLang];
+    document.documentElement.lang = curLang;
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.hidden = el.dataset.lang !== curLang;
+    });
+    document.querySelectorAll('[data-en][data-tl]').forEach(el => {
+        el.textContent = el.dataset[curLang];
+    });
     
     // 기본 요소들
     const subtitleEl = document.getElementById('subtitle-text');
@@ -74,6 +81,78 @@ function updateUIText() {
     
     const retryBtnEl = document.getElementById('retry-btn');
     if (retryBtnEl) retryBtnEl.innerText = t.retryBtn;
+}
+
+// Optional analytics is loaded only after an explicit choice. Advertising is disabled.
+function initPrivacyChoices() {
+    const analyticsId = 'G-2SJWW8WS8Y';
+    const storageKey = 'pinoy-analytics-consent';
+    let choice;
+    try { choice = localStorage.getItem(storageKey); } catch { /* No persistent preference when storage is unavailable. */ }
+    window['ga-disable-' + analyticsId] = choice !== 'granted';
+
+    const controls = document.createElement('details');
+    controls.className = 'privacy-choices';
+    controls.innerHTML = `
+        <summary data-en="Privacy choices" data-tl="Mga pagpipilian sa privacy">Privacy choices</summary>
+        <p data-en="Optional Google Analytics helps us understand visits. It stays off until you allow it. Your quiz works either way. You can change this choice here at any time."
+           data-tl="Nakakatulong ang opsyonal na Google Analytics para maunawaan ang mga pagbisita. Hindi ito gagana hangga't hindi mo pinapayagan. Gagana pa rin ang quiz sa alinmang pagpili. Maaari mong baguhin ang pagpili rito anumang oras.">Optional Google Analytics helps us understand visits. It stays off until you allow it. Your quiz works either way. You can change this choice here at any time.</p>
+        <p class="privacy-status" role="status"></p>
+        <div class="privacy-actions">
+            <button type="button" data-choice="denied" data-en="Keep analytics off" data-tl="Huwag payagan ang analytics">Keep analytics off</button>
+            <button type="button" data-choice="granted" data-en="Allow analytics" data-tl="Payagan ang analytics">Allow analytics</button>
+        </div>`;
+    document.body.appendChild(controls);
+
+    function applyChoice(next) {
+        choice = next;
+        const allowed = next === 'granted';
+        window['ga-disable-' + analyticsId] = !allowed;
+        if (allowed || window.gtag) {
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+            window.gtag('consent', window.__pinoyAnalyticsLoaded ? 'update' : 'default', {
+                analytics_storage: allowed ? 'granted' : 'denied',
+                ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+            });
+        }
+        if (allowed && !window.__pinoyAnalyticsLoaded) {
+            window.__pinoyAnalyticsLoaded = true;
+            window.gtag('js', new Date());
+            window.gtag('config', analyticsId, { allow_google_signals: false, allow_ad_personalization_signals: false });
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + analyticsId;
+            document.head.appendChild(script);
+        }
+        if (!allowed) {
+            // Remove first-party GA cookies as well as disabling subsequent measurement.
+            document.cookie.split(';').forEach(cookie => {
+                const name = cookie.split('=')[0].trim();
+                if (!/^_ga(?:_|$)/.test(name)) return;
+                for (const domain of ['', location.hostname, '.' + location.hostname]) {
+                    document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
+                }
+            });
+        }
+        const status = controls.querySelector('.privacy-status');
+        status.dataset.en = allowed ? 'Analytics is on.' : 'Analytics is off.';
+        status.dataset.tl = allowed ? 'Naka-on ang analytics.' : 'Naka-off ang analytics.';
+        status.textContent = status.dataset[curLang];
+    }
+    controls.querySelectorAll('[data-choice]').forEach(button => {
+        button.addEventListener('click', () => {
+            try { localStorage.setItem(storageKey, button.dataset.choice); } catch { /* This choice still applies to the current page. */ }
+            applyChoice(button.dataset.choice);
+        });
+    });
+    applyChoice(choice === 'granted' ? 'granted' : 'denied');
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPrivacyChoices);
+} else {
+    initPrivacyChoices();
 }
 
 // 페이지 로드시 실행

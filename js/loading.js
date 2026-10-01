@@ -1,5 +1,11 @@
 const urlParams = new URLSearchParams(window.location.search);
-const scores = JSON.parse(urlParams.get('scores') || '{}');
+let scores;
+try { scores = JSON.parse(urlParams.get('scores') || 'null'); } catch { scores = null; }
+if (!scores || !['E', 'I', 'S', 'N', 'T', 'F', 'J', 'P'].every(key =>
+    Number.isInteger(scores[key]) && scores[key] >= 0 && scores[key] <= 12)) {
+    scores = null;
+    window.location.replace('quiz.html');
+}
 
 const loadingMessages = {
     en: [
@@ -23,6 +29,7 @@ let percent = 0;
 let messageIndex = 0;
 
 function startLoading() {
+    if (!scores) return;
     const percentEl = document.getElementById('percentage');
     const fillEl = document.getElementById('loader-fill');
     const messageEl = document.getElementById('loading-messages');
@@ -55,8 +62,10 @@ function startLoading() {
             mbti += (scores.J >= scores.P) ? "J" : "P";
             
             // 결과 저장
-            localStorage.setItem('lastMBTI', mbti);
-            localStorage.setItem('lastTestDate', new Date().toISOString());
+            try {
+                localStorage.setItem('lastMBTI', mbti);
+                localStorage.setItem('lastTestDate', new Date().toISOString());
+            } catch { /* The quiz still completes when browser storage is unavailable. */ }
 
             setTimeout(() => {
                 window.location.href = `results/${mbti.toLowerCase()}.html`;
