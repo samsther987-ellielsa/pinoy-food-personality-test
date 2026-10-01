@@ -193,3 +193,31 @@ test('homepage leads with the MBTI test on mobile, with food content below', asy
 
   expect(errors, 'no JS errors during language toggle').toEqual([]);
 });
+
+test('quiz page has one h1 that names the page without showing it', async ({ page }) => {
+  await page.goto('/quiz');
+
+  const h1 = page.getByRole('heading', { level: 1 });
+  await expect(h1, 'quiz needs exactly one h1').toHaveCount(1);
+  await expect(h1).toHaveText('Pinoy Food Personality Quiz');
+
+  // Reachable by assistive tech (getByRole found it) but clipped to nothing on screen:
+  // the question, not a page title, is what a sighted reader sees.
+  const box = await h1.boundingBox();
+  expect(box!.width, 'h1 must be clipped, not laid out').toBeLessThanOrEqual(1);
+  expect(box!.height, 'h1 must be clipped, not laid out').toBeLessThanOrEqual(1);
+  await expect(page.locator('#question-text')).toBeVisible();
+
+  // Headings start at h1 and never skip a level.
+  const levels = await page.evaluate(() =>
+    [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map((h) => Number(h.tagName[1]))
+  );
+  expect(levels[0]).toBe(1);
+  levels.forEach((lvl, i) => {
+    if (i > 0) expect(lvl - levels[i - 1], `skip before heading ${i}`).toBeLessThanOrEqual(1);
+  });
+
+  // The hidden title is translated like every other string on the site.
+  await page.click('#lang-btn');
+  await expect(h1).toHaveText('Quiz sa Pinoy Food Personality');
+});

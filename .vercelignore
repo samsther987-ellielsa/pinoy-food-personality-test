@@ -9,3 +9,6 @@ scripts/
 *.md
 *.ts
 *.log
+
+# SEO audit artifacts (JSON/PNG/TXT are not covered by *.md above)
+*-audit/
