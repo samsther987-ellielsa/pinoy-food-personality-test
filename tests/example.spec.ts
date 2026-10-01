@@ -4,11 +4,11 @@ import { readFileSync } from 'node:fs';
 test('home page exposes quiz and content navigation', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Filipino Recipes and Food Guides/);
+  await expect(page).toHaveTitle(/Pinoy Food Personality Test/);
   const mainNav = page.getByLabel('Main navigation');
   await expect(mainNav.getByRole('link', { name: /Food Guide/i })).toBeVisible();
   await expect(mainNav.getByRole('link', { name: /Blog/i })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Let's Eat|Tara Kain/i })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Start the MBTI Test/i })).toBeVisible();
 });
 
 test('representative result page has static publisher content', async ({ page }) => {
@@ -164,18 +164,21 @@ test('quiz outputs are noindex and merged posts redirect outside the sitemap', a
   }
 });
 
-test('homepage leads with editorial content, and the quiz sections follow', async ({ page }) => {
+test('homepage leads with the MBTI test on mobile, with food content below', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/');
+  await expect(page.locator('#start-btn')).toBeInViewport({ ratio: 1 });
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pinoy FoodPersonality Test');
 
   const order = await page.evaluate(() =>
-    ['recipes-section', 'blog-preview-section', 'how-it-works', 'popular-results-section']
+    ['start-screen', 'how-it-works', 'popular-results-section', 'intro-section', 'recipes-section', 'blog-preview-section']
       .map((id) => document.getElementById(id)!.getBoundingClientRect().top + window.scrollY)
   );
-  expect(order, 'recipes → blog → how-it-works → popular results').toEqual([...order].sort((a, b) => a - b));
+  expect(order, 'test → how-it-works → results → introduction → recipes → blog').toEqual([...order].sort((a, b) => a - b));
 
-  // Hero offers content destinations, not only the quiz.
+  // Supporting food links remain available after the test sections.
   for (const id of ['hero-link-recipes', 'hero-link-guide', 'hero-link-blog']) {
     await expect(page.locator(`#${id}`)).toBeVisible();
   }
@@ -183,7 +186,10 @@ test('homepage leads with editorial content, and the quiz sections follow', asyn
   await expect(page.locator('#hero-link-recipes')).toHaveText('Filipino Recipes');
   await page.getByRole('button', { name: /Eng|Tag/i }).click();
   await expect(page.locator('#hero-link-recipes')).toHaveText('Mga Filipino Recipe');
+  await expect(page.locator('#start-btn')).toHaveText('Simulan ang MBTI Test');
   await expect(page.locator('#faq-q2')).toHaveText(/Aling mga Filipino dish/);
+  await page.locator('#start-btn').click();
+  await expect(page).toHaveURL(/quiz(?:\.html)?$/);
 
   expect(errors, 'no JS errors during language toggle').toEqual([]);
 });

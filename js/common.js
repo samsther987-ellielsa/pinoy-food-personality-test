@@ -3,8 +3,8 @@ let curTheme = 'light';
 
 const uiText = {
     en: {
-        subtitle: "Discover your soul food & K-Pop twin!",
-        startBtn: "Let's Eat! (Start)",
+        subtitle: "Discover your MBTI, Filipino soul food & K-Pop twin!",
+        startBtn: "Start the MBTI Test",
         options: ["Super Agree! 😍", "Agree 🙂", "Disagree 😕", "Super Disagree! 🙅‍♂️"],
         analyzing: "Analyzing your taste...",
         loadingSub: "Comparing with K-Pop Stars...",
@@ -13,8 +13,8 @@ const uiText = {
         retryBtn: "Try Again 🔄"
     },
     tl: {
-        subtitle: "Alamin ang iyong Soul Food at K-Pop Twin!",
-        startBtn: "Tara Kain! (Simula)",
+        subtitle: "Alamin ang iyong MBTI, Filipino Soul Food at K-Pop Twin!",
+        startBtn: "Simulan ang MBTI Test",
         options: ["Sobrang Agree! 😍", "Pwede 🙂", "Di masyado 😕", "Sobrang Hindi! 🙅‍♂️"],
         analyzing: "Ina-analyze ang iyong personality...",
         loadingSub: "Hinahanap ang iyong K-Pop match...",
