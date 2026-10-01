@@ -221,3 +221,23 @@ test('quiz page has one h1 that names the page without showing it', async ({ pag
   await page.click('#lang-btn');
   await expect(h1).toHaveText('Quiz sa Pinoy Food Personality');
 });
+
+test('every indexed page has one h1 and skips no heading level', async ({ page }) => {
+  const paths = [...readFileSync('sitemap.xml', 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => new URL(m[1]).pathname);
+  expect(paths.length).toBeGreaterThan(0);
+
+  for (const path of paths) {
+    await page.goto(path);
+    const levels = await page.evaluate(() =>
+      [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map((h) => Number(h.tagName[1]))
+    );
+    expect(levels.filter((l) => l === 1).length, `${path} needs exactly one h1`).toBe(1);
+    expect(levels[0], `${path} must open with its h1`).toBe(1);
+    levels.forEach((lvl, i) => {
+      if (i > 0) {
+        expect(lvl - levels[i - 1], `${path} skips a level at heading ${i}`).toBeLessThanOrEqual(1);
+      }
+    });
+  }
+});

@@ -524,6 +524,7 @@ main a { color: var(--accent); text-underline-offset: 2px; }
     box-shadow: 0 4px 15px var(--shadow);
 }
 
+.intro-section h2,
 .intro-section h3 {
     color: var(--accent);
     font-size: 1.1rem;
@@ -544,6 +545,7 @@ main a { color: var(--accent); text-underline-offset: 2px; }
     margin-top: 15px;
 }
 
+.how-it-works h2,
 .how-it-works h3 {
     text-align: center;
     color: var(--accent);
@@ -601,6 +603,7 @@ main a { color: var(--accent); text-underline-offset: 2px; }
     margin-top: 20px;
 }
 
+.faq-section h2,
 .faq-section h3 {
     color: var(--accent);
     font-size: 1.1rem;
@@ -682,12 +685,14 @@ main a { color: var(--accent); text-underline-offset: 2px; }
     text-align: left;
 }
 
+.legal-content h2,
 .legal-content h3 {
     color: var(--accent);
     font-size: 1rem;
     margin: 20px 0 8px 0;
 }
 
+.legal-content h2:first-child,
 .legal-content h3:first-child {
     margin-top: 0;
 }
